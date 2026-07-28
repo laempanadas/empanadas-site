@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusão de Dados - La Empanadas</title>
+    
+    <!-- Tailwind CSS & DaisyUI via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER RESPONSIVO (Mesmo padrão visual com Menu Hambúrguer) -->
+    <header class="bg-neutral text-neutral-content shadow-md sticky top-0 z-50">
+        <div class="navbar max-w-5xl mx-auto px-4">
+            <!-- Lado Esquerdo: Logo -->
+            <div class="flex-1">
+                <a href="/" class="btn btn-ghost text-lg font-bold tracking-wide text-white flex items-center gap-2">
+                    <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
+                    La Empanadas
+                </a>
+            </div>
+            
+            <!-- Lado Direito: Menu Hambúrguer (Mobile) -->
+            <div class="flex-none lg:hidden">
+                <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow bg-neutral text-neutral-content rounded-box w-56 space-y-2 border border-gray-700">
+                        <li><a href="/politica" class="active:bg-orange-600">Política de Privacidade</a></li>
+                        <li><a href="/termos" class="active:bg-orange-600">Termos de Uso</a></li>
+                        <li><a href="/exclusao" class="active:bg-orange-600">Exclusão de Dados</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Links por extenso (Apenas Computador) -->
+            <div class="flex-none hidden lg:block">
+                <ul class="menu menu-horizontal px-1 gap-2 font-medium">
+                    <li><a href="/politica" class="hover:text-orange-500 transition-colors">Política de Privacidade</a></li>
+                    <li><a href="/termos" class="hover:text-orange-500 transition-colors">Termos de Uso</a></li>
+                    <li><a href="/exclusao" class="hover:text-orange-500 transition-colors">Exclusão de Dados</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (Exclusão de Dados do Usuário) -->
+    <main class="max-w-4xl mx-auto px-6 py-10 flex-grow w-full">
+        <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Exclusão de Dados do Usuário</h1>
+            <p class="text-sm text-gray-500 mb-8 flex items-center gap-1">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                Última atualização: 29 de junho de 2026
+            </p>
+
+            <p class="text-gray-600 leading-relaxed mb-8">
+                Respeitamos integralmente a privacidade de nossos usuários e, em conformidade com as diretrizes da LGPD e os termos da Meta, disponibilizamos um canal direto para que você solicite a exclusão de todos os seus dados pessoais armazenados pela <strong class="text-gray-900">La Empanadas</strong>.
+            </p>
+
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">1</span>
+                        Como solicitar a exclusão
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-3">
+                        Para solicitar a eliminação dos seus dados de nosso banco de dados, basta enviar uma mensagem eletrônica especificando sua solicitação para o e-mail oficial abaixo:
+                    </p>
+                    <div class="p-4 bg-orange-50 border border-orange-100 rounded-xl inline-block">
+                        <a href="mailto:contato@laempanadas.com.br" class="text-lg font-bold text-orange-600 hover:underline flex items-center gap-2">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            contato@laempanadas.com.br
+                        </a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">2</span>
+                        Informações necessárias na solicitação
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-3">
+                        Para garantir que possamos identificar e remover os seus registros de forma correta e segura, solicitamos que informe no corpo do e-mail:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-1.5 text-gray-600">
+                        <li>Seu nome completo.</li>
+                        <li>O número do telefone celular cadastrado (no formato com DDI e DDD, ex: <code class="bg-gray-100 px-1.5 py-0.5 rounded text-gray-800 text-xs">+55 XX XXXXX-XXXX</code>).</li>
+                        <li>O assunto do e-mail preenchido como: <strong class="text-gray-900">"Exclusão de Dados de Usuário - MP-WPP"</strong>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">3</span>
+                        Prazo para conclusão
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Após o recebimento e validação da titularidade da conta de envio, o nosso encarregado de proteção de dados processará e excluirá permanentemente os registros em um prazo máximo de 5 (cinco) dias úteis, enviando uma confirmação para o seu endereço de e-mail.
+                    </p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <!-- FOOTER ESTRUTURADO -->
+    <footer class="bg-neutral text-neutral-content pt-10 border-t border-gray-800">
+        <div class="footer max-w-5xl mx-auto px-6 pb-8 grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Coluna 1: Sobre a Marca -->
+            <aside>
+                <span class="text-lg font-bold text-white flex items-center gap-2 mb-2">
+                    <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
+                    La Empanadas
+                </span>
+                <p class="text-xs text-gray-400">
+                    Sabor tradicional e ingredientes de alta qualidade assados diretamente na sua mesa.
+                </p>
+            </aside> 
+            
+            <!-- Coluna 2: Links Institucionais -->
+            <nav>
+                <h6 class="footer-title text-white opacity-95">Institucional</h6> 
+                <a href="/politica" class="link link-hover text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
+                <a href="/termos" class="link link-hover text-gray-400 hover:text-white transition-colors">Termos de Uso</a>
+                <a href="/exclusao" class="link link-hover text-gray-400 hover:text-white transition-colors">Exclusão de Dados</a>
+            </nav> 
+            
+            <!-- Coluna 3: E-mail de Contato -->
+            <nav>
+                <h6 class="footer-title text-white opacity-95">Contato</h6> 
+                <a href="mailto:contato@laempanadas.com.br" class="link link-hover text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    contato@laempanadas.com.br
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Direitos Autorais -->
+        <div class="border-t border-gray-800 py-4 bg-black/20">
+            <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-2">
+                <p>© 2026 La Empanadas. Todos os direitos reservados.</p>
+                <p>Aplicativo MP-WPP / Plataforma Meta (WhatsApp)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inicialização de ícones -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

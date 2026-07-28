@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Serviço - La Empanadas</title>
+    
+    <!-- Tailwind CSS & DaisyUI via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER RESPONSIVO (Mesmo padrão visual com Menu Hambúrguer) -->
+    <header class="bg-neutral text-neutral-content shadow-md sticky top-0 z-50">
+        <div class="navbar max-w-5xl mx-auto px-4">
+            <!-- Lado Esquerdo: Logo -->
+            <div class="flex-1">
+                <a href="/" class="btn btn-ghost text-lg font-bold tracking-wide text-white flex items-center gap-2">
+                    <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
+                    La Empanadas
+                </a>
+            </div>
+            
+            <!-- Lado Direito: Menu Hambúrguer (Mobile) -->
+            <div class="flex-none lg:hidden">
+                <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow bg-neutral text-neutral-content rounded-box w-56 space-y-2 border border-gray-700">
+                        <li><a href="/politica" class="active:bg-orange-600">Política de Privacidade</a></li>
+                        <li><a href="/termos" class="active:bg-orange-600">Termos de Uso</a></li>
+                        <li><a href="/exclusao" class="active:bg-orange-600">Exclusão de Dados</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Links por extenso (Apenas Computador) -->
+            <div class="flex-none hidden lg:block">
+                <ul class="menu menu-horizontal px-1 gap-2 font-medium">
+                    <li><a href="/politica" class="hover:text-orange-500 transition-colors">Política de Privacidade</a></li>
+                    <li><a href="/termos" class="hover:text-orange-500 transition-colors">Termos de Uso</a></li>
+                    <li><a href="/exclusao" class="hover:text-orange-500 transition-colors">Exclusão de Dados</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (Termos de Serviço) -->
+    <main class="max-w-4xl mx-auto px-6 py-10 flex-grow w-full">
+        <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Termos de Serviço</h1>
+            <p class="text-sm text-gray-500 mb-8 flex items-center gap-1">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                Última atualização: 29 de junho de 2026
+            </p>
+
+            <p class="text-gray-600 leading-relaxed mb-8">
+                Ao interagir com o nosso assistente ou plataforma de atendimento de pedidos <strong class="text-gray-900">MP-WPP</strong>, operada pela empresa <strong class="text-gray-900">La Empanadas</strong>, você concorda em cumprir e vincular-se aos seguintes Termos de Serviço.
+            </p>
+
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">1</span>
+                        Uso Aceitável
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-3">
+                        O usuário concorda em utilizar nossos canais digitais exclusivamente para fins legítimos, como consulta de cardápio, realização de pedidos de alimentos, acompanhamento de entregas e esclarecimento de dúvidas operacionais. É estritamente proibido:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-1.5 text-gray-600">
+                        <li>Enviar conteúdo ofensivo, ilegal ou abusivo por meio de nossas plataformas de chat.</li>
+                        <li>Tentar contornar as medidas de segurança tecnológicas do aplicativo ou servidor.</li>
+                        <li>Utilizar ferramentas automatizadas (bots não oficiais) para sobrecarregar nossa infraestrutura.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">2</span>
+                        Cadastro e Exatidão de Dados
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Para o atendimento correto e entrega de mercadorias, o usuário deve fornecer informações precisas e atualizadas (endereço de entrega, nome do destinatário e número de contato telefônico).
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">3</span>
+                        Limitação de Responsabilidade
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        A La Empanadas empenha-se para manter os serviços de integração de chat ativos de forma contínua. Contudo, falhas decorrentes de instabilidades de provedores de terceiros (como a própria API do WhatsApp ou serviços de hospedagem na web) estão fora do nosso controle operacional direto.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">4</span>
+                        Alterações nos Termos
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Reservamo-nos o direito de atualizar e modificar estes termos periodicamente. Recomendamos a consulta a esta página para manter-se atualizado sobre as regras vigentes.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">5</span>
+                        Resolução de Dúvidas
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Se você tiver alguma dúvida em relação a estes Termos de Serviço, por favor, envie uma mensagem para o endereço de e-mail: 
+                        <a href="mailto:contato@laempanadas.com.br" class="text-orange-600 hover:underline font-semibold">contato@laempanadas.com.br</a>.
+                    </p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <!-- FOOTER ESTRUTURADO (Coesão total com as páginas anteriores) -->
+    <footer class="bg-neutral text-neutral-content pt-10 border-t border-gray-800">
+        <div class="footer max-w-5xl mx-auto px-6 pb-8 grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Coluna 1: Sobre a Marca -->
+            <aside>
+                <span class="text-lg font-bold text-white flex items-center gap-2 mb-2">
+                    <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
+                    La Empanadas
+                </span>
+                <p class="text-xs text-gray-400">
+                    Sabor tradicional e ingredientes de alta qualidade assados diretamente na sua mesa.
+                </p>
+            </aside> 
+            
+            <!-- Coluna 2: Links Institucionais -->
+            <nav>
+                <h6 class="footer-title text-white opacity-95">Institucional</h6> 
+                <a href="/politica" class="link link-hover text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
+                <a href="/termos" class="link link-hover text-gray-400 hover:text-white transition-colors">Termos de Uso</a>
+                <a href="/exclusao" class="link link-hover text-gray-400 hover:text-white transition-colors">Exclusão de Dados</a>
+            </nav> 
+            
+            <!-- Coluna 3: E-mail de Contato solicitado -->
+            <nav>
+                <h6 class="footer-title text-white opacity-95">Contato</h6> 
+                <a href="mailto:contato@laempanadas.com.br" class="link link-hover text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    contato@laempanadas.com.br
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Direitos Autorais -->
+        <div class="border-t border-gray-800 py-4 bg-black/20">
+            <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-2">
+                <p>© 2026 La Empanadas. Todos os direitos reservados.</p>
+                <p>Aplicativo MP-WPP / Plataforma Meta (WhatsApp)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inicialização de ícones -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

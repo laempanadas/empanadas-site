@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - La Empanadas</title>
+    
+    <!-- Tailwind CSS & DaisyUI via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER RESPONSIVO (Com Menu Hambúrguer para Celular) -->
+    <header class="bg-neutral text-neutral-content shadow-md sticky top-0 z-50">
+        <div class="navbar max-w-5xl mx-auto px-4">
+            <!-- Lado Esquerdo: Logo -->
+            <div class="flex-1">
+                <a href="/" class="btn btn-ghost text-lg font-bold tracking-wide text-white flex items-center gap-2">
+                    <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
+                    La Empanadas
+                </a>
+            </div>
+            
+            <!-- Lado Direito: Menu Hambúrguer (Mobile) -->
+            <div class="flex-none lg:hidden">
+                <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow bg-neutral text-neutral-content rounded-box w-56 space-y-2 border border-gray-700">
+                        <li><a href="/politica" class="active:bg-orange-600">Política de Privacidade</a></li>
+                        <li><a href="/termos" class="active:bg-orange-600">Termos de Uso</a></li>
+                        <li><a href="/exclusao" class="active:bg-orange-600">Exclusão de Dados</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Links por extenso (Apenas Computador) -->
+            <div class="flex-none hidden lg:block">
+                <ul class="menu menu-horizontal px-1 gap-2 font-medium">
+                    <li><a href="/politica" class="hover:text-orange-500 transition-colors">Política de Privacidade</a></li>
+                    <li><a href="/termos" class="hover:text-orange-500 transition-colors">Termos de Uso</a></li>
+                    <li><a href="/exclusao" class="hover:text-orange-500 transition-colors">Exclusão de Dados</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (Política de Privacidade) -->
+    <main class="max-w-4xl mx-auto px-6 py-10 flex-grow">
+        <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Política de Privacidade</h1>
+            <p class="text-sm text-gray-500 mb-8 flex items-center gap-1">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                Última atualização: 29 de junho de 2026
+            </p>
+
+            <p class="text-gray-600 leading-relaxed mb-8">
+                A presente Política de Privacidade regula como a empresa <strong class="text-gray-900">La Empanadas</strong> coleta, armazena, processa e utiliza as informações obtidas por meio do nosso aplicativo <strong class="text-gray-900">MP-WPP</strong> e canais associados à plataforma Meta (WhatsApp).
+            </p>
+
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">1</span>
+                        Coleta de Informações
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-3">
+                        Nós coletamos informações fornecidas voluntariamente por você ao interagir com o nosso canal de atendimento no WhatsApp, tais como:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-1.5 text-gray-600">
+                        <li>Nome de exibição do perfil do WhatsApp.</li>
+                        <li>Número de telefone celular.</li>
+                        <li>Conteúdo das mensagens de texto enviadas para processamento de pedidos.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">2</span>
+                        Uso das Informações
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-3">
+                        Os dados coletados são utilizados unicamente para as seguintes finalidades:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-1.5 text-gray-600">
+                        <li>Gerenciamento, atendimento e entrega de pedidos solicitados diretamente pelo usuário.</li>
+                        <li>Suporte técnico e melhorias na experiência de atendimento ao cliente.</li>
+                        <li>Cumprimento de obrigações legais de faturamento ou fiscais.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">3</span>
+                        Compartilhamento de Dados
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        A La Empanadas não comercializa, aluga ou compartilha seus dados pessoais com terceiros para fins de marketing. O acesso às suas informações é restrito a operadores de sistemas de logística/entregas estritamente necessários para a conclusão do seu pedido.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">4</span>
+                        Segurança dos Dados
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Adotamos medidas técnicas administrativas razoáveis para proteger suas informações pessoais contra perda, roubo, acesso não autorizado ou divulgação indevida.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">5</span>
+                        Seus Direitos
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Conforme a legislação vigente, você possui o direito de solicitar a confirmação da existência de tratamento, o acesso aos seus dados, a correção de dados incompletos ou inexatos, e a exclusão definitiva dos seus dados pessoais de nossas bases de dados.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-lg text-sm">6</span>
+                        Contato
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Caso tenha dúvidas ou queira exercer os seus direitos em relação à sua privacidade, entre em contato através do e-mail: 
+                        <a href="mailto:contato@laempanadas.com.br" class="text-orange-600 hover:underline font-semibold">contato@laempanadas.com.br</a>.
+                    </p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <!-- FOOTER ESTRUTURADO (Alinhado com a identidade da marca) -->
+    <footer class="bg-neutral text-neutral-content pt-10 border-t border-gray-800">
+        <div class="footer max-w-5xl mx-auto px-6 pb-8 grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Coluna 1: Nome/Sobre -->
+            <aside>
+                <span class="text-lg font-bold text-white flex items-center gap-2 mb-2">
+                    <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
+                    La Empanadas
+                </span>
+                <p class="text-xs text-gray-400">
+                    Sabor tradicional e ingredientes de alta qualidade assados diretamente na sua mesa.
+                </p>
+            </aside> 
+            
+            <!-- Coluna 2: Links Institucionais solicitados -->
+            <nav>
+                <h6 class="footer-title text-white opacity-95">Institucional</h6> 
+                <a href="/politica" class="link link-hover text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
+                <a href="/termos" class="link link-hover text-gray-400 hover:text-white transition-colors">Termos de Uso</a>
+                <a href="/exclusao" class="link link-hover text-gray-400 hover:text-white transition-colors">Exclusão de Dados</a>
+            </nav> 
+            
+            <!-- Coluna 3: Contato solicitado -->
+            <nav>
+                <h6 class="footer-title text-white opacity-95">Contato</h6> 
+                <a href="mailto:contato@laempanadas.com.br" class="link link-hover text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    contato@laempanadas.com.br
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Faixa de direitos autorais -->
+        <div class="border-t border-gray-800 py-4 bg-black/20">
+            <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-2">
+                <p>© 2026 La Empanadas. Todos os direitos reservados.</p>
+                <p>Aplicativo MP-WPP / Plataforma Meta (WhatsApp)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inicialização dos ícones Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
