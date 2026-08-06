@@ -106,16 +106,16 @@
       "id": "combo_coca",
       "nome": "Combo Coca-Cola",
       "descricao": "Contém 4 Empanadas à sua escolha + 1 Refrigerante Coca-Cola de 600ml.",
-      "preco": 61.90,
-      "imagem": "https://images.unsplash.com/photo-1619860860774-1e2e17343432?w=500&auto=format&fit=crop&q=60",
+      "preco": 62.90,
+      "imagem": "assets/js/img/empanada_combo_coca_600ml",
       "categoriaId": "combo"
     },
     {
       "id": "combo_familia",
-      "nome": "Combo Família (9 Empanadas Assadas)",
+      "nome": "Combo Família (8 Empanadas Assadas)",
       "descricao": "9 empanadas assadas à sua escolha para dividir com quem você gosta.",
       "preco": 102.00,
-      "imagem": "https://images.unsplash.com/photo-1619860860774-1e2e17343432?w=500&auto=format&fit=crop&q=60",
+      "imagem": "assets/js/img/empanadas_combo_8",
       "categoriaId": "combo"
     },
     {
@@ -123,14 +123,14 @@
       "nome": "Combo 4 Empanadas",
       "descricao": "Leve 4 empanadas assadas de qualquer sabor com preço promocional.",
       "preco": 52.90,
-      "imagem": "https://images.unsplash.com/photo-1619860860774-1e2e17343432?w=500&auto=format&fit=crop&q=60",
+      "imagem": "assets/js/img/empanadas_combo_4",
       "categoriaId": "combo"
     },
     {
       "id": "beb_coca_600",
       "nome": "Coca-Cola Original 600ml",
       "descricao": "Garrafa de 600ml ideal para acompanhar sua empanada.",
-      "preco": 9.00,
+      "preco": 15.00,
       "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
       "categoriaId": "bebida"
     },
@@ -138,7 +138,7 @@
       "id": "beb_coca_zero_350",
       "nome": "Coca-Cola sem Açúcar 350ml",
       "descricao": "Lata de 350ml de Coca-Cola sabor zero açúcar gelada.",
-      "preco": 7.00,
+      "preco": 8.50,
       "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
       "categoriaId": "bebida"
     },
@@ -146,7 +146,7 @@
       "id": "beb_coca_zero_600",
       "nome": "Coca-Cola Zero 600ml",
       "descricao": "Garrafa de 600ml de Coca-Cola sabor zero açúcar.",
-      "preco": 9.00,
+      "preco": 15.00,
       "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
       "categoriaId": "bebida"
     },
@@ -154,7 +154,7 @@
       "id": "beb_coca_2l",
       "nome": "Coca-Cola 2L",
       "descricao": "Tamanho família. Garrafa de 2 litros.",
-      "preco": 16.00,
+      "preco": 25.00,
       "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
       "categoriaId": "bebida"
     },
