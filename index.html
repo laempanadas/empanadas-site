@@ -27,7 +27,7 @@
 
   <link rel="icon" href="/favicon.ico">
 
-  <!-- Tailwind CSS & DaisyUI via CDN -->
+  <!-- Tailwind CSS & DaisyUI -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -49,7 +49,7 @@
     }
   </script>
 
-  <!-- Google Fonts - Poppins -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -67,9 +67,8 @@
     }
   </style>
 
-  <!-- SweetAlert2 -->
+  <!-- Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- JSON-LD: Restaurant / LocalBusiness -->
@@ -192,7 +191,6 @@
     </div>
   </div>
 
-  <!-- Conteúdo principal -->
   <main class="max-w-md mx-auto p-4 pb-28 flex-grow w-full" role="main">
 
     <!-- Introdução -->
@@ -320,44 +318,47 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-neutral text-neutral-content pt-10 border-t border-gray-800 w-full mt-auto">
-    <div class="footer max-w-md mx-auto px-6 pb-8 grid-cols-1 grid-flow-row gap-6">
-      <aside>
-        <span class="text-base font-bold text-white flex items-center gap-2 mb-1">
+  <footer class="bg-neutral text-neutral-content mt-auto border-t border-gray-800">
+    <div class="max-w-md mx-auto px-4 py-8 space-y-6">
+
+      <div>
+        <div class="flex items-center gap-2 mb-2">
           <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
-          La Empanadas
-        </span>
-        <p class="text-xs text-gray-400">
+          <span class="text-base font-bold text-white">La Empanadas</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed">
           Empanadas argentinas artesanais, feitas com receita tradicional e ingredientes de qualidade.
         </p>
-      </aside>
+      </div>
 
-      <nav class="flex flex-col gap-2">
-        <h6 class="footer-title text-white opacity-95 text-xs">Institucional</h6>
-        <a href="politica.html" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
-        <a href="termos.html" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors">Termos de Uso</a>
-        <a href="exclusao.html" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors">Exclusão de Dados</a>
-      </nav>
+      <div class="grid gap-5 sm:grid-cols-2">
+        <nav class="flex flex-col gap-2">
+          <h6 class="text-xs font-bold uppercase tracking-wide text-white opacity-90">Institucional</h6>
+          <a href="politica.html" class="text-xs text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
+          <a href="termos.html" class="text-xs text-gray-400 hover:text-white transition-colors">Termos de Uso</a>
+          <a href="exclusao.html" class="text-xs text-gray-400 hover:text-white transition-colors">Exclusão de Dados</a>
+        </nav>
 
-      <nav class="flex flex-col gap-2">
-        <h6 class="footer-title text-white opacity-95 text-xs">Contato</h6>
-        <a href="mailto:contato@laempanadas.com.br" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
-          <i data-lucide="mail" class="w-4 h-4"></i>
-          contato@laempanadas.com.br
-        </a>
-        <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
-          <i data-lucide="message-circle" class="w-4 h-4"></i>
-          WhatsApp: (11) 2669-0644
-        </a>
-        <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
-          <i data-lucide="map-pin" class="w-4 h-4"></i>
-          R. Marina, 474 - Campestre, Santo André - SP
-        </a>
-      </nav>
+        <nav class="flex flex-col gap-2">
+          <h6 class="text-xs font-bold uppercase tracking-wide text-white opacity-90">Contato</h6>
+          <a href="mailto:contato@laempanadas.com.br" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            contato@laempanadas.com.br
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            WhatsApp: (11) 2669-0644
+          </a>
+          <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            R. Marina, 474 - Campestre, Santo André - SP
+          </a>
+        </nav>
+      </div>
 
-      <!-- Onde estamos no footer -->
-      <section class="mt-2 mb-4 p-4 bg-neutral-900 border border-white/10 rounded-2xl" aria-labelledby="localizacao-footer-title">
-        <h2 id="localizacao-footer-title" class="text-sm font-bold text-white mb-2">
+      <section class="rounded-2xl border border-white/10 bg-white/5 p-4">
+        <h2 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
           Onde estamos
         </h2>
 
@@ -366,26 +367,22 @@
         </p>
 
         <p class="text-xs text-gray-400 mt-1">
-          CEP 09070-510
-        </p>
-
-        <p class="text-xs text-gray-400 mt-1">
-          Retirada e delivery na região.
+          CEP 09070-510 • Retirada e delivery na região
         </p>
 
         <a
           href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-sm btn-outline border-orange-400 text-orange-300 mt-3 rounded-xl"
+          class="inline-flex items-center justify-center mt-3 px-4 py-2 rounded-xl border border-orange-400 text-orange-300 text-xs font-semibold hover:bg-orange-400 hover:text-neutral transition-colors"
         >
           Ver no Google Maps
         </a>
       </section>
     </div>
 
-    <div class="border-t border-gray-800 py-4 bg-black/20 w-full">
-      <div class="max-w-md mx-auto px-6 text-[10px] text-gray-500 flex flex-col gap-1">
+    <div class="border-t border-gray-800 py-4 bg-black/20">
+      <div class="max-w-md mx-auto px-4 text-[10px] text-gray-500 flex flex-col gap-1">
         <p>© 2026 La Empanadas. Todos os direitos reservados.</p>
         <p>Aplicativo MP-WPP / Plataforma Meta (WhatsApp)</p>
       </div>
