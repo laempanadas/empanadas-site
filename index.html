@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>La Empanadas | Empanadas Argentinas em Delivery</title>
 
-  <meta name="description" content="La Empanadas oferece empanadas argentinas assadas diariamente, com pedido rápido via WhatsApp, combos especiais e entrega prática.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.laempanadas.com.br/">
+  <meta name="description" content="La Empanadas oferece empanadas argentinas assadas diariamente, com pedido rápido via WhatsApp, retirada ou delivery em Santo André.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://laempanadas.com.br/">
   <meta name="language" content="pt-BR">
 
   <!-- Open Graph -->
@@ -15,14 +16,14 @@
   <meta property="og:site_name" content="La Empanadas">
   <meta property="og:title" content="La Empanadas | Empanadas Argentinas em Delivery">
   <meta property="og:description" content="Empanadas argentinas assadas diariamente. Faça seu pedido rápido via WhatsApp.">
-  <meta property="og:url" content="https://www.laempanadas.com.br/">
-  <meta property="og:image" content="https://www.laempanadas.com.br/assets/og-image.jpg">
+  <meta property="og:url" content="https://laempanadas.com.br/">
+  <meta property="og:image" content="https://laempanadas.com.br/assets/og-image.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="La Empanadas | Empanadas Argentinas em Delivery">
   <meta name="twitter:description" content="Empanadas argentinas assadas diariamente. Pedido rápido via WhatsApp.">
-  <meta name="twitter:image" content="https://www.laempanadas.com.br/assets/og-image.jpg">
+  <meta name="twitter:image" content="https://laempanadas.com.br/assets/og-image.jpg">
 
   <link rel="icon" href="/favicon.ico">
 
@@ -71,17 +72,26 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- JSON-LD: Restaurant -->
+  <!-- JSON-LD: Restaurant / LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "La Empanadas",
-    "url": "https://www.laempanadas.com.br/",
+    "url": "https://laempanadas.com.br/",
     "description": "Delivery de empanadas argentinas assadas diariamente com pedido rápido via WhatsApp.",
     "servesCuisine": "Argentina",
     "priceRange": "$$",
+    "telephone": "+55 11 2669-0644",
     "email": "contato@laempanadas.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Marina, 474 - Campestre",
+      "addressLocality": "Santo André",
+      "addressRegion": "SP",
+      "postalCode": "09070-510",
+      "addressCountry": "BR"
+    },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -95,7 +105,8 @@
         "opens": "18:00",
         "closes": "23:00"
       }
-    ]
+    ],
+    "hasMap": "https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510"
   }
   </script>
 
@@ -105,7 +116,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "La Empanadas",
-    "url": "https://www.laempanadas.com.br/"
+    "url": "https://laempanadas.com.br/"
   }
   </script>
 
@@ -120,7 +131,7 @@
         "name": "Como faço meu pedido?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Escolha os itens do cardápio e finalize no WhatsApp."
+          "text": "Escolha os itens do cardápio, abra o carrinho e finalize no WhatsApp."
         }
       },
       {
@@ -183,6 +194,8 @@
 
   <!-- Conteúdo principal -->
   <main class="max-w-md mx-auto p-4 pb-28 flex-grow w-full" role="main">
+
+    <!-- Introdução -->
     <section class="mb-4 text-center" aria-labelledby="sobre-title">
       <h2 id="sobre-title" class="text-sm font-bold text-gray-900">
         Empanadas argentinas assadas diariamente
@@ -192,6 +205,7 @@
       </p>
     </section>
 
+    <!-- Horário -->
     <section class="mb-4 p-3 rounded-2xl bg-white border border-orange-100 shadow-sm" aria-labelledby="horario-title">
       <h2 id="horario-title" class="text-xs font-bold uppercase tracking-wide text-gray-700">
         Horário de atendimento
@@ -202,6 +216,7 @@
       </div>
     </section>
 
+    <!-- CTA -->
     <section class="mb-4 flex flex-col gap-2" aria-label="Ações rápidas">
       <a href="#cardapio-grid" class="btn btn-sm bg-terracotta-500 hover:bg-terracotta-600 text-white border-none rounded-xl">
         Ver cardápio
@@ -209,6 +224,47 @@
       <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline border-terracotta-500 text-terracotta-600 rounded-xl">
         Pedir no WhatsApp
       </a>
+    </section>
+
+    <!-- Localização -->
+    <section class="mb-6 p-4 bg-white border border-orange-100 rounded-2xl shadow-sm" aria-labelledby="localizacao-title">
+      <h2 id="localizacao-title" class="text-sm font-bold text-gray-900 mb-2">
+        Onde estamos
+      </h2>
+
+      <p class="text-xs text-gray-600">
+        R. Marina, 474 - Campestre, Santo André - SP
+      </p>
+
+      <p class="text-xs text-gray-500 mt-1">
+        CEP 09070-510
+      </p>
+
+      <p class="text-xs text-gray-500 mt-1">
+        Atendemos retirada e delivery na região.
+      </p>
+
+      <a
+        href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-sm btn-outline border-terracotta-500 text-terracotta-600 mt-3 rounded-xl"
+      >
+        Ver no Google Maps
+      </a>
+
+      <div class="mt-4 overflow-hidden rounded-2xl border border-gray-200">
+        <iframe
+          title="Mapa da localização da La Empanadas"
+          src="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510&output=embed"
+          width="100%"
+          height="220"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </section>
 
     <!-- Carrossel -->
@@ -334,6 +390,10 @@
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           WhatsApp: (11) 2669-0644
         </a>
+        <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="map-pin" class="w-4 h-4"></i>
+          R. Marina, 474 - Campestre, Santo André - SP
+        </a>
       </nav>
     </div>
 
@@ -345,7 +405,7 @@
     </div>
   </footer>
 
-  <!-- Modal do Carrinho -->
+  <!-- Modal do carrinho -->
   <dialog id="modal_carrinho" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box p-6 bg-white max-w-md">
       <div class="flex justify-between items-center border-b border-gray-100 pb-3">
@@ -378,7 +438,7 @@
           <label class="label py-1">
             <span class="label-text font-semibold text-gray-700 text-xs">Endereço de Entrega</span>
           </label>
-          <input type="text" id="endereco-cliente" placeholder="Rua, número, bairro e complemento" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required />
+          <input type="text" id="endereco-cliente" placeholder="Rua, número, bairro, cidade e complemento" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required />
         </div>
 
         <div class="form-control">
