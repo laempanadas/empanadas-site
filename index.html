@@ -1,231 +1,410 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>La Empanadas - Delivery</title>
-    
-    <!-- Tailwind CSS & DaisyUI via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Customização de cores baseada em alimentos (Terracota) -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        terracotta: {
-                            50: '#fdf4f0',
-                            100: '#fbe7de',
-                            500: '#d95d39', 
-                            600: '#c2410c',
-                            700: '#9a3412',
-                        }
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>La Empanadas | Empanadas Argentinas em Delivery</title>
+
+  <meta name="description" content="La Empanadas oferece empanadas argentinas assadas diariamente, com pedido rápido via WhatsApp, combos especiais e entrega prática.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.laempanadas.com.br/">
+  <meta name="language" content="pt-BR">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="La Empanadas">
+  <meta property="og:title" content="La Empanadas | Empanadas Argentinas em Delivery">
+  <meta property="og:description" content="Empanadas argentinas assadas diariamente. Faça seu pedido rápido via WhatsApp.">
+  <meta property="og:url" content="https://www.laempanadas.com.br/">
+  <meta property="og:image" content="https://www.laempanadas.com.br/assets/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="La Empanadas | Empanadas Argentinas em Delivery">
+  <meta name="twitter:description" content="Empanadas argentinas assadas diariamente. Pedido rápido via WhatsApp.">
+  <meta name="twitter:image" content="https://www.laempanadas.com.br/assets/og-image.jpg">
+
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- Tailwind CSS & DaisyUI via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: {
+              50: '#fdf4f0',
+              100: '#fbe7de',
+              500: '#d95d39',
+              600: '#c2410c',
+              700: '#9a3412',
             }
+          }
         }
-    </script>
-    
-    <!-- Google Fonts - Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        body { 
-            font-family: 'Poppins', sans-serif; 
+      }
+    }
+  </script>
+
+  <!-- Google Fonts - Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- JSON-LD: Restaurant -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Empanadas",
+    "url": "https://www.laempanadas.com.br/",
+    "description": "Delivery de empanadas argentinas assadas diariamente com pedido rápido via WhatsApp.",
+    "servesCuisine": "Argentina",
+    "priceRange": "$$",
+    "email": "contato@laempanadas.com.br",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "18:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday", "Sunday"],
+        "opens": "18:00",
+        "closes": "23:00"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "La Empanadas",
+    "url": "https://www.laempanadas.com.br/"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Como faço meu pedido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Escolha os itens do cardápio e finalize no WhatsApp."
         }
-        .scrollbar-none::-webkit-scrollbar {
-            display: none;
+      },
+      {
+        "@type": "Question",
+        "name": "Qual o horário de atendimento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Segunda a quinta, das 18h às 22h. Sexta, sábado e domingo, das 18h às 23h."
         }
-        .scrollbar-none {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+      },
+      {
+        "@type": "Question",
+        "name": "O pedido é finalizado por onde?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O pedido segue para o WhatsApp para confirmação e finalização."
         }
-    </style>
-    
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+      }
+    ]
+  }
+  </script>
 </head>
-<!-- CORREÇÃO 1: removido "justify-between" do body. Esse era o bug do footer:
-     justify-between distribui os filhos diretos do body (header/main/footer) de
-     forma espaçada e imprevisível. O padrão certo para "footer sempre no fim"
-     é flex-col + min-h-screen no pai, e mt-auto no footer (ver mais abaixo). -->
+
 <body class="bg-orange-50/40 text-gray-800 min-h-screen flex flex-col">
 
-    <!-- Bloco Unificado de Topo -->
-    <div class="sticky top-0 z-50 bg-white border-b border-orange-100 shadow-sm">
-        <div class="max-w-md mx-auto">
-            <header class="navbar px-4 py-2 bg-white">
-                <div class="flex-1 gap-2">
-                    <span class="p-2 bg-terracotta-100 rounded-full text-terracotta-600">
-                        <i data-lucide="store" class="w-6 h-6"></i>
-                    </span>
-                    <div>
-                        <h1 class="text-lg font-bold text-gray-900 leading-none">La Empanada</h1>
-                        <span class="text-xs text-green-600 font-semibold flex items-center gap-1 mt-1">
-                            <span class="w-2 h-2 rounded-full bg-green-500 inline-block animate-pulse"></span> Aberto agora
-                        </span>
-                    </div>
-                </div>
-                <div class="flex-none">
-                    <button onclick="abrirCarrinho()" class="btn btn-ghost btn-circle relative">
-                        <i data-lucide="shopping-basket" class="w-6 h-6 text-gray-700"></i>
-                        <span id="badge-cart" class="badge badge-sm bg-terracotta-500 border-none text-white absolute top-1 right-1 hidden">0</span>
-                    </button>
-                </div>
-            </header>
-            
-            <!-- CORREÇÃO: Adicionado 'flex-nowrap' e 'scroll-smooth' para rolagem lateral ultra responsiva -->
-            <div class="flex flex-row flex-nowrap gap-2 overflow-x-auto pb-3 pt-1 px-4 scrollbar-none bg-white scroll-smooth snap-x" id="categorias-container">
-                <!-- Injetado dinamicamente via script.js -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Área de Conteúdo Central -->
-    <main class="max-w-md mx-auto p-4 pb-28 flex-grow w-full">
-        <!-- Carrossel de Destaques Visuais -->
-        <div id="carousel-track" class="carousel w-full rounded-2xl h-44 shadow-md mb-6 relative">
-          <!-- Slide 1 -->
-          <div id="slide1" class="carousel-item relative w-full h-full">
-            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&auto=format&fit=crop&q=80" class="w-full h-full object-cover brightness-[0.7]" alt="Combo Empanada e Vinho" />
-            <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
-              <span class="badge bg-terracotta-500 border-none text-white text-xs font-bold mb-1">RECOMENDADO</span>
-              <h2 class="text-lg font-bold">Combo Mendoza</h2>
-              <p class="text-xs opacity-90">2 Empanadas Salgadas + 1 Taça de Vinho Cabernet.</p>
-            </div>
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide2" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❮</a> 
-              <a href="#slide2" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❯</a>
-            </div>
-          </div>
-          
-          <!-- Slide 2 -->
-          <div id="slide2" class="carousel-item relative w-full h-full">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80" class="w-full h-full object-cover brightness-[0.7]" alt="Empanadas assadas" />
-            <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
-              <h2 class="text-lg font-bold">Massa Folhada e Sequinha</h2>
-              <p class="text-xs opacity-90">Receita tradicional argentina assada diariamente.</p>
-            </div>
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide1" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❮</a> 
-              <a href="#slide1" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❯</a>
-            </div>
+  <!-- Topo fixo -->
+  <div class="sticky top-0 z-50 bg-white border-b border-orange-100 shadow-sm">
+    <div class="max-w-md mx-auto">
+      <header class="navbar px-4 py-2 bg-white" role="banner">
+        <div class="flex-1 gap-2">
+          <span class="p-2 bg-terracotta-100 rounded-full text-terracotta-600">
+            <i data-lucide="store" class="w-6 h-6"></i>
+          </span>
+          <div>
+            <h1 class="text-lg font-bold text-gray-900 leading-none">La Empanadas</h1>
+            <span class="text-xs text-green-600 font-semibold flex flex-col mt-1 leading-tight">
+              <span class="flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-green-500 inline-block animate-pulse"></span>
+                Aberto agora
+              </span>
+              <span class="text-[11px] text-gray-500">Seg–Qui: 18h às 22h</span>
+              <span class="text-[11px] text-gray-500">Sex–Dom: 18h às 23h</span>
+            </span>
           </div>
         </div>
 
-        <!-- Grid de exibição dos Itens do Cardápio -->
-        <section class="grid grid-cols-1 gap-4" id="cardapio-grid">
-            <!-- Injetado dinamicamente via script.js -->
-        </section>
-    </main>
-
-    <!-- Barra Flutuante de Resumo do Carrinho -->
-    <div id="bottom-bar" class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-orange-100 p-4 shadow-lg z-40 transition-transform transform translate-y-full">
-        <div class="flex items-center justify-between gap-4">
-            <div>
-                <span class="text-xs text-gray-500 uppercase tracking-wider block">Total sem taxa</span>
-                <span id="bottom-bar-total" class="text-xl font-bold text-gray-900">R$ 0,00</span>
-            </div>
-            <button onclick="abrirCarrinho()" class="btn bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-6 rounded-xl flex items-center gap-2">
-                Ver Carrinho
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
+        <div class="flex-none">
+          <button onclick="abrirCarrinho()" class="btn btn-ghost btn-circle relative" aria-label="Abrir carrinho">
+            <i data-lucide="shopping-basket" class="w-6 h-6 text-gray-700"></i>
+            <span id="badge-cart" class="badge badge-sm bg-terracotta-500 border-none text-white absolute top-1 right-1 hidden">0</span>
+          </button>
         </div>
+      </header>
+
+      <nav class="flex flex-row flex-nowrap gap-2 overflow-x-auto pb-3 pt-1 px-4 scrollbar-none bg-white scroll-smooth snap-x" id="categorias-container" aria-label="Categorias do cardápio">
+        <!-- Injetado dinamicamente via script.js -->
+      </nav>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main class="max-w-md mx-auto p-4 pb-28 flex-grow w-full" role="main">
+    <section class="mb-4 text-center" aria-labelledby="sobre-title">
+      <h2 id="sobre-title" class="text-sm font-bold text-gray-900">
+        Empanadas argentinas assadas diariamente
+      </h2>
+      <p class="text-xs text-gray-600 mt-1">
+        Escolha seus sabores, monte seu pedido e finalize pelo WhatsApp.
+      </p>
+    </section>
+
+    <section class="mb-4 p-3 rounded-2xl bg-white border border-orange-100 shadow-sm" aria-labelledby="horario-title">
+      <h2 id="horario-title" class="text-xs font-bold uppercase tracking-wide text-gray-700">
+        Horário de atendimento
+      </h2>
+      <div class="mt-2 text-xs text-gray-600 leading-relaxed">
+        <p>Segunda a quinta: 18h às 22h</p>
+        <p>Sexta, sábado e domingo: 18h às 23h</p>
+      </div>
+    </section>
+
+    <section class="mb-4 flex flex-col gap-2" aria-label="Ações rápidas">
+      <a href="#cardapio-grid" class="btn btn-sm bg-terracotta-500 hover:bg-terracotta-600 text-white border-none rounded-xl">
+        Ver cardápio
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline border-terracotta-500 text-terracotta-600 rounded-xl">
+        Pedir no WhatsApp
+      </a>
+    </section>
+
+    <!-- Carrossel -->
+    <div id="carousel-track" class="carousel w-full rounded-2xl h-44 shadow-md mb-6 relative">
+      <div id="slide1" class="carousel-item relative w-full h-full">
+        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&auto=format&fit=crop&q=80" class="w-full h-full object-cover brightness-[0.7]" alt="Combo Empanada e Vinho" />
+        <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+          <span class="badge bg-terracotta-500 border-none text-white text-xs font-bold mb-1">RECOMENDADO</span>
+          <h2 class="text-lg font-bold">Combo Mendoza</h2>
+          <p class="text-xs opacity-90">2 Empanadas Salgadas + 1 Taça de Vinho Cabernet.</p>
+          <a href="#cardapio-grid" class="btn btn-sm bg-white text-gray-900 border-none mt-2 w-fit">
+            Ver cardápio
+          </a>
+        </div>
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❮</a>
+          <a href="#slide2" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❯</a>
+        </div>
+      </div>
+
+      <div id="slide2" class="carousel-item relative w-full h-full">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80" class="w-full h-full object-cover brightness-[0.7]" alt="Empanadas assadas" />
+        <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+          <h2 class="text-lg font-bold">Massa Folhada e Sequinha</h2>
+          <p class="text-xs opacity-90">Receita tradicional argentina assada diariamente.</p>
+          <a href="#cardapio-grid" class="btn btn-sm bg-white text-gray-900 border-none mt-2 w-fit">
+            Escolher sabores
+          </a>
+        </div>
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❮</a>
+          <a href="#slide1" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❯</a>
+        </div>
+      </div>
     </div>
 
-    <!-- FOOTER ADICIONADO (Links com a extensão .html corrigida) -->
-    <!-- CORREÇÃO 2: mt-10 -> mt-auto. Isso é o que faz o footer "grudar" no fim
-         da página (empurrando-o para baixo dentro do flex-col do body),
-         em vez de flutuar no meio dependendo da quantidade de conteúdo. -->
-    <footer class="bg-neutral text-neutral-content pt-10 border-t border-gray-800 w-full mt-auto">
-        <!-- CORREÇÃO: grid-flow-row adicionado. A classe "footer" do DaisyUI
-             vem com grid-auto-flow:column por padrão, que empurra aside+nav+nav
-             para colunas lado a lado mesmo com grid-cols-1 definido, espremendo
-             o texto num container estreito (max-w-md). grid-flow-row força o
-             empilhamento vertical correto. -->
-        <div class="footer max-w-md mx-auto px-6 pb-8 grid-cols-1 grid-flow-row gap-6">
-            <aside>
-                <span class="text-base font-bold text-white flex items-center gap-2 mb-1">
-                    <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
-                    La Empanadas
-                </span>
-                <p class="text-xs text-gray-400">
-                    Sabor tradicional e ingredientes de alta qualidade assados diretamente na sua mesa.
-                </p>
-            </aside> 
-            
-            <nav class="flex flex-col gap-2">
-                <h6 class="footer-title text-white opacity-95 text-xs">Institucional</h6> 
-                <!-- CORREÇÃO DE ROTAS: Links agora usam .html para funcionar nos servidores estáticos -->
-                <a href="politica.html" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
-                <a href="termos.html" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors">Termos de Uso</a>
-                <a href="exclusao.html" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors">Exclusão de Dados</a>
-            </nav> 
-            
-            <nav class="flex flex-col gap-2">
-                <h6 class="footer-title text-white opacity-95 text-xs">Contato</h6> 
-                <a href="mailto:contato@laempanadas.com.br" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                    contato@laempanadas.com.br
-                </a>
-            </nav>
-        </div>
-        
-        <div class="border-t border-gray-800 py-4 bg-black/20 w-full">
-            <div class="max-w-md mx-auto px-6 text-[10px] text-gray-500 flex flex-col gap-1">
-                <p>© 2026 La Empanadas. Todos os direitos reservados.</p>
-                <p>Aplicativo MP-WPP / Plataforma Meta (WhatsApp)</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Cardápio -->
+    <section id="cardapio" aria-labelledby="cardapio-title">
+      <h2 id="cardapio-title" class="sr-only">Cardápio</h2>
+      <div class="grid grid-cols-1 gap-4" id="cardapio-grid">
+        <!-- Injetado dinamicamente via script.js -->
+      </div>
+    </section>
 
-    <!-- Modal do Carrinho -->
-    <dialog id="modal_carrinho" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box p-6 bg-white max-w-md">
-            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
-                <h3 class="font-bold text-lg text-gray-900 flex items-center gap-2">
-                    <i data-lucide="shopping-cart" class="text-terracotta-500"></i> Seu Pedido
-                </h3>
-                <button onclick="fecharCarrinho()" class="btn btn-sm btn-circle btn-ghost">✕</button>
-            </div>
-            <div id="carrinho-itens-lista" class="py-4 space-y-4 max-h-[250px] overflow-y-auto"></div>
-            <div class="border-t border-dashed border-gray-200 pt-4 flex justify-between items-center">
-                <span class="font-semibold text-gray-600">Total do Pedido:</span>
-                <span id="modal-total" class="text-2xl font-bold text-terracotta-600">R$ 0,00</span>
-            </div>
-            <form id="checkout-form" class="mt-4 space-y-3">
-                <div class="form-control">
-                    <label class="label py-1"><span class="label-text font-semibold text-gray-700 text-xs">Seu Nome</span></label>
-                    <input type="text" id="nome-cliente" placeholder="Como te chamamos?" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required />
-                </div>
-                <div class="form-control">
-                    <label class="label py-1"><span class="label-text font-semibold text-gray-700 text-xs">Endereço de Entrega</span></label>
-                    <input type="text" id="endereco-cliente" placeholder="Rua, número e bairro" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required />
-                </div>
-                <div class="form-control">
-                    <label class="label py-1"><span class="label-text font-semibold text-gray-700 text-xs">Forma de Pagamento</span></label>
-                    <select id="pagamento-cliente" class="select select-bordered select-sm w-full bg-gray-50 border-gray-200" required>
-                        <option value="Pix">Pix</option>
-                        <option value="Cartão de Crédito">Cartão de Crédito</option>
-                        <option value="Dinheiro">Dinheiro (na entrega)</option>
-                    </select>
-                </div>
-                <div class="modal-action mt-6">
-                    <button type="submit" class="btn bg-green-600 hover:bg-green-700 text-white border-none w-full py-3 rounded-xl flex items-center justify-center gap-2">
-                        <i data-lucide="send" class="w-5 h-5"></i>
-                        Enviar Pedido via WhatsApp
-                    </button>
-                </div>
-            </form>
-        </div>
-    </dialog>
+    <!-- FAQ -->
+    <section class="mt-8 mb-6" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="text-sm font-bold text-gray-900 mb-3">
+        Perguntas frequentes
+      </h2>
 
-    <script src="assets/js/script.js"></script>
+      <div class="space-y-2">
+        <details class="collapse collapse-arrow bg-white border border-orange-100 rounded-2xl">
+          <summary class="collapse-title text-sm font-medium">
+            Como faço meu pedido?
+          </summary>
+          <div class="collapse-content text-xs text-gray-600">
+            <p>Escolha os itens do cardápio, abra o carrinho e finalize no WhatsApp.</p>
+          </div>
+        </details>
+
+        <details class="collapse collapse-arrow bg-white border border-orange-100 rounded-2xl">
+          <summary class="collapse-title text-sm font-medium">
+            Qual o horário de atendimento?
+          </summary>
+          <div class="collapse-content text-xs text-gray-600">
+            <p>Segunda a quinta, das 18h às 22h. Sexta, sábado e domingo, das 18h às 23h.</p>
+          </div>
+        </details>
+
+        <details class="collapse collapse-arrow bg-white border border-orange-100 rounded-2xl">
+          <summary class="collapse-title text-sm font-medium">
+            O pedido é finalizado por onde?
+          </summary>
+          <div class="collapse-content text-xs text-gray-600">
+            <p>O pedido segue para o WhatsApp para confirmação e finalização.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- Barra flutuante -->
+  <div id="bottom-bar" class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-orange-100 p-4 shadow-lg z-40 transition-transform transform translate-y-full">
+    <div class="flex items-center justify-between gap-4">
+      <div>
+        <span class="text-xs text-gray-500 uppercase tracking-wider block">Total sem taxa</span>
+        <span id="bottom-bar-total" class="text-xl font-bold text-gray-900">R$ 0,00</span>
+      </div>
+      <button onclick="abrirCarrinho()" class="btn bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-6 rounded-xl flex items-center gap-2">
+        Finalizar pedido
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-neutral text-neutral-content pt-10 border-t border-gray-800 w-full mt-auto">
+    <div class="footer max-w-md mx-auto px-6 pb-8 grid-cols-1 grid-flow-row gap-6">
+      <aside>
+        <span class="text-base font-bold text-white flex items-center gap-2 mb-1">
+          <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
+          La Empanadas
+        </span>
+        <p class="text-xs text-gray-400">
+          Empanadas argentinas artesanais, feitas com receita tradicional e ingredientes de qualidade.
+        </p>
+      </aside>
+
+      <nav class="flex flex-col gap-2">
+        <h6 class="footer-title text-white opacity-95 text-xs">Institucional</h6>
+        <a href="politica.html" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
+        <a href="termos.html" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors">Termos de Uso</a>
+        <a href="exclusao.html" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors">Exclusão de Dados</a>
+      </nav>
+
+      <nav class="flex flex-col gap-2">
+        <h6 class="footer-title text-white opacity-95 text-xs">Contato</h6>
+        <a href="mailto:contato@laempanadas.com.br" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          contato@laempanadas.com.br
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="link link-hover text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          WhatsApp: (11) 2669-0644
+        </a>
+      </nav>
+    </div>
+
+    <div class="border-t border-gray-800 py-4 bg-black/20 w-full">
+      <div class="max-w-md mx-auto px-6 text-[10px] text-gray-500 flex flex-col gap-1">
+        <p>© 2026 La Empanadas. Todos os direitos reservados.</p>
+        <p>Aplicativo MP-WPP / Plataforma Meta (WhatsApp)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal do Carrinho -->
+  <dialog id="modal_carrinho" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box p-6 bg-white max-w-md">
+      <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+        <h3 class="font-bold text-lg text-gray-900 flex items-center gap-2">
+          <i data-lucide="shopping-cart" class="text-terracotta-500"></i> Seu Pedido
+        </h3>
+        <button onclick="fecharCarrinho()" class="btn btn-sm btn-circle btn-ghost">✕</button>
+      </div>
+
+      <div id="carrinho-itens-lista" class="py-4 space-y-4 max-h-[250px] overflow-y-auto"></div>
+
+      <div class="border-t border-dashed border-gray-200 pt-4 flex justify-between items-center">
+        <span class="font-semibold text-gray-600">Total do Pedido:</span>
+        <span id="modal-total" class="text-2xl font-bold text-terracotta-600">R$ 0,00</span>
+      </div>
+
+      <p class="text-xs text-gray-500 bg-orange-50 border border-orange-100 rounded-lg p-3 mt-4">
+        Seu pedido será enviado para o WhatsApp para confirmação e finalização.
+      </p>
+
+      <form id="checkout-form" class="mt-4 space-y-3">
+        <div class="form-control">
+          <label class="label py-1">
+            <span class="label-text font-semibold text-gray-700 text-xs">Seu Nome</span>
+          </label>
+          <input type="text" id="nome-cliente" placeholder="Como te chamamos?" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required />
+        </div>
+
+        <div class="form-control">
+          <label class="label py-1">
+            <span class="label-text font-semibold text-gray-700 text-xs">Endereço de Entrega</span>
+          </label>
+          <input type="text" id="endereco-cliente" placeholder="Rua, número, bairro e complemento" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required />
+        </div>
+
+        <div class="form-control">
+          <label class="label py-1">
+            <span class="label-text font-semibold text-gray-700 text-xs">Forma de Pagamento</span>
+          </label>
+          <p class="text-[11px] text-gray-500 mb-1">
+            Pix é a forma mais rápida para finalizar o pedido.
+          </p>
+          <select id="pagamento-cliente" class="select select-bordered select-sm w-full bg-gray-50 border-gray-200" required>
+            <option value="Pix">Pix</option>
+            <option value="Cartão de Crédito">Cartão de Crédito</option>
+            <option value="Dinheiro">Dinheiro (na entrega)</option>
+          </select>
+        </div>
+
+        <div class="modal-action mt-6">
+          <button type="submit" class="btn bg-green-600 hover:bg-green-700 text-white border-none w-full py-3 rounded-xl flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-5 h-5"></i>
+            Enviar Pedido via WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
