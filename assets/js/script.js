@@ -328,7 +328,7 @@ function enviarPedidoParaWhatsApp(nome, endereco, pagamento) {
                      `*Pagamento:* ${pagamento}\n\n` +
                      `*Itens do Pedido:*\n${itensTexto}\n` +
                      `*Total Estimado:* R$ ${valorEstimado}\n\n` +
-                     `_Por favor, confirme meu pedido para iniciarmos o preparo! 
+                     `_Por favor, confirme meu pedido para iniciarmos o preparo!_ ✨`; 
 
     const linkWhatsApp = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensagem)}`;
     
