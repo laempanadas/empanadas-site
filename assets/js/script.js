@@ -328,7 +328,7 @@ function enviarPedidoParaWhatsApp(nome, endereco, pagamento) {
                      `*Pagamento:* ${pagamento}\n\n` +
                      `*Itens do Pedido:*\n${itensTexto}\n` +
                      `*Total Estimado:* R$ ${valorEstimado}\n\n` +
-                     `_Dica de segurança para o seu Bot Node.js:_ O bot deve utilizar as tags de id entre colchetes acima para re-validar os preços diretamente do servidor no Cloud Run antes de gerar o link final do Mercado Pago!`;
+                     `_Por favor, confirme meu pedido para iniciarmos o preparo! 
 
     const linkWhatsApp = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensagem)}`;
     
