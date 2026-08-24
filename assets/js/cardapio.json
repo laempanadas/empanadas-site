@@ -3,48 +3,17 @@
     { "id": "salgada", "nome": "Empanadas Salgadas" },
     { "id": "doce", "nome": "Empanadas Doces" },
     { "id": "combo", "nome": "Combos" },
-    { "id": "bebida", "nome": "Bebidas" }
+    { "id": "bebida", "nome": "Bebidas" },
+    { "id": "vinho", "nome": "Vinhos" }
   ],
   "itens": [
     {
-      "id": "emp_carne_ovo",
-      "nome": "Empanada de Carne com Ovos",
-      "descricao": "Tradicional recheio de carne bovina moída com ovos cozidos picados.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/CARNE.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_frango_espinafre",
-      "nome": "Empanada de Frango com Espinafre e Cheddar",
-      "descricao": "Combinação suave de peito de frango, folhas frescas de espinafre e cheddar.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/FRANGO.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_calabresa_cream",
-      "nome": "Empanada de Calabresa com Cream Cheese",
-      "descricao": "Calabresa moída de alta qualidade unida à cremosidade do cream cheese.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/CALABRESA.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_espinafre_ricota",
-      "nome": "Empanada de Espinafre com Ricota e Tomate Seco",
-      "descricao": "Recheio vegetariano leve de espinafre fresco, ricota macia e tomate seco.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/ESPINAFRE-RICOTA.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_bacon_cheeseburger",
-      "nome": "Empanada Bacon Cheeseburger",
-      "descricao": "Hambúrguer bovino, queijo derretido e pedaços crocantes de bacon frito.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/CHEESBACON.webp",
-      "categoriaId": "salgada"
+      "id": "emp_romeu",
+      "nome": "Empanada Romeu e Julieta",
+      "descricao": "Massa recheada com goiabada cascão e muçarela.",
+      "preco": 14.50,
+      "imagem": "assets/js/img/ROMEU.webp",
+      "categoriaId": "doce"
     },
     {
       "id": "emp_queijo_tomate",
@@ -63,22 +32,6 @@
       "categoriaId": "salgada"
     },
     {
-      "id": "emp_escarola_queijo",
-      "nome": "Empanada de Escarola com Queijo",
-      "descricao": "Escarola refogada no alho e azeite com uma generosa camada de queijo.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/ESCAROLA.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_atum_queijo",
-      "nome": "Empanada de Atum com Queijo",
-      "descricao": "Atum sólido conservado mesclado com queijo muçarela derretido.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/ATUM.webp",
-      "categoriaId": "salgada"
-    },
-    {
       "id": "emp_palmito",
       "nome": "Empanada de Palmito",
       "descricao": "Recheio cremoso com pedaços macios de palmito pupunha.",
@@ -87,7 +40,55 @@
       "categoriaId": "salgada"
     },
     {
-      "id": "emp_chocolate_morango",
+      "id": "emp_hamburguer",
+      "nome": "Empanada de Carne com Ovos",
+      "descricao": "Tradicional recheio de carne bovina moída com ovos cozidos picados.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/CARNE.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "emp_ Frango com Espinafre e Cheddar",
+      "nome": "Empanada de Frango com Espinafre e Cheddar",
+      "descricao": "Combinação suave de peito de frango, folhas frescas de espinafre e cheddar.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/FRANGO.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "emp_Espinafre com Ricota e Tomate Seco",
+      "nome": "Empanada de Espinafre com Ricota e Tomate Seco",
+      "descricao": "Recheio vegetariano leve de espinafre fresco, ricota macia e tomate seco.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/ESPINAFRE-RICOTA.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "emp_Escarola com Queijo",
+      "nome": "Empanada de Escarola com Queijo",
+      "descricao": "Escarola refogada no alho e azeite com uma generosa camada de queijo.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/ESCAROLA.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "emp_Bacon Cheeseburger",
+      "nome": "Empanada Bacon Cheeseburger",
+      "descricao": "Hambúrguer bovino, queijo derretido e pedaços crocantes de bacon frito.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/CHEESBACON.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "empcalabresa",
+      "nome": "Empanada de Calabresa com Cream Cheese",
+      "descricao": "Calabresa moída de alta qualidade unida à cremosidade do cream cheese.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/CALABRESA.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "empchocolate",
       "nome": "Empanada de Chocolate ao Leite com Morango",
       "descricao": "Saborosa combinação de chocolate ao leite cremoso com pedaços de morango.",
       "preco": 16.90,
@@ -95,12 +96,12 @@
       "categoriaId": "doce"
     },
     {
-      "id": "emp_romeu_julieta",
-      "nome": "Empanada Romeu e Julieta",
-      "descricao": "Massa recheada com goiabada cascão e muçarela.",
-      "preco": 14.50,
-      "imagem": "assets/js/img/ROMEU.webp",
-      "categoriaId": "doce"
+      "id": "emp_Atum",
+      "nome": "Empanada de Atum com Queijo",
+      "descricao": "Atum sólido conservado mesclado com queijo muçarela derretido.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/ATUM.webp",
+      "categoriaId": "salgada"
     },
     {
       "id": "combo_coca",
