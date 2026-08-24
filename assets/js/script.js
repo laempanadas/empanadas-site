@@ -185,6 +185,19 @@ function alterarQuantidade(id, delta) {
         carrinhoState[id] = novaQty;
     }
 
+    // --- RASTREAMENTO DO PIXEL META (AddToCart) ---
+    if (delta > 0) {
+        const itemObj = cardapioOriginal.itens.find(i => i.id === id);
+        if (itemObj && typeof fbq === 'function') {
+            fbq('track', 'AddToCart', {
+                content_ids: [itemObj.id],
+                content_type: 'product',
+                value: itemObj.preco,
+                currency: 'BRL'
+            });
+        }
+    }
+
     if (delta > 0 && qtyAtual === 0) {
         const itemObj = cardapioOriginal.itens.find(i => i.id === id);
         const Toast = Swal.mixin({
@@ -312,6 +325,19 @@ function configurarEventos() {
 function enviarPedidoParaWhatsApp(nome, endereco, pagamento) {
     if (totalItens() === 0) return;
 
+    const totalPedido = calcularTotal();
+    const idsItens = Object.keys(carrinhoState);
+
+    // --- RASTREAMENTO DO PIXEL META (Purchase) ---
+    if (typeof fbq === 'function') {
+        fbq('track', 'Purchase', {
+            content_ids: idsItens,
+            content_type: 'product',
+            value: totalPedido,
+            currency: 'BRL'
+        });
+    }
+
     let itensTexto = "";
     Object.entries(carrinhoState).forEach(([id, qty]) => {
         const item = cardapioOriginal.itens.find(i => i.id === id);
@@ -320,7 +346,7 @@ function enviarPedidoParaWhatsApp(nome, endereco, pagamento) {
         }
     });
 
-    const valorEstimado = calcularTotal().toFixed(2);
+    const valorEstimado = totalPedido.toFixed(2);
 
     const mensagem = `*LA EMPANADAS - NOVO PEDIDO* 🥟\n\n` +
                      `*Cliente:* ${nome}\n` +
