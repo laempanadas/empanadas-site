@@ -114,7 +114,7 @@
     {
       "id": "combo_familia",
       "nome": "Combo Família (8 Empanadas Assadas)",
-      "descricao": "9 empanadas assadas à sua escolha para dividir com quem você gosta.",
+      "descricao": "8 empanadas assadas à sua escolha para dividir com quem você gosta.",
       "preco": 102.00,
       "imagem": "assets/js/img/empanadas_combo_8.webp",
       "categoriaId": "combo"
