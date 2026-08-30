@@ -2,51 +2,78 @@
 <html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="msvalidate.01" content="F9639AAAB6CB8D0F42E52A7089ACC199" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msvalidate.01" content="F9639AAAB6CB8D0F42E52A7089ACC199">
 
   <title>La Empanadas | Empanadas Argentinas em Delivery</title>
-
   <meta name="description" content="La Empanadas oferece empanadas argentinas assadas diariamente, com pedido rápido via WhatsApp, retirada ou delivery em Santo André.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://laempanadas.com.br/">
   <meta name="language" content="pt-BR">
 
-  <!-- Clarity tracking code for https://laempanadas.com.br/ -->
-<script>
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  <link rel="preload" as="image" href="assets/js/img/COMBO_4_OVOMALTINE.webp" fetchpriority="high">
+
+  <!-- Clarity -->
+  <script>
+    (function(c, l, a, r, i, t, y) {
+      c[a] = c[a] || function() {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt";
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "y10ylvzktj");
-</script>
+  </script>
 
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TJF85JT');</script>
-<!-- End Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l !== "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-TJF85JT");
+  </script>
 
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1716259822824246');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  
+  <!-- Meta Pixel -->
+  <script>
+    !function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
+    fbq("init", "1716259822824246");
+    fbq("track", "PageView");
+  </script>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
+      alt=""
+    >
+  </noscript>
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="La Empanadas">
@@ -55,7 +82,7 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
   <meta property="og:url" content="https://laempanadas.com.br/">
   <meta property="og:image" content="https://laempanadas.com.br/assets/og-image.jpg">
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="La Empanadas | Empanadas Argentinas em Delivery">
   <meta name="twitter:description" content="Empanadas argentinas assadas diariamente. Pedido rápido via WhatsApp.">
@@ -63,51 +90,54 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
 
   <link rel="icon" href="/favicon.ico">
 
-  <!-- Tailwind CSS & DaisyUI -->
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css">
 
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             terracotta: {
-              50: '#fdf4f0',
-              100: '#fbe7de',
-              500: '#d95d39',
-              600: '#c2410c',
-              700: '#9a3412',
+              50: "#fdf4f0",
+              100: "#fbe7de",
+              500: "#d95d39",
+              600: "#c2410c",
+              700: "#9a3412"
             }
           }
         }
       }
-    }
+    };
   </script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
     }
+
     .scrollbar-none::-webkit-scrollbar {
       display: none;
     }
+
     .scrollbar-none {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
   </style>
 
-  <!-- Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Bibliotecas não bloqueantes -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 
-  <!-- JSON-LD: Restaurant / LocalBusiness -->
+  <!-- Dados estruturados: restaurante -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -141,11 +171,15 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
         "closes": "23:00"
       }
     ],
-    "hasMap": "https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510"
+    "hasMap": "https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510",
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Cardápio La Empanadas"
+    }
   }
   </script>
 
-  <!-- JSON-LD: WebSite -->
+  <!-- Dados estruturados: site -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -155,7 +189,7 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
   }
   </script>
 
-  <!-- JSON-LD: FAQ -->
+  <!-- Dados estruturados: FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -192,7 +226,6 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
 
 <body class="bg-orange-50/40 text-gray-800 min-h-screen flex flex-col">
 
-  <!-- Topo fixo -->
   <div class="sticky top-0 z-50 bg-white border-b border-orange-100 shadow-sm">
     <div class="max-w-md mx-auto">
       <header class="navbar px-4 py-2 bg-white" role="banner">
@@ -200,6 +233,7 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
           <span class="p-2 bg-terracotta-100 rounded-full text-terracotta-600">
             <i data-lucide="store" class="w-6 h-6"></i>
           </span>
+
           <div>
             <h1 class="text-lg font-bold text-gray-900 leading-none">La Empanadas</h1>
             <span class="text-xs text-green-600 font-semibold flex flex-col mt-1 leading-tight">
@@ -214,210 +248,260 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
         </div>
 
         <div class="flex-none">
-          <button onclick="abrirCarrinho()" class="btn btn-ghost btn-circle relative" aria-label="Abrir carrinho">
+          <button id="btn-abrir-carrinho" class="btn btn-ghost btn-circle relative" aria-label="Abrir carrinho">
             <i data-lucide="shopping-basket" class="w-6 h-6 text-gray-700"></i>
             <span id="badge-cart" class="badge badge-sm bg-terracotta-500 border-none text-white absolute top-1 right-1 hidden">0</span>
           </button>
         </div>
       </header>
 
-      <nav class="flex flex-row flex-nowrap gap-2 overflow-x-auto pb-3 pt-1 px-4 scrollbar-none bg-white scroll-smooth snap-x" id="categorias-container" aria-label="Categorias do cardápio">
-        <!-- Injetado dinamicamente via script.js -->
+      <nav id="categorias-container" class="flex flex-row flex-nowrap gap-2 overflow-x-auto pb-3 pt-1 px-4 scrollbar-none bg-white scroll-smooth" aria-label="Categorias do cardápio">
+        <button data-categoria-filtro="todos" aria-pressed="true" class="btn btn-sm rounded-full px-5 border-none shrink-0 bg-terracotta-500 text-white shadow-sm">Todas</button>
+        <button data-categoria-filtro="salgada" aria-pressed="false" class="btn btn-sm rounded-full px-5 border-none shrink-0 bg-gray-100 text-gray-700">Empanadas Salgadas</button>
+        <button data-categoria-filtro="doce" aria-pressed="false" class="btn btn-sm rounded-full px-5 border-none shrink-0 bg-gray-100 text-gray-700">Empanadas Doces</button>
+        <button data-categoria-filtro="combo" aria-pressed="false" class="btn btn-sm rounded-full px-5 border-none shrink-0 bg-gray-100 text-gray-700">Combos</button>
+        <button data-categoria-filtro="bebida" aria-pressed="false" class="btn btn-sm rounded-full px-5 border-none shrink-0 bg-gray-100 text-gray-700">Bebidas</button>
+        <button data-categoria-filtro="vinho" aria-pressed="false" class="btn btn-sm rounded-full px-5 border-none shrink-0 bg-gray-100 text-gray-700">Vinhos</button>
       </nav>
     </div>
   </div>
 
   <main class="max-w-md mx-auto p-4 pb-28 flex-grow w-full" role="main">
-
-    <!-- Introdução -->
     <section class="mb-4 text-center" aria-labelledby="sobre-title">
-      <h2 id="sobre-title" class="text-sm font-bold text-gray-900">
-        Empanadas argentinas assadas diariamente
-      </h2>
-      <p class="text-xs text-gray-600 mt-1">
-        Escolha seus sabores, monte seu pedido e finalize pelo WhatsApp.
-      </p>
+      <h2 id="sobre-title" class="text-sm font-bold text-gray-900">Empanadas argentinas assadas diariamente</h2>
+      <p class="text-xs text-gray-600 mt-1">Escolha seus sabores, monte seu pedido e finalize pelo WhatsApp.</p>
     </section>
 
-    <!-- Horário -->
     <section class="mb-4 p-3 rounded-2xl bg-white border border-orange-100 shadow-sm" aria-labelledby="horario-title">
-      <h2 id="horario-title" class="text-xs font-bold uppercase tracking-wide text-gray-700">
-        Horário de atendimento
-      </h2>
+      <h2 id="horario-title" class="text-xs font-bold uppercase tracking-wide text-gray-700">Horário de atendimento</h2>
       <div class="mt-2 text-xs text-gray-600 leading-relaxed">
         <p>Segunda a quinta: 18h às 22h</p>
         <p>Sexta, sábado e domingo: 18h às 23h</p>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="mb-4 flex flex-col gap-2" aria-label="Ações rápidas">
-      <a href="#cardapio-grid" class="btn btn-sm bg-terracotta-500 hover:bg-terracotta-600 text-white border-none rounded-xl">
-        Ver cardápio
-      </a>
-      <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline border-terracotta-500 text-terracotta-600 rounded-xl">
-        Pedir no WhatsApp
-      </a>
+      <a href="#cardapio-grid" class="btn btn-sm bg-terracotta-500 hover:bg-terracotta-600 text-white border-none rounded-xl">Ver cardápio</a>
+      <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline border-terracotta-500 text-terracotta-600 rounded-xl">Pedir no WhatsApp</a>
     </section>
 
-    <!-- Carrossel -->
-<div id="carousel-track" class="carousel w-full rounded-2xl h-44 shadow-md mb-6 relative">
-  
-  <!-- Slide 1: Combo Ovomaltine -->
-  <div id="slide1" class="carousel-item relative w-full h-full">
-    <img src="assets/js/img/COMBO_4_OVOMALTINE.webp" class="w-full h-full object-cover brightness-[0.7]" alt="Combo 4 Empanadas + Tortinha de Ovomaltine" />
-    <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
-      <span class="badge bg-terracotta-500 border-none text-white text-xs font-bold mb-1">PROMOÇÃO</span>
-      <h2 class="text-lg font-bold">Combo Ovomaltine</h2>
-      <p class="text-xs opacity-90">4 Empanadas + Tortinha de Ovomaltine por R$ 69,00 com Frete Grátis.</p>
-      <a href="#cardapio-grid" class="btn btn-sm bg-white text-gray-900 border-none mt-2 w-fit">
-        Peça agora
-      </a>
-    </div>
-    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide2" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❮</a>
-      <a href="#slide2" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❯</a>
-    </div>
-  </div>
+    <section id="carousel-track" class="carousel w-full rounded-2xl h-44 shadow-md mb-6 relative" aria-label="Promoções">
+      <div id="slide1" class="carousel-item relative w-full h-full">
+        <img src="assets/js/img/COMBO_4_OVOMALTINE.webp" width="448" height="176" class="w-full h-full object-cover brightness-[0.7]" alt="Combo 4 Empanadas mais Tortinha de Ovomaltine" fetchpriority="high" decoding="async">
+        <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+          <span class="badge bg-terracotta-500 border-none text-white text-xs font-bold mb-1">PROMOÇÃO</span>
+          <h2 class="text-lg font-bold">Combo Ovomaltine</h2>
+          <p class="text-xs opacity-90">4 Empanadas + Tortinha de Ovomaltine por R$ 69,00 com Frete Grátis.</p>
+          <a href="#cardapio-grid" class="btn btn-sm bg-white text-gray-900 border-none mt-2 w-fit">Peça agora</a>
+        </div>
+        <div class="absolute flex justify-between -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50" aria-label="Ir para próxima promoção">❯</a>
+        </div>
+      </div>
 
-  <!-- Slide 2: Combo Cheesecake -->
-  <div id="slide2" class="carousel-item relative w-full h-full">
-    <img src="assets/js/img/COMBO-4-EMPANADAS-CHEESECAKE-_1_.webp" class="w-full h-full object-cover brightness-[0.7]" alt="Combo 4 Empanadas + Cheesecake" />
-    <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
-      <span class="badge bg-terracotta-500 border-none text-white text-xs font-bold mb-1">PROMOÇÃO</span>
-      <h2 class="text-lg font-bold">Combo Cheesecake</h2>
-      <p class="text-xs opacity-90">4 Empanadas + Cheesecake por R$ 69,00 com Frete Grátis.</p>
-      <a href="#cardapio-grid" class="btn btn-sm bg-white text-gray-900 border-none mt-2 w-fit">
-        Peça agora
-      </a>
-    </div>
-    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide1" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❮</a>
-      <a href="#slide1" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50">❯</a>
-    </div>
-  </div>
-
-</div>
-    <!-- Cardápio -->
-    <section id="cardapio" aria-labelledby="cardapio-title">
-      <h2 id="cardapio-title" class="sr-only">Cardápio</h2>
-      <div class="grid grid-cols-1 gap-4" id="cardapio-grid">
-        <!-- Injetado dinamicamente via script.js -->
+      <div id="slide2" class="carousel-item relative w-full h-full">
+        <img src="assets/js/img/COMBO-4-EMPANADAS-CHEESECAKE-_1_.webp" width="448" height="176" class="w-full h-full object-cover brightness-[0.7]" alt="Combo 4 Empanadas mais Cheesecake" loading="lazy" decoding="async">
+        <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+          <span class="badge bg-terracotta-500 border-none text-white text-xs font-bold mb-1">PROMOÇÃO</span>
+          <h2 class="text-lg font-bold">Combo Cheesecake</h2>
+          <p class="text-xs opacity-90">4 Empanadas + Cheesecake por R$ 69,00 com Frete Grátis.</p>
+          <a href="#cardapio-grid" class="btn btn-sm bg-white text-gray-900 border-none mt-2 w-fit">Peça agora</a>
+        </div>
+        <div class="absolute flex justify-between -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" class="btn btn-circle btn-xs bg-white/30 border-none text-white hover:bg-white/50" aria-label="Ir para promoção anterior">❮</a>
+        </div>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <section id="cardapio" aria-labelledby="cardapio-title">
+      <h2 id="cardapio-title" class="text-lg font-bold text-gray-900 mb-4">Cardápio</h2>
+
+      <div id="cardapio-grid" class="grid grid-cols-1 gap-4" aria-live="polite">
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="doce">
+          <figure class="w-1/3 min-w-[120px] h-full">
+            <img src="assets/js/img/ROMEU.webp" alt="Empanada Romeu e Julieta" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+          </figure>
+          <div class="card-body p-4 w-2/3 justify-between">
+            <div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada Romeu e Julieta</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Massa recheada com goiabada cascão e muçarela.</p></div>
+            <div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.50</span><div class="flex items-center gap-2" id="controls-emp-romeu" data-item-id="emp_romeu"><button data-action="add" data-id="emp_romeu" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div>
+          </div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/QUEIJO-TOMATE.webp" alt="Empanada de Queijo, Tomate, Manjericão e Orégano" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Queijo, Tomate, Manjericão e Orégano</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Leveza do estilo caprese com queijo, tomates frescos picados e manjericão aromático.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-queijo-tomate" data-item-id="emp_queijo_tomate"><button data-action="add" data-id="emp_queijo_tomate" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/QUEIJO-CEBOLA.webp" alt="Empanada de Queijo com Cebola Caramelizada" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Queijo com Cebola Caramelizada</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Contraste agridoce do queijo derretido com cebolas lentamente douradas.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-queijo-cebola" data-item-id="emp_queijo_cebola"><button data-action="add" data-id="emp_queijo_cebola" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/PALMITO.webp" alt="Empanada de Palmito" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Palmito</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Recheio cremoso com pedaços macios de palmito pupunha.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-palmito" data-item-id="emp_palmito"><button data-action="add" data-id="emp_palmito" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CARNE.webp" alt="Empanada de Carne com Ovos" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Carne com Ovos</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Tradicional recheio de carne bovina moída com ovos cozidos picados.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-hamburguer" data-item-id="emp_hamburguer"><button data-action="add" data-id="emp_hamburguer" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/FRANGO.webp" alt="Empanada de Frango com Espinafre e Cheddar" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Frango com Espinafre e Cheddar</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Combinação suave de peito de frango, folhas frescas de espinafre e cheddar.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-frango-espinafre-cheddar" data-item-id="emp_ Frango com Espinafre e Cheddar"><button data-action="add" data-id="emp_ Frango com Espinafre e Cheddar" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/ESPINAFRE-RICOTA.webp" alt="Empanada de Espinafre com Ricota e Tomate Seco" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Espinafre com Ricota e Tomate Seco</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Recheio vegetariano leve de espinafre fresco, ricota macia e tomate seco.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-espinafre-ricota-tomate-seco" data-item-id="emp_Espinafre com Ricota e Tomate Seco"><button data-action="add" data-id="emp_Espinafre com Ricota e Tomate Seco" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/ESCAROLA.webp" alt="Empanada de Escarola com Queijo" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Escarola com Queijo</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Escarola refogada no alho e azeite com uma generosa camada de queijo.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-escarola-queijo" data-item-id="emp_Escarola com Queijo"><button data-action="add" data-id="emp_Escarola com Queijo" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CHEESBACON.webp" alt="Empanada Bacon Cheeseburger" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada Bacon Cheeseburger</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Hambúrguer bovino, queijo derretido e pedaços crocantes de bacon frito.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-bacon-cheeseburger" data-item-id="emp_Bacon Cheeseburger"><button data-action="add" data-id="emp_Bacon Cheeseburger" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CALABRESA.webp" alt="Empanada de Calabresa com Cream Cheese" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Calabresa com Cream Cheese</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Calabresa moída de alta qualidade unida à cremosidade do cream cheese.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-calabresa" data-item-id="empcalabresa"><button data-action="add" data-id="empcalabresa" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="doce">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CHOCOLATE.webp" alt="Empanada de Chocolate ao Leite com Morango" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Chocolate ao Leite com Morango</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Saborosa combinação de chocolate ao leite cremoso com pedaços de morango.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 16.90</span><div class="flex items-center gap-2" id="controls-emp-chocolate" data-item-id="empchocolate"><button data-action="add" data-id="empchocolate" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/ATUM.webp" alt="Empanada de Atum com Queijo" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Atum com Queijo</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Atum sólido conservado mesclado com queijo muçarela derretido.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-atum" data-item-id="emp_Atum"><button data-action="add" data-id="emp_Atum" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/empanada_combo_coca_600ml.webp" alt="Combo Coca-Cola" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Combo Coca-Cola</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Contém 4 Empanadas à sua escolha + 1 Refrigerante Coca-Cola de 600ml.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 62.90</span><div class="flex items-center gap-2" id="controls-combo-coca" data-item-id="combo_coca"><button data-action="add" data-id="combo_coca" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/empanadas_combo_8.webp" alt="Combo Família com 8 Empanadas Assadas" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Combo Família (8 Empanadas Assadas)</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">8 empanadas assadas à sua escolha para dividir com quem você gosta.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 102.00</span><div class="flex items-center gap-2" id="controls-combo-familia" data-item-id="combo_familia"><button data-action="add" data-id="combo_familia" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/empanadas_combo_4.webp" alt="Combo 4 Empanadas" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Combo 4 Empanadas</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Leve 4 empanadas assadas de qualquer sabor com preço promocional.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 52.90</span><div class="flex items-center gap-2" id="controls-combo-quatro" data-item-id="combo_quatro"><button data-action="add" data-id="combo_quatro" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola Original 600ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Original 600ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Garrafa de 600ml ideal para acompanhar sua empanada.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 15.00</span><div class="flex items-center gap-2" id="controls-beb-coca-600" data-item-id="beb_coca_600"><button data-action="add" data-id="beb_coca_600" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola sem Açúcar 350ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola sem Açúcar 350ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Lata de 350ml de Coca-Cola sabor zero açúcar gelada.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 8.50</span><div class="flex items-center gap-2" id="controls-beb-coca-zero-350" data-item-id="beb_coca_zero_350"><button data-action="add" data-id="beb_coca_zero_350" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola Zero 600ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Zero 600ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Garrafa de 600ml de Coca-Cola sabor zero açúcar.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 15.00</span><div class="flex items-center gap-2" id="controls-beb-coca-zero-600" data-item-id="beb_coca_zero_600"><button data-action="add" data-id="beb_coca_zero_600" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola 2 litros" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola 2L</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Tamanho família. Garrafa de 2 litros.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 25.00</span><div class="flex items-center gap-2" id="controls-beb-coca-2l" data-item-id="beb_coca_2l"><button data-action="add" data-id="beb_coca_2l" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="vinho">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho La Plata Branco Argentino 750ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Vinho La Plata Branco Argentino 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Vinho argentino branco jovem e refrescante, ideal para empanadas vegetarianas.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 55.90</span><div class="flex items-center gap-2" id="controls-vin-la-plata" data-item-id="vin_la_plata"><button data-action="add" data-id="vin_la_plata" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="vinho">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho Tinto Argentino San Telmo Malbec 750ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Vinho Tinto Argentino San Telmo Malbec 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Clássico Malbec de Mendoza de aroma frutado, perfeito com empanada de carne ou costela.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 79.90</span><div class="flex items-center gap-2" id="controls-vin-san-telmo" data-item-id="vin_san_telmo"><button data-action="add" data-id="vin_san_telmo" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="vinho">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho Tinto Seco Argentino Cavic 750ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Vinho Tinto Seco Argentino Cavic 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Vinho de mesa tinto seco argentino, fácil de beber no dia a dia.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 40.00</span><div class="flex items-center gap-2" id="controls-vin-cavic" data-item-id="vin_cavic"><button data-action="add" data-id="vin_cavic" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+      </div>
+    </section>
+
     <section class="mt-8 mb-6" aria-labelledby="faq-title">
-      <h2 id="faq-title" class="text-sm font-bold text-gray-900 mb-3">
-        Perguntas frequentes
-      </h2>
+      <h2 id="faq-title" class="text-sm font-bold text-gray-900 mb-3">Perguntas frequentes</h2>
 
       <div class="space-y-2">
         <details class="collapse collapse-arrow bg-white border border-orange-100 rounded-2xl">
-          <summary class="collapse-title text-sm font-medium">
-            Como faço meu pedido?
-          </summary>
-          <div class="collapse-content text-xs text-gray-600">
-            <p>Escolha os itens do cardápio, abra o carrinho e finalize no WhatsApp.</p>
-          </div>
+          <summary class="collapse-title text-sm font-medium">Como faço meu pedido?</summary>
+          <div class="collapse-content text-xs text-gray-600"><p>Escolha os itens do cardápio, abra o carrinho e finalize no WhatsApp.</p></div>
         </details>
 
         <details class="collapse collapse-arrow bg-white border border-orange-100 rounded-2xl">
-          <summary class="collapse-title text-sm font-medium">
-            Qual o horário de atendimento?
-          </summary>
-          <div class="collapse-content text-xs text-gray-600">
-            <p>Segunda a quinta, das 18h às 22h. Sexta, sábado e domingo, das 18h às 23h.</p>
-          </div>
+          <summary class="collapse-title text-sm font-medium">Qual o horário de atendimento?</summary>
+          <div class="collapse-content text-xs text-gray-600"><p>Segunda a quinta, das 18h às 22h. Sexta, sábado e domingo, das 18h às 23h.</p></div>
         </details>
 
         <details class="collapse collapse-arrow bg-white border border-orange-100 rounded-2xl">
-          <summary class="collapse-title text-sm font-medium">
-            O pedido é finalizado por onde?
-          </summary>
-          <div class="collapse-content text-xs text-gray-600">
-            <p>O pedido segue para o WhatsApp para confirmação e finalização.</p>
-          </div>
+          <summary class="collapse-title text-sm font-medium">O pedido é finalizado por onde?</summary>
+          <div class="collapse-content text-xs text-gray-600"><p>O pedido segue para o WhatsApp para confirmação e finalização.</p></div>
         </details>
       </div>
     </section>
   </main>
 
-  <!-- Barra flutuante -->
   <div id="bottom-bar" class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-orange-100 p-4 shadow-lg z-40 transition-transform transform translate-y-full">
     <div class="flex items-center justify-between gap-4">
       <div>
         <span class="text-xs text-gray-500 uppercase tracking-wider block">Total sem taxa</span>
         <span id="bottom-bar-total" class="text-xl font-bold text-gray-900">R$ 0,00</span>
       </div>
-      <button onclick="abrirCarrinho()" class="btn bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-6 rounded-xl flex items-center gap-2">
+
+      <button id="btn-bottombar-carrinho" class="btn bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-6 rounded-xl flex items-center gap-2">
         Finalizar pedido
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </button>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="bg-neutral text-neutral-content mt-auto border-t border-gray-800">
     <div class="max-w-md mx-auto px-4 py-8 space-y-6">
-
       <div>
         <div class="flex items-center gap-2 mb-2">
           <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
           <span class="text-base font-bold text-white">La Empanadas</span>
         </div>
-        <p class="text-xs text-gray-400 leading-relaxed">
-          Empanadas argentinas artesanais, feitas com receita tradicional e ingredientes de qualidade.
-        </p>
+        <p class="text-xs text-gray-400 leading-relaxed">Empanadas argentinas artesanais, feitas com receita tradicional e ingredientes de qualidade.</p>
       </div>
 
       <div class="grid gap-5 sm:grid-cols-2">
         <nav class="flex flex-col gap-2">
-          <h6 class="text-xs font-bold uppercase tracking-wide text-white opacity-90">Institucional</h6>
+          <h2 class="text-xs font-bold uppercase tracking-wide text-white opacity-90">Institucional</h2>
           <a href="politica.html" class="text-xs text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
           <a href="termos.html" class="text-xs text-gray-400 hover:text-white transition-colors">Termos de Uso</a>
           <a href="exclusao.html" class="text-xs text-gray-400 hover:text-white transition-colors">Exclusão de Dados</a>
         </nav>
 
         <nav class="flex flex-col gap-2">
-          <h6 class="text-xs font-bold uppercase tracking-wide text-white opacity-90">Contato</h6>
-          <a href="mailto:contato@laempanadas.com.br" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
-            <i data-lucide="mail" class="w-4 h-4"></i>
-            contato@laempanadas.com.br
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-            WhatsApp: (11) 2669-0644
-          </a>
-          <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5">
-            <i data-lucide="map-pin" class="w-4 h-4"></i>
-            R. Marina, 474 - Campestre, Santo André - SP
-          </a>
+          <h2 class="text-xs font-bold uppercase tracking-wide text-white opacity-90">Contato</h2>
+          <a href="mailto:contato@laempanadas.com.br" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="mail" class="w-4 h-4"></i>contato@laempanadas.com.br</a>
+          <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="message-circle" class="w-4 h-4"></i>WhatsApp: (11) 2669-0644</a>
+          <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4"></i>R. Marina, 474 - Campestre, Santo André - SP</a>
         </nav>
       </div>
 
       <section class="rounded-2xl border border-white/10 bg-white/5 p-4">
-        <h2 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
-          <i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>
-          Onde estamos
-        </h2>
-
-        <p class="text-xs text-gray-300">
-          R. Marina, 474 - Campestre, Santo André - SP
-        </p>
-
-        <p class="text-xs text-gray-400 mt-1">
-          CEP 09070-510 • Retirada e delivery na região
-        </p>
-
-        <a
-          href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center mt-3 px-4 py-2 rounded-xl border border-orange-400 text-orange-300 text-xs font-semibold hover:bg-orange-400 hover:text-neutral transition-colors"
-        >
-          Ver no Google Maps
-        </a>
+        <h2 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>Onde estamos</h2>
+        <p class="text-xs text-gray-300">R. Marina, 474 - Campestre, Santo André - SP</p>
+        <p class="text-xs text-gray-400 mt-1">CEP 09070-510 • Retirada e delivery na região</p>
+        <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center mt-3 px-4 py-2 rounded-xl border border-orange-400 text-orange-300 text-xs font-semibold hover:bg-orange-400 hover:text-neutral transition-colors">Ver no Google Maps</a>
       </section>
     </div>
 
@@ -429,14 +513,11 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
     </div>
   </footer>
 
-  <!-- Modal do carrinho -->
   <dialog id="modal_carrinho" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box p-6 bg-white max-w-md">
       <div class="flex justify-between items-center border-b border-gray-100 pb-3">
-        <h3 class="font-bold text-lg text-gray-900 flex items-center gap-2">
-          <i data-lucide="shopping-cart" class="text-terracotta-500"></i> Seu Pedido
-        </h3>
-        <button onclick="fecharCarrinho()" class="btn btn-sm btn-circle btn-ghost">✕</button>
+        <h2 class="font-bold text-lg text-gray-900 flex items-center gap-2"><i data-lucide="shopping-cart" class="text-terracotta-500"></i>Seu Pedido</h2>
+        <button id="btn-fechar-carrinho" class="btn btn-sm btn-circle btn-ghost" aria-label="Fechar carrinho">✕</button>
       </div>
 
       <div id="carrinho-itens-lista" class="py-4 space-y-4 max-h-[250px] overflow-y-auto"></div>
@@ -446,32 +527,22 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
         <span id="modal-total" class="text-2xl font-bold text-terracotta-600">R$ 0,00</span>
       </div>
 
-      <p class="text-xs text-gray-500 bg-orange-50 border border-orange-100 rounded-lg p-3 mt-4">
-        Seu pedido será enviado para o WhatsApp para confirmação e finalização.
-      </p>
+      <p class="text-xs text-gray-500 bg-orange-50 border border-orange-100 rounded-lg p-3 mt-4">Seu pedido será enviado para o WhatsApp para confirmação e finalização.</p>
 
       <form id="checkout-form" class="mt-4 space-y-3">
         <div class="form-control">
-          <label class="label py-1">
-            <span class="label-text font-semibold text-gray-700 text-xs">Seu Nome</span>
-          </label>
-          <input type="text" id="nome-cliente" placeholder="Como te chamamos?" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required />
+          <label class="label py-1" for="nome-cliente"><span class="label-text font-semibold text-gray-700 text-xs">Seu Nome</span></label>
+          <input type="text" id="nome-cliente" placeholder="Como te chamamos?" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required>
         </div>
 
         <div class="form-control">
-          <label class="label py-1">
-            <span class="label-text font-semibold text-gray-700 text-xs">Endereço de Entrega</span>
-          </label>
-          <input type="text" id="endereco-cliente" placeholder="Rua, número, bairro, cidade e complemento" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required />
+          <label class="label py-1" for="endereco-cliente"><span class="label-text font-semibold text-gray-700 text-xs">Endereço de Entrega</span></label>
+          <input type="text" id="endereco-cliente" placeholder="Rua, número, bairro, cidade e complemento" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required>
         </div>
 
         <div class="form-control">
-          <label class="label py-1">
-            <span class="label-text font-semibold text-gray-700 text-xs">Forma de Pagamento</span>
-          </label>
-          <p class="text-[11px] text-gray-500 mb-1">
-            Pix é a forma mais rápida para finalizar o pedido.
-          </p>
+          <label class="label py-1" for="pagamento-cliente"><span class="label-text font-semibold text-gray-700 text-xs">Forma de Pagamento</span></label>
+          <p class="text-[11px] text-gray-500 mb-1">Pix é a forma mais rápida para finalizar o pedido.</p>
           <select id="pagamento-cliente" class="select select-bordered select-sm w-full bg-gray-50 border-gray-200" required>
             <option value="Pix">Pix</option>
             <option value="Cartão de Crédito">Cartão de Crédito</option>
@@ -489,6 +560,6 @@ src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
     </div>
   </dialog>
 
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
