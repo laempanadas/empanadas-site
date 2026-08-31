@@ -128,7 +128,7 @@
       "categoriaId": "combo"
     },
     {
-      "id": "combo_quatro",
+      "id": "combo_quatro_ovomaltine",
       "nome": "Combo 4 Empanadas + TORTINHA DE OVOMALTINE",
       "descricao": "Leve 4 empanadas assadas de qualquer sabor com preço promocional + TORTINHA DE OVOMALTINE.",
       "preco": 69.00,
@@ -136,7 +136,7 @@
       "categoriaId": "combo"
     },
     {
-      "id": "combo_quatro",
+      "id": "combo_quatro_cheesecake",
       "nome": "Combo 4 Empanadas + CHEESECAKE DE FRUTAS VERMELHAS",
       "descricao": "Leve 4 empanadas assadas de qualquer sabor com preço promocional + CHEESECAKE DE FRUTAS VERMELHAS.",
       "preco": 69.00,
