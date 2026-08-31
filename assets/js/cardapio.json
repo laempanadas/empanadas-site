@@ -128,6 +128,22 @@
       "categoriaId": "combo"
     },
     {
+      "id": "combo_quatro",
+      "nome": "Combo 4 Empanadas + TORTINHA DE OVOMALTINE",
+      "descricao": "Leve 4 empanadas assadas de qualquer sabor com preço promocional + TORTINHA DE OVOMALTINE.",
+      "preco": 69.00,
+      "imagem": "assets/js/img/COMBO_4_OVOMALTINE.webp",
+      "categoriaId": "combo"
+    },
+    {
+      "id": "combo_quatro",
+      "nome": "Combo 4 Empanadas + CHEESECAKE DE FRUTAS VERMELHAS",
+      "descricao": "Leve 4 empanadas assadas de qualquer sabor com preço promocional + CHEESECAKE DE FRUTAS VERMELHAS.",
+      "preco": 69.00,
+      "imagem": "assets/js/img/COMBO-4-EMPANADAS-CHEESECAKE-_1_.webp",
+      "categoriaId": "combo"
+    },
+    {
       "id": "beb_coca_600",
       "nome": "Coca-Cola Original 600ml",
       "descricao": "Garrafa de 600ml ideal para acompanhar sua empanada.",
