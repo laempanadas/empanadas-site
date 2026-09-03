@@ -512,71 +512,95 @@
     </div>
   </div>
 
- <!-- Footer Claro Gastronômico (Alto Contraste e Harmonia com a Página) -->
-  <footer class="mt-auto border-t border-orange-200/80" style="background-color: #FFF7ED;">
-    <div class="max-w-md mx-auto px-5 py-8 space-y-6">
+ <!-- Footer Gastronômico Premium (Harmonioso, Elegante e com Visual de App) -->
+  <footer class="mt-auto bg-gradient-to-b from-orange-50/60 to-orange-100/40 border-t border-orange-100/80">
+    <div class="max-w-md mx-auto px-5 pt-8 pb-6 space-y-6">
       
-      <!-- Marca & Descrição -->
-      <div>
-        <div class="flex items-center gap-2 mb-2">
-          <i data-lucide="cookie" class="w-5 h-5 inline-block text-terracotta-500" style="color: #c2410c;"></i>
-          <span class="text-base font-bold text-gray-900 tracking-wide">La Empanadas</span>
+      <!-- Cabeçalho da Marca -->
+      <div class="text-center sm:text-left space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-orange-100 shadow-2xs">
+          <i data-lucide="cookie" class="w-4 h-4 text-terracotta-500 inline-block" style="color: #c2410c;"></i>
+          <span class="text-xs font-bold uppercase tracking-wider text-gray-900">La Empanadas</span>
         </div>
-        <p class="text-xs text-gray-600 leading-relaxed">
+        <p class="text-xs text-gray-600 leading-relaxed max-w-sm">
           Empanadas argentinas artesanais, assadas diariamente com massa leve, crocante e recheios suculentos.
         </p>
       </div>
 
-      <!-- Links Institucionais e Atendimento -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-1">
-        <nav class="flex flex-col gap-2.5">
-          <h2 class="text-xs font-bold uppercase tracking-wider text-orange-950">Institucional</h2>
-          <a href="politica.html" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors">Política de Privacidade</a>
-          <a href="termos.html" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors">Termos de Uso</a>
-          <a href="exclusao.html" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors">Exclusão de Dados</a>
-        </nav>
+      <!-- Ações Rápidas de Atendimento (Visual de App) -->
+      <div class="space-y-2">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400 block px-1">Atendimento Rápido</span>
+        
+        <div class="grid grid-cols-1 gap-2">
+          <!-- WhatsApp Button -->
+          <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="flex items-center justify-between p-3 rounded-2xl bg-white border border-emerald-100 hover:border-emerald-300 shadow-2xs transition-all group">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+              </div>
+              <div class="text-left">
+                <span class="text-xs font-bold text-gray-900 block">Peça pelo WhatsApp</span>
+                <span class="text-[11px] text-gray-500">(11) 2669-0644 • Resposta rápida</span>
+              </div>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400 group-hover:text-emerald-600 transition-colors"></i>
+          </a>
 
-        <nav class="flex flex-col gap-2.5">
-          <h2 class="text-xs font-bold uppercase tracking-wider text-orange-950">Atendimento</h2>
-          <a href="mailto:contato@laempanadas.com.br" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors flex items-center gap-2">
-            <i data-lucide="mail" class="w-4 h-4 shrink-0 text-orange-700 inline-block"></i>
-            <span class="truncate">contato@laempanadas.com.br</span>
+          <!-- Email -->
+          <a href="mailto:contato@laempanadas.com.br" 
+             class="flex items-center gap-3 p-3 rounded-2xl bg-white border border-orange-100 shadow-2xs hover:bg-orange-50/50 transition-colors">
+            <div class="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 shrink-0">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </div>
+            <div class="text-left min-w-0">
+              <span class="text-xs font-semibold text-gray-800 block truncate">contato@laempanadas.com.br</span>
+              <span class="text-[11px] text-gray-500">Dúvidas, eventos e parcerias</span>
+            </div>
           </a>
-          <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-800 hover:text-emerald-900 font-semibold transition-colors flex items-center gap-2">
-            <i data-lucide="message-circle" class="w-4 h-4 shrink-0 text-emerald-600 inline-block"></i>
-            <span>WhatsApp: (11) 2669-0644</span>
-          </a>
-          <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors flex items-center gap-2">
-            <i data-lucide="map-pin" class="w-4 h-4 shrink-0 text-orange-700 inline-block"></i>
-            <span>R. Marina, 474 - Santo André</span>
-          </a>
-        </nav>
+        </div>
       </div>
 
-      <!-- Card "Onde Estamos" Claro e com Alto Destaque -->
-      <section class="rounded-2xl p-4 bg-white border border-orange-200 shadow-sm">
-        <h2 class="text-sm font-bold text-gray-900 mb-1 flex items-center gap-2">
-          <i data-lucide="map-pin" class="w-4 h-4 inline-block text-terracotta-500" style="color: #c2410c;"></i>
-          Onde estamos
-        </h2>
-        <p class="text-xs text-gray-800 font-semibold">R. Marina, 474 - Campestre, Santo André - SP</p>
-        <p class="text-[11px] text-gray-500 mt-0.5">CEP 09070-510 • Retirada e Delivery rápido</p>
-        
+      <!-- Card "Onde Estamos" -->
+      <div class="p-4 rounded-2xl bg-white border border-orange-100 shadow-2xs space-y-3">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-terracotta-50 flex items-center justify-center text-terracotta-600 shrink-0 mt-0.5" style="background-color: #fff1eb; color: #c2410c;">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h3 class="text-xs font-bold text-gray-900">Nossa Cozinha / Retirada</h3>
+            <p class="text-xs text-gray-600 mt-0.5 font-medium">R. Marina, 474 - Campestre, Santo André - SP</p>
+            <p class="text-[11px] text-gray-400">CEP 09070-510 • Santo André e região</p>
+          </div>
+        </div>
+
         <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="inline-flex items-center justify-center mt-3 w-full py-2.5 rounded-xl bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs font-bold shadow-sm transition-all text-center" style="background-color: #c2410c;">
-          Ver no Google Maps
+           class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-orange-50 hover:bg-orange-100 text-terracotta-600 text-xs font-bold border border-orange-200 transition-colors"
+           style="color: #c2410c;">
+          <i data-lucide="map" class="w-4 h-4"></i>
+          Abrir no Google Maps
         </a>
-      </section>
-    </div>
-
-    <!-- Sub-footer / Direitos -->
-    <div class="border-t border-orange-200/60 py-4" style="background-color: #FAEDE1;">
-      <div class="max-w-md mx-auto px-5 text-[11px] text-gray-600 flex flex-col gap-1 text-center sm:text-left font-medium">
-        <p>© 2026 La Empanadas. Todos os direitos reservados.</p>
-        <p class="text-[10px] text-gray-500">Cardápio Digital Delivery Integrado via WhatsApp</p>
       </div>
+
+      <!-- Links Institucionais (Discretos e Alinhados) -->
+      <nav class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-2 border-t border-orange-200/40 text-[11px] text-gray-500 font-medium">
+        <a href="politica.html" class="hover:text-gray-900 transition-colors">Privacidade</a>
+        <span>•</span>
+        <a href="termos.html" class="hover:text-gray-900 transition-colors">Termos de Uso</a>
+        <span>•</span>
+        <a href="exclusao.html" class="hover:text-gray-900 transition-colors">Exclusão de Dados</a>
+      </nav>
+
+      <!-- Copyright -->
+      <div class="text-center pt-1 text-[11px] text-gray-400 space-y-0.5">
+        <p>© 2026 La Empanadas. Todos os direitos reservados.</p>
+        <p class="text-[10px] text-gray-400/80">Cardápio Digital Integrado ao WhatsApp</p>
+      </div>
+
     </div>
   </footer>
 
