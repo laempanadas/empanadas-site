@@ -90,48 +90,13 @@
 
   <link rel="icon" href="/favicon.ico">
 
-  <!-- CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css">
+  <!-- CSS compilado localmente: Tailwind + DaisyUI -->
+  <link rel="stylesheet" href="assets/css/styles.min.css">
 
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            terracotta: {
-              50: "#fdf4f0",
-              100: "#fbe7de",
-              500: "#c2410c",
-              600: "#9a3412",
-              700: "#7c2d12"
-            }
-          }
-        }
-      }
-    };
-  </script>
-
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-    }
-
-    .scrollbar-none::-webkit-scrollbar {
-      display: none;
-    }
-
-    .scrollbar-none {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
 
   <!-- Bibliotecas não bloqueantes -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
@@ -401,40 +366,40 @@
         </article>
 
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
-  <figure class="w-1/3 min-w-[120px] h-full">
-    <img src="assets/js/img/COMBO_4_OVOMALTINE.webp" alt="Combo 4 Empanadas mais Tortinha de Ovomaltine" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
-  </figure>
-  <div class="card-body p-4 w-2/3 justify-between">
-    <div>
-      <h3 class="font-bold text-gray-900 text-sm leading-tight">Combo 4 Empanadas + Tortinha de Ovomaltine</h3>
-      <p class="text-xs text-gray-500 mt-1 line-clamp-2">Leve 4 empanadas assadas de qualquer sabor com preço promocional + Tortinha de Ovomaltine.</p>
-    </div>
-    <div class="flex items-center justify-between mt-2">
-      <span class="text-base font-bold text-terracotta-600">R$ 69.00</span>
-      <div class="flex items-center gap-2" id="controls-combo-quatro-ovomaltine" data-item-id="combo_quatro_ovomaltine">
-        <button data-action="add" data-id="combo_quatro_ovomaltine" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
-      </div>
-    </div>
-  </div>
-</article>
+          <figure class="w-1/3 min-w-[120px] h-full">
+            <img src="assets/js/img/COMBO_4_OVOMALTINE.webp" alt="Combo 4 Empanadas mais Tortinha de Ovomaltine" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+          </figure>
+          <div class="card-body p-4 w-2/3 justify-between">
+            <div>
+              <h3 class="font-bold text-gray-900 text-sm leading-tight">Combo 4 Empanadas + Tortinha de Ovomaltine</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">Leve 4 empanadas assadas de qualquer sabor com preço promocional + Tortinha de Ovomaltine.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-base font-bold text-terracotta-600">R$ 69.00</span>
+              <div class="flex items-center gap-2" id="controls-combo-quatro-ovomaltine" data-item-id="combo_quatro_ovomaltine">
+                <button data-action="add" data-id="combo_quatro_ovomaltine" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </article>
 
-<article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
-  <figure class="w-1/3 min-w-[120px] h-full">
-    <img src="assets/js/img/COMBO-4-EMPANADAS-CHEESECAKE-_1_.webp" alt="Combo 4 Empanadas mais Cheesecake de Frutas Vermelhas" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
-  </figure>
-  <div class="card-body p-4 w-2/3 justify-between">
-    <div>
-      <h3 class="font-bold text-gray-900 text-sm leading-tight">Combo 4 Empanadas + Cheesecake de Frutas Vermelhas</h3>
-      <p class="text-xs text-gray-500 mt-1 line-clamp-2">Leve 4 empanadas assadas de qualquer sabor com preço promocional + Cheesecake de Frutas Vermelhas.</p>
-    </div>
-    <div class="flex items-center justify-between mt-2">
-      <span class="text-base font-bold text-terracotta-600">R$ 69.00</span>
-      <div class="flex items-center gap-2" id="controls-combo-quatro-cheesecake" data-item-id="combo_quatro_cheesecake">
-        <button data-action="add" data-id="combo_quatro_cheesecake" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
-      </div>
-    </div>
-  </div>
-</article>
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
+          <figure class="w-1/3 min-w-[120px] h-full">
+            <img src="assets/js/img/COMBO-4-EMPANADAS-CHEESECAKE-_1_.webp" alt="Combo 4 Empanadas mais Cheesecake de Frutas Vermelhas" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+          </figure>
+          <div class="card-body p-4 w-2/3 justify-between">
+            <div>
+              <h3 class="font-bold text-gray-900 text-sm leading-tight">Combo 4 Empanadas + Cheesecake de Frutas Vermelhas</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">Leve 4 empanadas assadas de qualquer sabor com preço promocional + Cheesecake de Frutas Vermelhas.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-base font-bold text-terracotta-600">R$ 69.00</span>
+              <div class="flex items-center gap-2" id="controls-combo-quatro-cheesecake" data-item-id="combo_quatro_cheesecake">
+                <button data-action="add" data-id="combo_quatro_cheesecake" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </article>
 
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
           <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola Original 600ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
@@ -443,11 +408,6 @@
 
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
           <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/cocacola350zero.avif" alt="Coca-Cola sem Açúcar 350ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola sem Açúcar 350ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Lata de 350ml de Coca-Cola sabor zero açúcar gelada.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 8.50</span><div class="flex items-center gap-2" id="controls-beb-coca-zero-350" data-item-id="beb_coca_zero_350"><button data-action="add" data-id="beb_coca_zero_350" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
-        </article>
-
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/coca-cola-lata-350ml.avif" alt="Coca-Cola sem Açúcar 350ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
           <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola sem Açúcar 350ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Lata de 350ml de Coca-Cola sabor zero açúcar gelada.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 8.50</span><div class="flex items-center gap-2" id="controls-beb-coca-zero-350" data-item-id="beb_coca_zero_350"><button data-action="add" data-id="beb_coca_zero_350" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
         </article>
 
@@ -463,7 +423,7 @@
 
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
           <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/coca-cola-sem-acucar-2l.avif" alt="Coca-Cola zero 2 litros" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola zero 2L</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Tamanho família. Garrafa de 2 litros.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 25.00</span><div class="flex items-center gap-2" id="controls-beb-coca-2l" data-item-id="beb_coca_2l"><button data-action="add" data-id="beb_coca_2l" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola zero 2L</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Tamanho família. Garrafa de 2 litros.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 25.00</span><div class="flex items-center gap-2" id="controls-beb-coca-zero-2l" data-item-id="beb_coca_zero_2l"><button data-action="add" data-id="beb_coca_zero_2l" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
         </article>
 
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="vinho">
