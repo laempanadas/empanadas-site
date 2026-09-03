@@ -46,9 +46,7 @@ function configurarEventosDelegados() {
     categorias.addEventListener("click", (event) => {
       const botao = event.target.closest("[data-categoria-filtro]");
 
-      if (!botao) {
-        return;
-      }
+      if (!botao) return;
 
       categoriaAtiva = botao.dataset.categoriaFiltro;
       atualizarEstiloBotoesCategoria();
@@ -62,9 +60,7 @@ function configurarEventosDelegados() {
     cardapioGrid.addEventListener("click", (event) => {
       const botao = event.target.closest("[data-action][data-id]");
 
-      if (!botao) {
-        return;
-      }
+      if (!botao) return;
 
       const id = botao.dataset.id;
       const delta = botao.dataset.action === "add" ? 1 : -1;
@@ -167,76 +163,69 @@ function alterarQuantidade(id, delta) {
   }
 
   atualizarIndicadores();
-  atualizarControlesDosItens();
+  atualizarControleItemIndividual(id);
 
   if (document.getElementById("modal_carrinho")?.open) {
     abrirCarrinho();
   }
 }
 
-function atualizarControlesDosItens() {
-  document.querySelectorAll("[data-item-id]").forEach((container) => {
-    const id = container.dataset.itemId;
-    const quantidade = carrinhoState[id] || 0;
+// Otimização: Atualiza somente o item clicado em vez da lista inteira
+function atualizarControleItemIndividual(id) {
+  const container = document.querySelector(`[data-item-id="${id}"]`);
+  if (!container) return;
 
-    if (quantidade > 0) {
-      container.innerHTML = `
-        <button
-          type="button"
-          data-action="remove"
-          data-id="${id}"
-          class="btn btn-xs btn-circle bg-gray-100 text-gray-800 border-none hover:bg-gray-200"
-          aria-label="Remover uma unidade"
-        >
-          <i data-lucide="minus" class="w-3.5 h-3.5"></i>
-        </button>
+  const quantidade = carrinhoState[id] || 0;
 
-        <span class="font-semibold text-sm w-4 text-center" aria-label="${quantidade} itens">
-          ${quantidade}
-        </span>
+  if (quantidade > 0) {
+    container.innerHTML = `
+      <button
+        type="button"
+        data-action="remove"
+        data-id="${id}"
+        class="btn btn-xs btn-circle bg-gray-100 text-gray-800 border-none hover:bg-gray-200 inline-flex items-center justify-center"
+        aria-label="Remover uma unidade"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      </button>
 
-        <button
-          type="button"
-          data-action="add"
-          data-id="${id}"
-          class="btn btn-xs btn-circle bg-terracotta-500 text-white border-none hover:bg-terracotta-600"
-          aria-label="Adicionar uma unidade"
-        >
-          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-        </button>
-      `;
-    } else {
-      container.innerHTML = `
-        <button
-          type="button"
-          data-action="add"
-          data-id="${id}"
-          class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4"
-        >
-          Adicionar
-        </button>
-      `;
-    }
-  });
+      <span class="font-semibold text-sm w-4 text-center" aria-label="${quantidade} itens">
+        ${quantidade}
+      </span>
 
-  if (window.lucide) {
-    window.lucide.createIcons();
+      <button
+        type="button"
+        data-action="add"
+        data-id="${id}"
+        class="btn btn-xs btn-circle bg-terracotta-500 text-white border-none hover:bg-terracotta-600 inline-flex items-center justify-center"
+        aria-label="Adicionar uma unidade"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      </button>
+    `;
+  } else {
+    container.innerHTML = `
+      <button
+        type="button"
+        data-action="add"
+        data-id="${id}"
+        class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4"
+      >
+        Adicionar
+      </button>
+    `;
   }
 }
 
 function calcularTotal() {
   return Object.entries(carrinhoState).reduce((total, [id, quantidade]) => {
     const item = cardapioOriginal.itens.find((produto) => produto.id === id);
-
     return total + (item ? item.preco * quantidade : 0);
   }, 0);
 }
 
 function totalItens() {
-  return Object.values(carrinhoState).reduce(
-    (total, quantidade) => total + quantidade,
-    0
-  );
+  return Object.values(carrinhoState).reduce((total, quantidade) => total + quantidade, 0);
 }
 
 function formatarPreco(valor) {
@@ -248,10 +237,8 @@ function atualizarIndicadores() {
   const total = calcularTotal();
 
   const badge = document.getElementById("badge-cart");
-
   if (badge) {
     badge.textContent = quantidadeTotal;
-
     if (quantidadeTotal > 0) {
       badge.classList.remove("hidden");
     } else {
@@ -264,7 +251,6 @@ function atualizarIndicadores() {
 
   if (bottomBar && totalBottomBar) {
     totalBottomBar.textContent = formatarPreco(total);
-
     if (quantidadeTotal > 0) {
       bottomBar.classList.remove("translate-y-full");
     } else {
@@ -278,16 +264,14 @@ function abrirCarrinho() {
   const lista = document.getElementById("carrinho-itens-lista");
   const totalModal = document.getElementById("modal-total");
 
-  if (!modal || !lista || !totalModal) {
-    return;
-  }
+  if (!modal || !lista || !totalModal) return;
 
   lista.innerHTML = "";
 
   if (totalItens() === 0) {
     lista.innerHTML = `
       <div class="text-center py-8 text-gray-400">
-        <i data-lucide="frown" class="w-12 h-12 mx-auto mb-2 opacity-50"></i>
+        <i data-lucide="frown" class="w-12 h-12 mx-auto mb-2 opacity-50 inline-block"></i>
         <p>Seu carrinho está vazio.</p>
       </div>
     `;
@@ -307,10 +291,7 @@ function abrirCarrinho() {
 
   Object.entries(carrinhoState).forEach(([id, quantidade]) => {
     const item = cardapioOriginal.itens.find((produto) => produto.id === id);
-
-    if (!item) {
-      return;
-    }
+    if (!item) return;
 
     const linha = document.createElement("div");
     linha.className = "flex justify-between items-center bg-gray-50 p-3 rounded-xl";
@@ -341,16 +322,13 @@ function abrirCarrinho() {
 
 function fecharCarrinho() {
   const modal = document.getElementById("modal_carrinho");
-
   if (modal?.open) {
     modal.close();
   }
 }
 
 function enviarPedidoParaWhatsApp(nome, endereco, pagamento) {
-  if (totalItens() === 0) {
-    return;
-  }
+  if (totalItens() === 0) return;
 
   const totalPedido = calcularTotal();
   const idsItens = Object.keys(carrinhoState);
@@ -368,7 +346,6 @@ function enviarPedidoParaWhatsApp(nome, endereco, pagamento) {
 
   Object.entries(carrinhoState).forEach(([id, quantidade]) => {
     const item = cardapioOriginal.itens.find((produto) => produto.id === id);
-
     if (item) {
       itensTexto += `- ${quantidade}x ${item.nome} [${id}]\n`;
     }
@@ -395,10 +372,7 @@ function enviarPedidoParaWhatsApp(nome, endereco, pagamento) {
 
 function habilitarArrastarComMouse(idContainer) {
   const container = document.getElementById(idContainer);
-
-  if (!container) {
-    return;
-  }
+  if (!container) return;
 
   let arrastando = false;
   let posicaoInicialX = 0;
@@ -422,32 +396,26 @@ function habilitarArrastarComMouse(idContainer) {
   });
 
   container.addEventListener("mousemove", (event) => {
-    if (!arrastando) {
-      return;
-    }
-
+    if (!arrastando) return;
     event.preventDefault();
-
     const posicaoAtualX = event.pageX - container.offsetLeft;
     const distancia = (posicaoAtualX - posicaoInicialX) * 1.2;
-
     container.scrollLeft = scrollInicial - distancia;
   });
 }
 
 function iniciarAutoplayCarrossel() {
   const track = document.getElementById("carousel-track");
-
-  if (!track) {
-    return;
-  }
+  if (!track) return;
 
   let slideAtivo = 1;
   const totalSlides = 2;
 
   setInterval(() => {
-    slideAtivo = slideAtivo === totalSlides ? 1 : slideAtivo + 1;
+    // Pausa o carrossel se a aba do navegador estiver oculta
+    if (document.hidden) return;
 
+    slideAtivo = slideAtivo === totalSlides ? 1 : slideAtivo + 1;
     const slide = document.getElementById(`slide${slideAtivo}`);
 
     if (slide) {

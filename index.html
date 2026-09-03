@@ -11,67 +11,19 @@
   <link rel="canonical" href="https://laempanadas.com.br/">
   <meta name="language" content="pt-BR">
 
+  <!-- Preload do LCP Banner -->
   <link rel="preload" as="image" href="assets/js/img/COMBO_4_OVOMALTINE.webp" fetchpriority="high">
 
-  <!-- Clarity -->
-  <script>
-    (function(c, l, a, r, i, t, y) {
-      c[a] = c[a] || function() {
-        (c[a].q = c[a].q || []).push(arguments);
-      };
-      t = l.createElement(r);
-      t.async = 1;
-      t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt";
-      y = l.getElementsByTagName(r)[0];
-      y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "y10ylvzktj");
-  </script>
+  <!-- CSS compilado localmente: Tailwind + DaisyUI -->
+  <link rel="stylesheet" href="assets/css/styles.min.css">
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l !== "dataLayer" ? "&l=" + l : "";
-      j.async = true;
-      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, "script", "dataLayer", "GTM-TJF85JT");
-  </script>
-
-  <!-- Meta Pixel -->
-  <script>
-    !function(f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function() {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-
-    fbq("init", "1716259822824246");
-    fbq("track", "PageView");
-  </script>
-
+  <!-- Fontes Google Otimizadas (Não bloqueante) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
-    <img
-      height="1"
-      width="1"
-      style="display:none"
-      src="https://www.facebook.com/tr?id=1716259822824246&ev=PageView&noscript=1"
-      alt=""
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   </noscript>
 
   <!-- Open Graph -->
@@ -89,14 +41,6 @@
   <meta name="twitter:image" content="https://laempanadas.com.br/assets/og-image.jpg">
 
   <link rel="icon" href="/favicon.ico">
-
-  <!-- CSS compilado localmente: Tailwind + DaisyUI -->
-  <link rel="stylesheet" href="assets/css/styles.min.css">
-
-  <!-- Fontes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Bibliotecas não bloqueantes -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
@@ -193,14 +137,15 @@
 
   <div class="sticky top-0 z-50 bg-white border-b border-orange-100 shadow-sm">
     <div class="max-w-md mx-auto">
-      <header class="navbar px-4 py-2 bg-white" role="banner">
+      <header class="navbar px-4 py-2 bg-white min-h-[64px]" role="banner">
         <div class="flex-1 flex items-center gap-3">
           <img
             src="assets/js/img/logo-la-empanadas.webp"
             alt="Logo La Empanadas"
-            width="220"
-            height="102"
-            class="w-[100px] sm:w-[120px] h-auto object-contain shrink-0"
+            width="120"
+            height="55"
+            class="w-[100px] sm:w-[120px] h-auto object-contain shrink-0 aspect-[120/55]"
+            fetchpriority="high"
           >
 
           <div>
@@ -215,14 +160,14 @@
         </div>
 
         <div class="flex-none">
-          <button id="btn-abrir-carrinho" class="btn btn-ghost btn-circle relative" aria-label="Abrir carrinho">
-            <i data-lucide="shopping-basket" class="w-6 h-6 text-gray-700"></i>
+          <button id="btn-abrir-carrinho" class="btn btn-ghost btn-circle relative w-10 h-10 min-h-[40px]" aria-label="Abrir carrinho">
+            <i data-lucide="shopping-basket" class="w-6 h-6 inline-block text-gray-700"></i>
             <span id="badge-cart" class="badge badge-sm bg-terracotta-500 border-none text-white absolute top-1 right-1 hidden">0</span>
           </button>
         </div>
       </header>
 
-      <nav id="categorias-container" class="flex flex-row flex-nowrap gap-2 overflow-x-auto pb-3 pt-1 px-4 scrollbar-none bg-white scroll-smooth" aria-label="Categorias do cardápio">
+      <nav id="categorias-container" class="flex flex-row flex-nowrap gap-2 overflow-x-auto pb-3 pt-1 px-4 scrollbar-none bg-white scroll-smooth min-h-[45px]" aria-label="Categorias do cardápio">
         <button data-categoria-filtro="todos" aria-pressed="true" class="btn btn-sm rounded-full px-5 border-none shrink-0 bg-terracotta-500 text-white shadow-sm">Todas</button>
         <button data-categoria-filtro="salgada" aria-pressed="false" class="btn btn-sm rounded-full px-5 border-none shrink-0 bg-gray-100 text-gray-700">Empanadas Salgadas</button>
         <button data-categoria-filtro="doce" aria-pressed="false" class="btn btn-sm rounded-full px-5 border-none shrink-0 bg-gray-100 text-gray-700">Empanadas Doces</button>
@@ -252,7 +197,7 @@
       <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline border-terracotta-500 text-terracotta-600 rounded-xl">Pedir no WhatsApp</a>
     </section>
 
-    <section id="carousel-track" class="carousel w-full rounded-2xl h-44 shadow-md mb-6 relative" aria-label="Promoções">
+    <section id="carousel-track" class="carousel w-full rounded-2xl h-44 shadow-md mb-6 relative overflow-hidden" aria-label="Promoções">
       <div id="slide1" class="carousel-item relative w-full h-full">
         <img src="assets/js/img/COMBO_4_OVOMALTINE.webp" width="448" height="176" class="w-full h-full object-cover brightness-[0.7]" alt="Combo 4 Empanadas mais Tortinha de Ovomaltine" fetchpriority="high" decoding="async">
         <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
@@ -285,6 +230,7 @@
 
       <div id="cardapio-grid" class="grid grid-cols-1 gap-4" aria-live="polite">
 
+        <!-- Empanadas Doces -->
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="doce">
           <figure class="w-1/3 min-w-[120px] h-full">
             <img src="assets/js/img/ROMEU.webp" alt="Empanada Romeu e Julieta" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
@@ -295,6 +241,12 @@
           </div>
         </article>
 
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="doce">
+          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CHOCOLATE.webp" alt="Empanada de Chocolate ao Leite com Morango" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Chocolate ao Leite com Morango</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Saborosa combinação de chocolate ao leite cremoso com pedaços de morango.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 16.90</span><div class="flex items-center gap-2" id="controls-emp-chocolate" data-item-id="empchocolate"><button data-action="add" data-id="empchocolate" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        </article>
+
+        <!-- Empanadas Salgadas -->
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
           <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/QUEIJO-TOMATE.webp" alt="Empanada de Queijo, Tomate, Manjericão e Orégano" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
           <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Queijo, Tomate, Manjericão e Orégano</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Leveza do estilo caprese com queijo, tomates frescos picados e manjericão aromático.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-queijo-tomate" data-item-id="emp_queijo_tomate"><button data-action="add" data-id="emp_queijo_tomate" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
@@ -340,16 +292,12 @@
           <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Calabresa com Cream Cheese</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Calabresa moída de alta qualidade unida à cremosidade do cream cheese.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-calabresa" data-item-id="empcalabresa"><button data-action="add" data-id="empcalabresa" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="doce">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CHOCOLATE.webp" alt="Empanada de Chocolate ao Leite com Morango" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Chocolate ao Leite com Morango</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Saborosa combinação de chocolate ao leite cremoso com pedaços de morango.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 16.90</span><div class="flex items-center gap-2" id="controls-emp-chocolate" data-item-id="empchocolate"><button data-action="add" data-id="empchocolate" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
-        </article>
-
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
           <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/ATUM.webp" alt="Empanada de Atum com Queijo" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
           <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Atum com Queijo</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Atum sólido conservado mesclado com queijo muçarela derretido.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-atum" data-item-id="emp_Atum"><button data-action="add" data-id="emp_Atum" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
         </article>
 
+        <!-- Combos -->
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
           <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/empanada_combo_coca_600ml.webp" alt="Combo Coca-Cola" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
           <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Combo Coca-Cola</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Contém 4 Empanadas à sua escolha + 1 Refrigerante Coca-Cola de 600ml.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 62.90</span><div class="flex items-center gap-2" id="controls-combo-coca" data-item-id="combo_coca"><button data-action="add" data-id="combo_coca" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
@@ -401,30 +349,116 @@
           </div>
         </article>
 
+        <!-- Bebidas -->
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola Original 600ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Original 600ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Garrafa de 600ml ideal para acompanhar sua empanada.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 15.00</span><div class="flex items-center gap-2" id="controls-beb-coca-600" data-item-id="beb_coca_600"><button data-action="add" data-id="beb_coca_600" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+          <figure class="w-1/3 min-w-[120px] h-full">
+            <img src="assets/js/img/coca-cola-lata-350ml.avif" alt="Coca-Cola Original 350ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+          </figure>
+          <div class="card-body p-4 w-2/3 justify-between">
+            <div>
+              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Original 350ml</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">Lata de 350ml de Coca-Cola sabor original gelada.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-base font-bold text-terracotta-600">R$ 8.50</span>
+              <div class="flex items-center gap-2" id="controls-beb-coca-original-350" data-item-id="beb_coca_original_350">
+                <button data-action="add" data-id="beb_coca_original_350" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/cocacola350zero.avif" alt="Coca-Cola sem Açúcar 350ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola sem Açúcar 350ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Lata de 350ml de Coca-Cola sabor zero açúcar gelada.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 8.50</span><div class="flex items-center gap-2" id="controls-beb-coca-zero-350" data-item-id="beb_coca_zero_350"><button data-action="add" data-id="beb_coca_zero_350" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+          <figure class="w-1/3 min-w-[120px] h-full">
+            <img src="assets/js/img/cocacolazero.avif" alt="Coca-Cola sem Açúcar 350ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+          </figure>
+          <div class="card-body p-4 w-2/3 justify-between">
+            <div>
+              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola sem Açúcar 350ml</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">Lata de 350ml de Coca-Cola sabor zero açúcar gelada.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-base font-bold text-terracotta-600">R$ 8.50</span>
+              <div class="flex items-center gap-2" id="controls-beb-coca-zero-350" data-item-id="beb_coca_zero_350">
+                <button data-action="add" data-id="beb_coca_zero_350" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola Zero 600ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Zero 600ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Garrafa de 600ml de Coca-Cola sabor zero açúcar.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 15.00</span><div class="flex items-center gap-2" id="controls-beb-coca-zero-600" data-item-id="beb_coca_zero_600"><button data-action="add" data-id="beb_coca_zero_600" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+          <figure class="w-1/3 min-w-[120px] h-full">
+            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola Original 600ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+          </figure>
+          <div class="card-body p-4 w-2/3 justify-between">
+            <div>
+              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Original 600ml</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">Garrafa de 600ml ideal para acompanhar sua empanada.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-base font-bold text-terracotta-600">R$ 15.00</span>
+              <div class="flex items-center gap-2" id="controls-beb-coca-600" data-item-id="beb_coca_600">
+                <button data-action="add" data-id="beb_coca_600" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola 2 litros" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola 2L</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Tamanho família. Garrafa de 2 litros.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 25.00</span><div class="flex items-center gap-2" id="controls-beb-coca-2l" data-item-id="beb_coca_2l"><button data-action="add" data-id="beb_coca_2l" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+          <figure class="w-1/3 min-w-[120px] h-full">
+            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola Zero 600ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+          </figure>
+          <div class="card-body p-4 w-2/3 justify-between">
+            <div>
+              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Zero 600ml</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">Garrafa de 600ml de Coca-Cola sabor zero açúcar.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-base font-bold text-terracotta-600">R$ 15.00</span>
+              <div class="flex items-center gap-2" id="controls-beb-coca-zero-600" data-item-id="beb_coca_zero_600">
+                <button data-action="add" data-id="beb_coca_zero_600" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/coca-cola-sem-acucar-2l.avif" alt="Coca-Cola zero 2 litros" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola zero 2L</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Tamanho família. Garrafa de 2 litros.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 25.00</span><div clas
+          <figure class="w-1/3 min-w-[120px] h-full">
+            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola 2 litros" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+          </figure>
+          <div class="card-body p-4 w-2/3 justify-between">
+            <div>
+              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola 2L</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">Tamanho família. Garrafa de 2 litros.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-base font-bold text-terracotta-600">R$ 25.00</span>
+              <div class="flex items-center gap-2" id="controls-beb-coca-2l" data-item-id="beb_coca_2l">
+                <button data-action="add" data-id="beb_coca_2l" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </article>
 
+        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
+          <figure class="w-1/3 min-w-[120px] h-full">
+            <img src="assets/js/img/coca-cola-zero-2l.avif" alt="Coca-Cola zero 2 litros" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+          </figure>
+          <div class="card-body p-4 w-2/3 justify-between">
+            <div>
+              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola zero 2L</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">Tamanho família. Garrafa de 2 litros.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-base font-bold text-terracotta-600">R$ 25.00</span>
+              <div class="flex items-center gap-2" id="controls-beb-coca-zero-2l" data-item-id="beb_coca_zero_2l">
+                <button data-action="add" data-id="beb_coca_zero_2l" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vinhos -->
         <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="vinho">
           <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho La Plata Branco Argentino 750ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
           <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Vinho La Plata Branco Argentino 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Vinho argentino branco jovem e refrescante, ideal para empanadas vegetarianas.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 55.90</span><div class="flex items-center gap-2" id="controls-vin-la-plata" data-item-id="vin_la_plata"><button data-action="add" data-id="vin_la_plata" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
@@ -473,16 +507,17 @@
 
       <button id="btn-bottombar-carrinho" class="btn bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-6 rounded-xl flex items-center gap-2">
         Finalizar pedido
-        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        <i data-lucide="arrow-right" class="w-4 h-4 inline-block"></i>
       </button>
     </div>
   </div>
 
-  <footer class="bg-neutral text-neutral-content mt-auto border-t border-gray-800">
+  <!-- Footer com cor escura fixada (bg-[#1d232a]) -->
+  <footer class="bg-[#1d232a] text-neutral-content mt-auto border-t border-gray-800">
     <div class="max-w-md mx-auto px-4 py-8 space-y-6">
       <div>
         <div class="flex items-center gap-2 mb-2">
-          <i data-lucide="cookie" class="w-5 h-5 text-orange-500"></i>
+          <i data-lucide="cookie" class="w-5 h-5 inline-block text-orange-500"></i>
           <span class="text-base font-bold text-white">La Empanadas</span>
         </div>
         <p class="text-xs text-gray-300 leading-relaxed">Empanadas argentinas artesanais, feitas com receita tradicional e ingredientes de qualidade.</p>
@@ -498,14 +533,14 @@
 
         <nav class="flex flex-col gap-2">
           <h2 class="text-xs font-bold uppercase tracking-wide text-white opacity-90">Contato</h2>
-          <a href="mailto:contato@laempanadas.com.br" class="text-xs text-gray-300 hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="mail" class="w-4 h-4"></i>contato@laempanadas.com.br</a>
-          <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="text-xs text-gray-300 hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="message-circle" class="w-4 h-4"></i>WhatsApp: (11) 2669-0644</a>
-          <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-300 hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4"></i>R. Marina, 474 - Campestre, Santo André - SP</a>
+          <a href="mailto:contato@laempanadas.com.br" class="text-xs text-gray-300 hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="mail" class="w-4 h-4 inline-block"></i>contato@laempanadas.com.br</a>
+          <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="text-xs text-gray-300 hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="message-circle" class="w-4 h-4 inline-block"></i>WhatsApp: (11) 2669-0644</a>
+          <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-300 hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 inline-block"></i>R. Marina, 474 - Campestre, Santo André - SP</a>
         </nav>
       </div>
 
       <section class="rounded-2xl border border-white/10 bg-white/5 p-4">
-        <h2 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-orange-400"></i>Onde estamos</h2>
+        <h2 class="text-sm font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 inline-block text-orange-400"></i>Onde estamos</h2>
         <p class="text-xs text-gray-300">R. Marina, 474 - Campestre, Santo André - SP</p>
         <p class="text-xs text-gray-300 mt-1">CEP 09070-510 • Retirada e delivery na região</p>
         <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center mt-3 px-4 py-2 rounded-xl border border-orange-400 text-orange-300 text-xs font-semibold hover:bg-orange-400 hover:text-neutral transition-colors">Ver no Google Maps</a>
@@ -523,7 +558,7 @@
   <dialog id="modal_carrinho" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box p-6 bg-white max-w-md">
       <div class="flex justify-between items-center border-b border-gray-100 pb-3">
-        <h2 class="font-bold text-lg text-gray-900 flex items-center gap-2"><i data-lucide="shopping-cart" class="text-terracotta-500"></i>Seu Pedido</h2>
+        <h2 class="font-bold text-lg text-gray-900 flex items-center gap-2"><i data-lucide="shopping-cart" class="text-terracotta-500 inline-block"></i>Seu Pedido</h2>
         <button id="btn-fechar-carrinho" class="btn btn-sm btn-circle btn-ghost" aria-label="Fechar carrinho">✕</button>
       </div>
 
@@ -559,7 +594,7 @@
 
         <div class="modal-action mt-6">
           <button type="submit" class="btn bg-green-600 hover:bg-green-700 text-white border-none w-full py-3 rounded-xl flex items-center justify-center gap-2">
-            <i data-lucide="send" class="w-5 h-5"></i>
+            <i data-lucide="send" class="w-5 h-5 inline-block"></i>
             Enviar Pedido via WhatsApp
           </button>
         </div>
@@ -567,6 +602,53 @@
     </div>
   </dialog>
 
+  <!-- Script principal da aplicação -->
   <script src="assets/js/script.js" defer></script>
+
+  <!-- Rastreamento com carregamento inteligente após interação/carregamento (Economiza FCP/TBT) -->
+  <script>
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return;
+      window.analyticsLoaded = true;
+
+      // 1. Microsoft Clarity
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "y10ylvzktj");
+
+      // 2. Google Tag Manager
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-TJF85JT');
+
+      // 3. Meta Pixel
+      !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s);
+      }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1716259822824246');
+      fbq('track', 'PageView');
+    }
+
+    // Dispara após carregamento completo ou na primeira interação do usuário (touch/scroll/click)
+    ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
+      window.addEventListener(event, loadAnalytics, { once: true, passive: true });
+    });
+    window.addEventListener('load', () => {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => setTimeout(loadAnalytics, 1500));
+      } else {
+        setTimeout(loadAnalytics, 2000);
+      }
+    });
+  </script>
 </body>
 </html>
