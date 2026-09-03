@@ -156,9 +156,19 @@
       "nome": "Coca-Cola sem Açúcar 350ml",
       "descricao": "Lata de 350ml de Coca-Cola sabor zero açúcar gelada.",
       "preco": 8.50,
-      "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
+      "imagem": "assets/js/img/cocacolazero.avif",
       "categoriaId": "bebida"
     },
+
+    {
+      "id": "beb_coca_original_350",
+      "nome": "Coca-Cola original 350ml",
+      "descricao": "Lata de 350ml de Coca-Cola sabor original gelada.",
+      "preco": 8.50,
+      "imagem": "assets/js/img/coca-cola-lata-350ml.avif",
+      "categoriaId": "bebida"
+    },
+
     {
       "id": "beb_coca_zero_600",
       "nome": "Coca-Cola Zero 600ml",
@@ -173,6 +183,15 @@
       "descricao": "Tamanho família. Garrafa de 2 litros.",
       "preco": 25.00,
       "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
+      "categoriaId": "bebida"
+    },
+
+    {
+      "id": "beb_coca_Zero2l",
+      "nome": "Coca-Cola-zero 2L",
+      "descricao": "Tamanho família. Garrafa de 2 litros.",
+      "preco": 25.00,
+      "imagem": "assets/js/img/coca-cola-zero-2l.avif",
       "categoriaId": "bebida"
     },
     {
