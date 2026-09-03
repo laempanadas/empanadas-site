@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,45 +90,32 @@
 
   <link rel="icon" href="/favicon.ico">
 
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preconnect" href="https://unpkg.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://connect.facebook.net">
-  <link rel="dns-prefetch" href="https://scripts.clarity.ms">
-
-  <!-- CSS não bloqueante -->
-  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" media="print" onload="this.media='all'; this.onload=null;">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"></noscript>
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css">
 
   <!-- Fontes -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script defer>
-    window.addEventListener('DOMContentLoaded', function () {
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              terracotta: {
-                50: "#fdf4f0",
-                100: "#fbe7de",
-                500: "#c2410c",
-                600: "#9a3412",
-                700: "#7c2d12"
-              }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: {
+              50: "#fdf4f0",
+              100: "#fbe7de",
+              500: "#c2410c",
+              600: "#9a3412",
+              700: "#7c2d12"
             }
           }
         }
-      };
-    });
+      }
+    };
   </script>
 
   <style>
@@ -148,7 +137,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
 
-  <!-- Dados estruturados -->
+  <!-- Dados estruturados: restaurante -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -169,26 +158,67 @@
       "addressCountry": "BR"
     },
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "18:00", "closes": "22:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "18:00", "closes": "23:00" }
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "18:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday", "Sunday"],
+        "opens": "18:00",
+        "closes": "23:00"
+      }
     ],
     "hasMap": "https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510",
-    "hasMenu": { "@type": "Menu", "name": "Cardápio La Empanadas" }
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Cardápio La Empanadas"
+    }
   }
   </script>
 
+  <!-- Dados estruturados: site -->
   <script type="application/ld+json">
-  { "@context": "https://schema.org", "@type": "WebSite", "name": "La Empanadas", "url": "https://laempanadas.com.br/" }
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "La Empanadas",
+    "url": "https://laempanadas.com.br/"
+  }
   </script>
 
+  <!-- Dados estruturados: FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Como faço meu pedido?", "acceptedAnswer": { "@type": "Answer", "text": "Escolha os itens do cardápio, abra o carrinho e finalize no WhatsApp." } },
-      { "@type": "Question", "name": "Qual o horário de atendimento?", "acceptedAnswer": { "@type": "Answer", "text": "Segunda a quinta, das 18h às 22h. Sexta, sábado e domingo, das 18h às 23h." } },
-      { "@type": "Question", "name": "O pedido é finalizado por onde?", "acceptedAnswer": { "@type": "Answer", "text": "O pedido segue para o WhatsApp para confirmação e finalização." } }
+      {
+        "@type": "Question",
+        "name": "Como faço meu pedido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Escolha os itens do cardápio, abra o carrinho e finalize no WhatsApp."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual o horário de atendimento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Segunda a quinta, das 18h às 22h. Sexta, sábado e domingo, das 18h às 23h."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O pedido é finalizado por onde?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O pedido segue para o WhatsApp para confirmação e finalização."
+        }
+      }
     ]
   }
   </script>
