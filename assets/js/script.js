@@ -426,22 +426,20 @@ function iniciarAutoplayCarrossel() {
     }
   }, 5000);
 }
+
 async function inicializarAutocomplete() {
   const autocompleteElement = document.getElementById("endereco-cliente");
 
   if (autocompleteElement) {
-    // Importa a nova biblioteca "places" exigida pelo Google
+    // Importa a nova biblioteca de mapas
     const { PlaceAutocompleteElement } = await google.maps.importLibrary("places");
-
-    // Restringe as buscas para o Brasil
-    autocompleteElement.componentRestrictions = { country: "br" };
 
     // Escuta quando o usuário escolhe um endereço sugerido
     autocompleteElement.addEventListener("gmp-placeselect", async (event) => {
       const place = event.place;
       
       // Busca os detalhes e formata o endereço
-      await place.fetchFields({ fields: ["formattedAddress", "location"] });
+      await place.fetchFields({ fields: ["formattedAddress"] });
 
       // Atualiza o valor para salvar no seu formulário
       autocompleteElement.value = place.formattedAddress;

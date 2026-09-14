@@ -615,12 +615,12 @@
           <input type="text" id="nome-cliente" placeholder="Como te chamamos?" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required>
         </div>
 
-        <!-- ⚠️ AQUI ESTÁ A ALTERAÇÃO: Trocamos o <input> pela tag inteligente do Google -->
         <div class="form-control">
           <label class="label py-1" for="endereco-cliente"><span class="label-text font-semibold text-gray-700 text-xs">Endereço de Entrega</span></label>
           <gmp-place-autocomplete 
             id="endereco-cliente" 
             placeholder="Digite a rua, número e cidade..." 
+            requested-region="BR"
             class="w-full text-sm bg-gray-50 border-gray-200"
             style="border: 1px solid #e5e7eb; padding: 0.4rem 0.75rem; border-radius: 0.5rem;"
             required
