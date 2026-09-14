@@ -53,6 +53,12 @@
   <!-- NOVA LINHA: Carrega a inteligência de endereço do Google Maps -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiwED8BFzPqlbIcBciW1XeZ6NKAVr-gJ4&libraries=places&callback=inicializarAutocomplete" async defer></script>
 
+   <style>
+  /* Faz as sugestões de endereços ficarem por cima do modal do carrinho */
+  .pac-container {
+    z-index: 99999 !important;
+  }
+</style>
 
 
   <!-- Dados estruturados: restaurante -->
@@ -588,7 +594,6 @@
       </div>
     </div>
   </footer>
-
   <dialog id="modal_carrinho" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box p-6 bg-white max-w-md">
       <div class="flex justify-between items-center border-b border-gray-100 pb-3">
@@ -611,9 +616,16 @@
           <input type="text" id="nome-cliente" placeholder="Como te chamamos?" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required>
         </div>
 
+        <!-- ⚠️ AQUI ESTÁ A ALTERAÇÃO: Trocamos o <input> pela tag inteligente do Google -->
         <div class="form-control">
           <label class="label py-1" for="endereco-cliente"><span class="label-text font-semibold text-gray-700 text-xs">Endereço de Entrega</span></label>
-          <input type="text" id="endereco-cliente" placeholder="Rua, número, bairro, cidade e complemento" class="input input-bordered input-sm w-full focus:outline-terracotta-500 bg-gray-50 border-gray-200" required>
+          <gmp-place-autocomplete 
+            id="endereco-cliente" 
+            placeholder="Digite a rua, número e cidade..." 
+            class="w-full text-sm bg-gray-50 border-gray-200"
+            style="border: 1px solid #e5e7eb; padding: 0.4rem 0.75rem; border-radius: 0.5rem;"
+            required
+          ></gmp-place-autocomplete>
         </div>
 
         <div class="form-control">
