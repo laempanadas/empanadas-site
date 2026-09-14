@@ -426,3 +426,19 @@ function iniciarAutoplayCarrossel() {
     }
   }, 5000);
 }
+function inicializarAutocomplete() {
+  const campoEndereco = document.getElementById("endereco-cliente");
+  if (campoEndereco) {
+    const autocomplete = new google.maps.places.Autocomplete(campoEndereco, {
+      componentRestrictions: { country: "br" },
+      fields: ["address_components", "formatted_address", "geometry"],
+      types: ["address"]
+    });
+    autocomplete.addListener("place_changed", () => {
+      const place = autocomplete.getPlace();
+      if (place.geometry) {
+        campoEndereco.value = place.formatted_address;
+      }
+    });
+  }
+}
