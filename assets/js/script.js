@@ -426,19 +426,25 @@ function iniciarAutoplayCarrossel() {
     }
   }, 5000);
 }
-function inicializarAutocomplete() {
-  const campoEndereco = document.getElementById("endereco-cliente");
-  if (campoEndereco) {
-    const autocomplete = new google.maps.places.Autocomplete(campoEndereco, {
-      componentRestrictions: { country: "br" },
-      fields: ["address_components", "formatted_address", "geometry"],
-      types: ["address"]
-    });
-    autocomplete.addListener("place_changed", () => {
-      const place = autocomplete.getPlace();
-      if (place.geometry) {
-        campoEndereco.value = place.formatted_address;
-      }
+async function inicializarAutocomplete() {
+  const autocompleteElement = document.getElementById("endereco-cliente");
+
+  if (autocompleteElement) {
+    // Importa a nova biblioteca "places" exigida pelo Google
+    const { PlaceAutocompleteElement } = await google.maps.importLibrary("places");
+
+    // Restringe as buscas para o Brasil
+    autocompleteElement.componentRestrictions = { country: "br" };
+
+    // Escuta quando o usuário escolhe um endereço sugerido
+    autocompleteElement.addEventListener("gmp-placeselect", async (event) => {
+      const place = event.place;
+      
+      // Busca os detalhes e formata o endereço
+      await place.fetchFields({ fields: ["formattedAddress", "location"] });
+
+      // Atualiza o valor para salvar no seu formulário
+      autocompleteElement.value = place.formattedAddress;
     });
   }
 }
