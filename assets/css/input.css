@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@source "../../*.html";
+@source "../../assets/js/**/*.js";
+
+@theme {
+  --color-terracotta-50: #fdf4f0;
+  --color-terracotta-100: #fbe7de;
+  --color-terracotta-500: #c2410c;
+  --color-terracotta-600: #9a3412;
+  --color-terracotta-700: #7c2d12;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

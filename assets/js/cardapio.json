@@ -3,48 +3,17 @@
     { "id": "salgada", "nome": "Empanadas Salgadas" },
     { "id": "doce", "nome": "Empanadas Doces" },
     { "id": "combo", "nome": "Combos" },
-    { "id": "bebida", "nome": "Bebidas" }
+    { "id": "bebida", "nome": "Bebidas" },
+    { "id": "vinho", "nome": "Vinhos" }
   ],
   "itens": [
     {
-      "id": "emp_carne_ovo",
-      "nome": "Empanada de Carne com Ovos",
-      "descricao": "Tradicional recheio de carne bovina moída com ovos cozidos picados.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/CARNE.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_frango_espinafre",
-      "nome": "Empanada de Frango com Espinafre e Cheddar",
-      "descricao": "Combinação suave de peito de frango, folhas frescas de espinafre e cheddar.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/FRANGO.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_calabresa_cream",
-      "nome": "Empanada de Calabresa com Cream Cheese",
-      "descricao": "Calabresa moída de alta qualidade unida à cremosidade do cream cheese.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/CALABRESA.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_espinafre_ricota",
-      "nome": "Empanada de Espinafre com Ricota e Tomate Seco",
-      "descricao": "Recheio vegetariano leve de espinafre fresco, ricota macia e tomate seco.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/ESPINAFRE-RICOTA.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_bacon_cheeseburger",
-      "nome": "Empanada Bacon Cheeseburger",
-      "descricao": "Hambúrguer bovino, queijo derretido e pedaços crocantes de bacon frito.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/CHEESBACON.webp",
-      "categoriaId": "salgada"
+      "id": "emp_romeu",
+      "nome": "Empanada Romeu e Julieta",
+      "descricao": "Massa recheada com goiabada cascão e muçarela.",
+      "preco": 14.50,
+      "imagem": "assets/js/img/ROMEU.webp",
+      "categoriaId": "doce"
     },
     {
       "id": "emp_queijo_tomate",
@@ -63,22 +32,6 @@
       "categoriaId": "salgada"
     },
     {
-      "id": "emp_escarola_queijo",
-      "nome": "Empanada de Escarola com Queijo",
-      "descricao": "Escarola refogada no alho e azeite com uma generosa camada de queijo.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/ESCAROLA.webp",
-      "categoriaId": "salgada"
-    },
-    {
-      "id": "emp_atum_queijo",
-      "nome": "Empanada de Atum com Queijo",
-      "descricao": "Atum sólido conservado mesclado com queijo muçarela derretido.",
-      "preco": 14.00,
-      "imagem": "assets/js/img/ATUM.webp",
-      "categoriaId": "salgada"
-    },
-    {
       "id": "emp_palmito",
       "nome": "Empanada de Palmito",
       "descricao": "Recheio cremoso com pedaços macios de palmito pupunha.",
@@ -87,7 +40,55 @@
       "categoriaId": "salgada"
     },
     {
-      "id": "emp_chocolate_morango",
+      "id": "emp_hamburguer",
+      "nome": "Empanada de Carne com Ovos",
+      "descricao": "Tradicional recheio de carne bovina moída com ovos cozidos picados.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/CARNE.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "emp_ Frango com Espinafre e Cheddar",
+      "nome": "Empanada de Frango com Espinafre e Cheddar",
+      "descricao": "Combinação suave de peito de frango, folhas frescas de espinafre e cheddar.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/FRANGO.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "emp_Espinafre com Ricota e Tomate Seco",
+      "nome": "Empanada de Espinafre com Ricota e Tomate Seco",
+      "descricao": "Recheio vegetariano leve de espinafre fresco, ricota macia e tomate seco.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/ESPINAFRE-RICOTA.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "emp_Escarola com Queijo",
+      "nome": "Empanada de Escarola com Queijo",
+      "descricao": "Escarola refogada no alho e azeite com uma generosa camada de queijo.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/ESCAROLA.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "emp_Bacon Cheeseburger",
+      "nome": "Empanada Bacon Cheeseburger",
+      "descricao": "Hambúrguer bovino, queijo derretido e pedaços crocantes de bacon frito.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/CHEESBACON.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "empcalabresa",
+      "nome": "Empanada de Calabresa com Cream Cheese",
+      "descricao": "Calabresa moída de alta qualidade unida à cremosidade do cream cheese.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/CALABRESA.webp",
+      "categoriaId": "salgada"
+    },
+    {
+      "id": "empchocolate",
       "nome": "Empanada de Chocolate ao Leite com Morango",
       "descricao": "Saborosa combinação de chocolate ao leite cremoso com pedaços de morango.",
       "preco": 16.90,
@@ -95,27 +96,27 @@
       "categoriaId": "doce"
     },
     {
-      "id": "emp_romeu_julieta",
-      "nome": "Empanada Romeu e Julieta",
-      "descricao": "Massa recheada com goiabada cascão e muçarela.",
-      "preco": 14.50,
-      "imagem": "assets/js/img/ROMEU.webp",
-      "categoriaId": "doce"
+      "id": "emp_Atum",
+      "nome": "Empanada de Atum com Queijo",
+      "descricao": "Atum sólido conservado mesclado com queijo muçarela derretido.",
+      "preco": 14.00,
+      "imagem": "assets/js/img/ATUM.webp",
+      "categoriaId": "salgada"
     },
     {
       "id": "combo_coca",
       "nome": "Combo Coca-Cola",
       "descricao": "Contém 4 Empanadas à sua escolha + 1 Refrigerante Coca-Cola de 600ml.",
-      "preco": 61.90,
-      "imagem": "https://images.unsplash.com/photo-1619860860774-1e2e17343432?w=500&auto=format&fit=crop&q=60",
+      "preco": 62.90,
+      "imagem": "assets/js/img/empanada_combo_coca_600ml.webp",
       "categoriaId": "combo"
     },
     {
       "id": "combo_familia",
-      "nome": "Combo Família (9 Empanadas Assadas)",
-      "descricao": "9 empanadas assadas à sua escolha para dividir com quem você gosta.",
+      "nome": "Combo Família (8 Empanadas Assadas)",
+      "descricao": "8 empanadas assadas à sua escolha para dividir com quem você gosta.",
       "preco": 102.00,
-      "imagem": "https://images.unsplash.com/photo-1619860860774-1e2e17343432?w=500&auto=format&fit=crop&q=60",
+      "imagem": "assets/js/img/empanadas_combo_8.webp",
       "categoriaId": "combo"
     },
     {
@@ -123,22 +124,46 @@
       "nome": "Combo 4 Empanadas",
       "descricao": "Leve 4 empanadas assadas de qualquer sabor com preço promocional.",
       "preco": 52.90,
-      "imagem": "https://images.unsplash.com/photo-1619860860774-1e2e17343432?w=500&auto=format&fit=crop&q=60",
+      "imagem": "assets/js/img/empanadas_combo_4.webp",
       "categoriaId": "combo"
     },
     {
-      "id": "beb_coca_600",
-      "nome": "Coca-Cola Original 600ml",
-      "descricao": "Garrafa de 600ml ideal para acompanhar sua empanada.",
-      "preco": 9.00,
-      "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
+      "id": "combo_quatro_ovomaltine",
+      "nome": "Combo 4 Empanadas + Tortinha de Ovomaltine",
+      "descricao": "Leve 4 empanadas assadas de qualquer sabor com preço promocional + Tortinha de Ovomaltine.",
+      "preco": 69.00,
+      "imagem": "assets/js/img/COMBO_4_OVOMALTINE.webp",
+      "categoriaId": "combo"
+    },
+    {
+      "id": "combo_quatro_cheesecake",
+      "nome": "Combo 4 Empanadas + Cheesecake de Frutas Vermelhas",
+      "descricao": "Leve 4 empanadas assadas de qualquer sabor com preço promocional + Cheesecake de Frutas Vermelhas.",
+      "preco": 69.00,
+      "imagem": "assets/js/img/COMBO-4-EMPANADAS-CHEESECAKE-_1_.webp",
+      "categoriaId": "combo"
+    },
+    {
+      "id": "beb_coca_original_350",
+      "nome": "Coca-Cola Original 350ml",
+      "descricao": "Lata de 350ml de Coca-Cola sabor original gelada.",
+      "preco": 8.50,
+      "imagem": "assets/js/img/coca-cola-lata-350ml.avif",
       "categoriaId": "bebida"
     },
     {
       "id": "beb_coca_zero_350",
       "nome": "Coca-Cola sem Açúcar 350ml",
       "descricao": "Lata de 350ml de Coca-Cola sabor zero açúcar gelada.",
-      "preco": 7.00,
+      "preco": 8.50,
+      "imagem": "assets/js/img/cocacolazero.avif",
+      "categoriaId": "bebida"
+    },
+    {
+      "id": "beb_coca_600",
+      "nome": "Coca-Cola Original 600ml",
+      "descricao": "Garrafa de 600ml ideal para acompanhar sua empanada.",
+      "preco": 15.00,
       "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
       "categoriaId": "bebida"
     },
@@ -146,7 +171,7 @@
       "id": "beb_coca_zero_600",
       "nome": "Coca-Cola Zero 600ml",
       "descricao": "Garrafa de 600ml de Coca-Cola sabor zero açúcar.",
-      "preco": 9.00,
+      "preco": 15.00,
       "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
       "categoriaId": "bebida"
     },
@@ -154,8 +179,16 @@
       "id": "beb_coca_2l",
       "nome": "Coca-Cola 2L",
       "descricao": "Tamanho família. Garrafa de 2 litros.",
-      "preco": 16.00,
+      "preco": 25.00,
       "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
+      "categoriaId": "bebida"
+    },
+    {
+      "id": "beb_coca_zero_2l",
+      "nome": "Coca-Cola zero 2L",
+      "descricao": "Tamanho família. Garrafa de 2 litros.",
+      "preco": 25.00,
+      "imagem": "assets/js/img/coca-cola-zero-2l.avif",
       "categoriaId": "bebida"
     },
     {
