@@ -40,8 +40,8 @@
       "categoriaId": "salgada"
     },
     {
-      "id": "emp_hamburguer",
-      "nome": "Empanada de Carne com Ovos",
+      "id": "emp_carne",
+      "nome": "Empanada Carne com Ovo",
       "descricao": "Tradicional recheio de carne bovina moída com ovos cozidos picados.",
       "preco": 14.00,
       "imagem": "assets/js/img/CARNE.webp",
@@ -72,8 +72,8 @@
       "categoriaId": "salgada"
     },
     {
-      "id": "emp_Bacon Cheeseburger",
-      "nome": "Empanada Bacon Cheeseburger",
+      "id": "emp_hamburguer",
+      "nome": "Empanada Hamburguer",
       "descricao": "Hambúrguer bovino, queijo derretido e pedaços crocantes de bacon frito.",
       "preco": 14.00,
       "imagem": "assets/js/img/CHEESBACON.webp",
