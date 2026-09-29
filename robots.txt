@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+<<<<<<< HEAD
+=======
+# Bloqueio de rotas e scripts internos
+Disallow: /api/
+Disallow: /admin/
+Disallow: /checkout/success/
+
+# Sitemap Oficial
+>>>>>>> 3e86fc0 (feat(seo-analytics): adiciona GA4, schema markup e atualiza paginas)
 Sitemap: https://laempanadas.com.br/sitemap.xml
