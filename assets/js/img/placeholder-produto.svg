@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Imagem indisponível">
+  <rect width="400" height="300" fill="#fbe7de"/>
+  <path d="M130 185c0-38 31-68 70-68s70 30 70 68z" fill="#fdf4f0" stroke="#c2410c" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M140 185h120" stroke="#c2410c" stroke-width="6" stroke-linecap="round"/>
+  <path d="M152 170q8-10 16 0t16 0t16 0t16 0t16 0t16 0" fill="none" stroke="#c2410c" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+  <text x="200" y="230" text-anchor="middle" font-family="Poppins, sans-serif" font-size="16" font-weight="600" fill="#9a3412">La Empanadas</text>
+</svg>

@@ -1,4 +1,16 @@
 const NUMERO_WHATSAPP = "551126690644";
+const IMAGEM_FALLBACK = "assets/js/img/placeholder-produto.svg";
+
+// Horário de funcionamento por dia da semana (0 = domingo), em horas de Brasília
+const HORARIOS_FUNCIONAMENTO = {
+  0: [18, 23],
+  1: [18, 22],
+  2: [18, 22],
+  3: [18, 22],
+  4: [18, 22],
+  5: [18, 23],
+  6: [18, 23]
+};
 
 let cardapioOriginal = { categorias: [], itens: [] };
 let carrinhoState = {};
@@ -6,6 +18,10 @@ let categoriaAtiva = "todos";
 
 document.addEventListener("DOMContentLoaded", async () => {
   configurarEventosDelegados();
+  configurarFallbackImagens();
+  atualizarStatusFuncionamento();
+  setInterval(atualizarStatusFuncionamento, 60000);
+  preencherAnoAtual();
   habilitarArrastarComMouse("categorias-container");
   iniciarAutoplayCarrossel();
 
@@ -99,6 +115,77 @@ function configurarEventosDelegados() {
   }
 }
 
+function configurarFallbackImagens() {
+  const aplicarFallback = (img) => {
+    if (img.dataset.fallbackAplicado) return;
+    img.dataset.fallbackAplicado = "true";
+    img.src = IMAGEM_FALLBACK;
+  };
+
+  // Captura erros de imagens que falharem depois que o script carregou
+  document.addEventListener("error", (event) => {
+    const img = event.target;
+    if (img instanceof HTMLImageElement && img.closest("#cardapio-grid")) {
+      aplicarFallback(img);
+    }
+  }, true);
+
+  // Imagens que já falharam antes do script rodar
+  document.querySelectorAll("#cardapio-grid img").forEach((img) => {
+    if (img.complete && img.naturalWidth === 0) {
+      aplicarFallback(img);
+    }
+  });
+}
+
+function estaAberto(data = new Date()) {
+  const partes = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Sao_Paulo",
+    weekday: "short",
+    hour: "numeric",
+    minute: "numeric",
+    hourCycle: "h23"
+  }).formatToParts(data);
+
+  const valor = (tipo) => partes.find((parte) => parte.type === tipo).value;
+  const dia = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(valor("weekday"));
+  const horaDecimal = Number(valor("hour")) + Number(valor("minute")) / 60;
+  const [abre, fecha] = HORARIOS_FUNCIONAMENTO[dia];
+
+  return horaDecimal >= abre && horaDecimal < fecha;
+}
+
+function atualizarStatusFuncionamento() {
+  const aberto = estaAberto();
+
+  document.querySelectorAll("[data-status-funcionamento]").forEach((tag) => {
+    tag.classList.toggle("bg-emerald-100", aberto);
+    tag.classList.toggle("text-emerald-800", aberto);
+    tag.classList.toggle("border-emerald-300", aberto);
+    tag.classList.toggle("bg-gray-100", !aberto);
+    tag.classList.toggle("text-gray-700", !aberto);
+    tag.classList.toggle("border-gray-300", !aberto);
+
+    const dot = tag.querySelector("[data-status-dot]");
+    if (dot) {
+      dot.classList.toggle("bg-emerald-600", aberto);
+      dot.classList.toggle("animate-pulse", aberto);
+      dot.classList.toggle("bg-gray-400", !aberto);
+    }
+
+    const texto = tag.querySelector("[data-status-texto]");
+    if (texto) {
+      texto.textContent = aberto ? "Aberto agora" : "Fechado";
+    }
+  });
+}
+
+function preencherAnoAtual() {
+  document.querySelectorAll("[data-ano-atual]").forEach((elemento) => {
+    elemento.textContent = new Date().getFullYear();
+  });
+}
+
 function atualizarEstiloBotoesCategoria() {
   document.querySelectorAll("[data-categoria-filtro]").forEach((botao) => {
     const ativo = botao.dataset.categoriaFiltro === categoriaAtiva;
@@ -183,7 +270,7 @@ function atualizarControleItemIndividual(id) {
         type="button"
         data-action="remove"
         data-id="${id}"
-        class="btn btn-xs btn-circle bg-gray-100 text-gray-800 border-none hover:bg-gray-200 inline-flex items-center justify-center"
+        class="btn btn-circle w-10 h-10 min-h-10 bg-gray-100 text-gray-800 border-none hover:bg-gray-200 inline-flex items-center justify-center transition-all duration-200 active:scale-95"
         aria-label="Remover uma unidade"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
@@ -197,7 +284,7 @@ function atualizarControleItemIndividual(id) {
         type="button"
         data-action="add"
         data-id="${id}"
-        class="btn btn-xs btn-circle bg-terracotta-500 text-white border-none hover:bg-terracotta-600 inline-flex items-center justify-center"
+        class="btn btn-circle w-10 h-10 min-h-10 bg-terracotta-500 text-white border-none hover:bg-terracotta-600 inline-flex items-center justify-center transition-all duration-200 active:scale-95"
         aria-label="Adicionar uma unidade"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
@@ -209,7 +296,7 @@ function atualizarControleItemIndividual(id) {
         type="button"
         data-action="add"
         data-id="${id}"
-        class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4"
+        class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95"
       >
         Adicionar
       </button>
@@ -257,6 +344,9 @@ function atualizarIndicadores() {
       bottomBar.classList.add("translate-y-full");
     }
   }
+
+  // Evita que a barra fixa cubra o rodapé quando há itens no carrinho
+  document.body.classList.toggle("pb-24", quantidadeTotal > 0);
 }
 
 function abrirCarrinho() {

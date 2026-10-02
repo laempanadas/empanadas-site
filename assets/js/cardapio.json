@@ -12,7 +12,7 @@
       "nome": "Empanada Romeu e Julieta",
       "descricao": "Massa recheada com goiabada cascão e muçarela.",
       "preco": 14.50,
-      "imagem": "assets/js/img/ROMEU.webp",
+      "imagem": "assets/js/img/empanada_romeu.webp",
       "categoriaId": "doce"
     },
     {
@@ -20,7 +20,7 @@
       "nome": "Empanada de Queijo, Tomate, Manjericão e Orégano",
       "descricao": "Leveza do estilo caprese com queijo, tomates frescos picados e manjericão aromático.",
       "preco": 14.00,
-      "imagem": "assets/js/img/QUEIJO-TOMATE.webp",
+      "imagem": "assets/js/img/empanada_queijo.webp",
       "categoriaId": "salgada"
     },
     {
@@ -28,7 +28,7 @@
       "nome": "Empanada de Queijo com Cebola Caramelizada",
       "descricao": "Contraste agridoce do queijo derretido com cebolas lentamente douradas.",
       "preco": 14.00,
-      "imagem": "assets/js/img/QUEIJO-CEBOLA.webp",
+      "imagem": "assets/js/img/empanada_queijo_cebola.webp",
       "categoriaId": "salgada"
     },
     {
@@ -36,15 +36,15 @@
       "nome": "Empanada de Palmito",
       "descricao": "Recheio cremoso com pedaços macios de palmito pupunha.",
       "preco": 14.00,
-      "imagem": "assets/js/img/PALMITO.webp",
+      "imagem": "assets/js/img/empanada_palmito.webp",
       "categoriaId": "salgada"
     },
     {
-      "id": "emp_hamburguer",
+      "id": "emp_carne",
       "nome": "Empanada de Carne com Ovos",
       "descricao": "Tradicional recheio de carne bovina moída com ovos cozidos picados.",
       "preco": 14.00,
-      "imagem": "assets/js/img/CARNE.webp",
+      "imagem": "assets/js/img/empanada_carne.webp",
       "categoriaId": "salgada"
     },
     {
@@ -52,7 +52,7 @@
       "nome": "Empanada de Frango com Espinafre e Cheddar",
       "descricao": "Combinação suave de peito de frango, folhas frescas de espinafre e cheddar.",
       "preco": 14.00,
-      "imagem": "assets/js/img/FRANGO.webp",
+      "imagem": "assets/js/img/empanada_frango_cheddar.webp",
       "categoriaId": "salgada"
     },
     {
@@ -60,7 +60,7 @@
       "nome": "Empanada de Espinafre com Ricota e Tomate Seco",
       "descricao": "Recheio vegetariano leve de espinafre fresco, ricota macia e tomate seco.",
       "preco": 14.00,
-      "imagem": "assets/js/img/ESPINAFRE-RICOTA.webp",
+      "imagem": "assets/js/img/empanada_espinafre.webp",
       "categoriaId": "salgada"
     },
     {
@@ -68,7 +68,7 @@
       "nome": "Empanada de Escarola com Queijo",
       "descricao": "Escarola refogada no alho e azeite com uma generosa camada de queijo.",
       "preco": 14.00,
-      "imagem": "assets/js/img/ESCAROLA.webp",
+      "imagem": "assets/js/img/empanada_escarola.webp",
       "categoriaId": "salgada"
     },
     {
@@ -76,7 +76,7 @@
       "nome": "Empanada Bacon Cheeseburger",
       "descricao": "Hambúrguer bovino, queijo derretido e pedaços crocantes de bacon frito.",
       "preco": 14.00,
-      "imagem": "assets/js/img/CHEESBACON.webp",
+      "imagem": "assets/js/img/empanada_bacon_cheesburguer.webp",
       "categoriaId": "salgada"
     },
     {
@@ -84,7 +84,7 @@
       "nome": "Empanada de Calabresa com Cream Cheese",
       "descricao": "Calabresa moída de alta qualidade unida à cremosidade do cream cheese.",
       "preco": 14.00,
-      "imagem": "assets/js/img/CALABRESA.webp",
+      "imagem": "assets/js/img/empanada_calabresa.webp",
       "categoriaId": "salgada"
     },
     {
@@ -92,7 +92,7 @@
       "nome": "Empanada de Chocolate ao Leite com Morango",
       "descricao": "Saborosa combinação de chocolate ao leite cremoso com pedaços de morango.",
       "preco": 16.90,
-      "imagem": "assets/js/img/CHOCOLATE.webp",
+      "imagem": "assets/js/img/empanada_chocolate_morango.webp",
       "categoriaId": "doce"
     },
     {
@@ -100,7 +100,7 @@
       "nome": "Empanada de Atum com Queijo",
       "descricao": "Atum sólido conservado mesclado com queijo muçarela derretido.",
       "preco": 14.00,
-      "imagem": "assets/js/img/ATUM.webp",
+      "imagem": "assets/js/img/empanada_atum.webp",
       "categoriaId": "salgada"
     },
     {
@@ -148,7 +148,7 @@
       "nome": "Coca-Cola Original 350ml",
       "descricao": "Lata de 350ml de Coca-Cola sabor original gelada.",
       "preco": 8.50,
-      "imagem": "assets/js/img/coca-cola-lata-350ml.avif",
+      "imagem": "assets/js/img/coca_cola_350ml.webp",
       "categoriaId": "bebida"
     },
     {
@@ -156,7 +156,7 @@
       "nome": "Coca-Cola sem Açúcar 350ml",
       "descricao": "Lata de 350ml de Coca-Cola sabor zero açúcar gelada.",
       "preco": 8.50,
-      "imagem": "assets/js/img/cocacolazero.avif",
+      "imagem": "assets/js/img/coca_cola_zero_350ml.webp",
       "categoriaId": "bebida"
     },
     {
@@ -164,7 +164,7 @@
       "nome": "Coca-Cola Original 600ml",
       "descricao": "Garrafa de 600ml ideal para acompanhar sua empanada.",
       "preco": 15.00,
-      "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
+      "imagem": "assets/js/img/coca_cola_original_600ml.webp",
       "categoriaId": "bebida"
     },
     {
@@ -172,7 +172,7 @@
       "nome": "Coca-Cola Zero 600ml",
       "descricao": "Garrafa de 600ml de Coca-Cola sabor zero açúcar.",
       "preco": 15.00,
-      "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
+      "imagem": "assets/js/img/coca_cola_zero_600ml.webp",
       "categoriaId": "bebida"
     },
     {
@@ -180,7 +180,7 @@
       "nome": "Coca-Cola 2L",
       "descricao": "Tamanho família. Garrafa de 2 litros.",
       "preco": 25.00,
-      "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60",
+      "imagem": "assets/js/img/coca_cola_original_2lts.webp",
       "categoriaId": "bebida"
     },
     {
@@ -188,7 +188,7 @@
       "nome": "Coca-Cola zero 2L",
       "descricao": "Tamanho família. Garrafa de 2 litros.",
       "preco": 25.00,
-      "imagem": "assets/js/img/coca-cola-zero-2l.avif",
+      "imagem": "assets/js/img/coca_cola_zero_2lts.webp",
       "categoriaId": "bebida"
     },
     {
