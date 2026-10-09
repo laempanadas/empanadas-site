@@ -7,4 +7,4 @@ Disallow: /admin/
 Disallow: /checkout/success/
 
 # Sitemap Oficial
-Sitemap: https://laempanadas.com.br/sitemap.xml
+Sitemap: https://www.laempanadas.com.br/sitemap.xml

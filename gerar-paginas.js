@@ -41,8 +41,8 @@ async function main() {
     try {
       const categoria = CATEGORIAS[item.categoriaId] || { nome: 'Outros', slug: 'outros' };
       const slugProduto = slugify(item.nome) + '-' + item.id;
-      const canonicalUrl = 'https://laempanadas.com.br/produtos/' + slugProduto + '.html';
-      const imagemUrl = item.imagem.startsWith('http') ? item.imagem : 'https://laempanadas.com.br/' + item.imagem;
+      const canonicalUrl = 'https://www.laempanadas.com.br/produtos/' + slugProduto + '.html';
+      const imagemUrl = item.imagem.startsWith('http') ? item.imagem : 'https://www.laempanadas.com.br/' + item.imagem;
       
       let html = template
         .replace(/\{\{PRODUTO_NOME\}\}/g, item.nome)
@@ -95,37 +95,37 @@ async function main() {
   sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
   sitemap += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n';
   sitemap += '  <url>\n';
-  sitemap += '    <loc>https://laempanadas.com.br/</loc>\n';
+  sitemap += '    <loc>https://www.laempanadas.com.br/</loc>\n';
   sitemap += '    <lastmod>' + hoje + '</lastmod>\n';
   sitemap += '    <changefreq>daily</changefreq>\n';
   sitemap += '    <priority>1.0</priority>\n';
   sitemap += '  </url>\n';
   sitemap += '  <url>\n';
-  sitemap += '    <loc>https://laempanadas.com.br/politica.html</loc>\n';
+  sitemap += '    <loc>https://www.laempanadas.com.br/politica.html</loc>\n';
   sitemap += '    <lastmod>' + hoje + '</lastmod>\n';
   sitemap += '    <changefreq>monthly</changefreq>\n';
   sitemap += '    <priority>0.5</priority>\n';
   sitemap += '  </url>\n';
   sitemap += '  <url>\n';
-  sitemap += '    <loc>https://laempanadas.com.br/termos.html</loc>\n';
+  sitemap += '    <loc>https://www.laempanadas.com.br/termos.html</loc>\n';
   sitemap += '    <lastmod>' + hoje + '</lastmod>\n';
   sitemap += '    <changefreq>monthly</changefreq>\n';
   sitemap += '    <priority>0.5</priority>\n';
   sitemap += '  </url>\n';
   sitemap += '  <url>\n';
-  sitemap += '    <loc>https://laempanadas.com.br/exclusao.html</loc>\n';
+  sitemap += '    <loc>https://www.laempanadas.com.br/exclusao.html</loc>\n';
   sitemap += '    <lastmod>' + hoje + '</lastmod>\n';
   sitemap += '    <changefreq>monthly</changefreq>\n';
   sitemap += '    <priority>0.5</priority>\n';
   sitemap += '  </url>\n';
   sitemap += '  <url>\n';
-  sitemap += '    <loc>https://laempanadas.com.br/#cardapio</loc>\n';
+  sitemap += '    <loc>https://www.laempanadas.com.br/#cardapio</loc>\n';
   sitemap += '    <lastmod>' + hoje + '</lastmod>\n';
   sitemap += '    <changefreq>weekly</changefreq>\n';
   sitemap += '    <priority>0.8</priority>\n';
   sitemap += '  </url>\n';
   sitemap += '  <url>\n';
-  sitemap += '    <loc>https://laempanadas.com.br/produtos</loc>\n';
+  sitemap += '    <loc>https://www.laempanadas.com.br/produtos</loc>\n';
   sitemap += '    <lastmod>' + hoje + '</lastmod>\n';
   sitemap += '    <changefreq>weekly</changefreq>\n';
   sitemap += '    <priority>0.8</priority>\n';
