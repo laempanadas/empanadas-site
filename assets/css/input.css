@@ -12,9 +12,78 @@
   --color-terracotta-700: #7c2d12;
 }
 
+/* Opção 1 aprovada: Terracota da marca (preview-cores.html). */
+:root {
+  --page: #FFF8F2;
+  --header: #fff;
+  --header-texto: #1c1917;
+  --borda: #FDE3D3;
+  --chip: #FFF1E8;
+  --chip-texto: #7C2D12;
+  --primaria: #C2410C;
+  --card: #fff;
+  --titulo: #1c1917;
+  --texto-suave: #78716c;
+  --preco: #9A3412;
+  --cta: #C2410C;
+  --cta-texto: #fff;
+  --footer: #7C2D12;
+  --footer-texto: #FED7AA;
+  --footer-titulo: #fff;
+  --footer-borda: rgba(255,255,255,.14);
+  --logo-bg: #fff;
+  --logo-pad: 4px;
+  --social-bg: rgba(255,255,255,.08);
+  --social-icone-bg: #fff;
+  --social-icone: #C2410C;
+  --rota-bg: #fff;
+  --rota-texto: #7C2D12;
+  --subfooter: #6A250F;
+}
+
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--page);
+  color: var(--titulo);
 }
+header, #categorias-container { background-color: var(--header); color: var(--header-texto); }
+#categorias-container [data-categoria-filtro] { background-color: var(--chip); color: var(--chip-texto); }
+#categorias-container [aria-pressed="true"],
+#categorias-container .bg-terracotta-500 { background-color: var(--primaria); color: white; }
+#cardapio-grid article, .faq-item { background-color: var(--card); border-color: var(--borda); }
+#cardapio-grid h3, .faq-item summary { color: var(--titulo); }
+#cardapio-grid .card-body p { color: var(--texto-suave); }
+#cardapio-grid .text-terracotta-600 { color: var(--preco); }
+.faq-item summary > span { background-color: var(--chip); color: var(--primaria); }
+.btn.bg-terracotta-500, main .btn.bg-green-600, #checkout-form .btn.bg-green-600 {
+  background-color: var(--primaria);
+  color: white;
+}
+.btn.bg-terracotta-500:hover, main .btn.bg-green-600:hover, #checkout-form .btn.bg-green-600:hover {
+  background-color: var(--preco);
+}
+#bottom-bar { background-color: var(--cta); border-color: var(--cta); color: var(--cta-texto); }
+#bottom-bar span { color: var(--cta-texto); }
+#bottom-bar .btn { background-color: white; color: var(--primaria); }
+#bottom-bar .btn:hover { background-color: var(--chip); }
+/* !important apenas para sobrepor as cores inline do template legado. */
+footer { background-color: var(--footer) !important; color: var(--footer-texto); border-color: var(--footer-borda); }
+footer :is(p, address, dt, a, .text-gray-600, .text-gray-700, .text-stone-500, .text-stone-600) { color: var(--footer-texto); }
+footer :is(h2, h3, dd, .font-bold, address > span) { color: var(--footer-titulo); }
+footer :is(dl, section.bg-white) { background-color: var(--social-bg); border-color: var(--footer-borda); }
+footer [class*="border-"] { border-color: var(--footer-borda); }
+footer > div:last-child { background-color: var(--subfooter) !important; }
+footer img { background-color: var(--logo-bg); padding: var(--logo-pad); border-radius: 8px; }
+footer a[href*="instagram.com"] { background-color: var(--social-bg); color: var(--footer-titulo); }
+footer a[href*="instagram.com"] > span { background-color: var(--social-icone-bg); color: var(--social-icone); }
+footer a[href*="google.com/maps"] { background-color: var(--rota-bg) !important; color: var(--rota-texto); }
+footer a[href*="google.com/maps"] :is(span, i, svg) { color: var(--rota-texto); }
+footer a:hover { text-decoration: underline; }
+footer [data-status-funcionamento].text-gray-700 { color: #374151; }
+footer [data-status-funcionamento].text-emerald-800 { color: #065f46; }
+footer [data-status-texto] { color: inherit; }
+:where(a, button, summary):focus-visible { outline: 2px solid var(--primaria); outline-offset: 3px; }
+footer :where(a, button):focus-visible, #bottom-bar button:focus-visible { outline-color: white; }
 
 .scrollbar-none::-webkit-scrollbar {
   display: none;
@@ -23,4 +92,25 @@ body {
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Abertura suave do FAQ (progressive enhancement: navegadores sem suporte abrem sem animação) */
+.faq-item {
+  interpolate-size: allow-keywords;
+}
+
+.faq-item::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size 0.25s ease, content-visibility 0.25s allow-discrete;
+}
+
+.faq-item[open]::details-content {
+  block-size: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item::details-content {
+    transition: none;
+  }
 }

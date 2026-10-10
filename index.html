@@ -32,13 +32,13 @@
   <meta property="og:title" content="La Empanadas | Empanadas Argentinas em Delivery">
   <meta property="og:description" content="Empanadas argentinas assadas diariamente. Faça seu pedido rápido via WhatsApp.">
   <meta property="og:url" content="https://www.laempanadas.com.br/">
-  <meta property="og:image" content="https://www.laempanadas.com.br/assets/og-image.jpg">
+  <meta property="og:image" content="https://www.laempanadas.com.br/assets/js/img/logo-la-empanadas.webp">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="La Empanadas | Empanadas Argentinas em Delivery">
   <meta name="twitter:description" content="Empanadas argentinas assadas diariamente. Pedido rápido via WhatsApp.">
-  <meta name="twitter:image" content="https://www.laempanadas.com.br/assets/og-image.jpg">
+  <meta name="twitter:image" content="https://www.laempanadas.com.br/assets/js/img/logo-la-empanadas.webp">
 
   <link rel="icon" href="/favicon.ico">
 
@@ -141,6 +141,22 @@
           "@type": "Answer",
           "text": "O pedido segue para o WhatsApp para confirmação e finalização."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o pagamento do meu pedido?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O pagamento é 100% seguro e pode ser realizado online via Mercado Pago (Pix ou Cartão de Crédito) ou finalizado diretamente pelo WhatsApp com a nossa equipe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso retirar o pedido no local?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Além do delivery, você pode retirar seu pedido na R. Marina, 474 - Campestre, Santo André - SP."
+        }
       }
     ]
   }
@@ -150,7 +166,7 @@
 <body class="bg-orange-50/40 text-gray-800 min-h-screen flex flex-col">
 
   <div class="sticky top-0 z-50 bg-white border-b border-orange-100 shadow-sm">
-    <div class="max-w-md mx-auto">
+    <div class="max-w-7xl mx-auto">
       <header class="navbar px-4 py-2 bg-white min-h-[64px]" role="banner">
         <div class="flex-1 flex items-center gap-3">
           <img
@@ -164,9 +180,9 @@
 
           <div>
             <h1 class="text-lg font-bold text-gray-900 leading-none">La Empanadas</h1>
-            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300 mt-1 w-fit">
-              <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block animate-pulse"></span>
-              Aberto agora
+            <span data-status-funcionamento class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300 mt-1 w-fit">
+              <span data-status-dot class="w-2 h-2 rounded-full bg-emerald-600 inline-block animate-pulse"></span>
+              <span data-status-texto>Aberto agora</span>
             </span>
             <span class="block text-[11px] text-gray-600 mt-1 leading-tight">Seg–Qui: 18h às 22h</span>
             <span class="block text-[11px] text-gray-600 leading-tight">Sex–Dom: 18h às 23h</span>
@@ -192,7 +208,8 @@
     </div>
   </div>
 
-  <main class="max-w-md mx-auto p-4 pb-28 flex-grow w-full" role="main">
+  <main class="max-w-7xl mx-auto px-4 pt-4 pb-12 flex-grow w-full" role="main">
+    <div class="max-w-2xl mx-auto">
     <section class="mb-4 text-center" aria-labelledby="sobre-title">
       <h2 id="sobre-title" class="text-sm font-bold text-gray-900">Empanadas argentinas assadas diariamente</h2>
       <p class="text-xs text-gray-600 mt-1">Escolha seus sabores, monte seu pedido e finalize pelo WhatsApp.</p>
@@ -211,7 +228,7 @@
       <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline border-terracotta-500 text-terracotta-600 rounded-xl">Pedir no WhatsApp</a>
     </section>
 
-    <section id="carousel-track" class="carousel w-full rounded-2xl h-44 shadow-md mb-6 relative overflow-hidden" aria-label="Promoções">
+    <section id="carousel-track" class="carousel w-full rounded-2xl h-44 md:h-64 shadow-md mb-8 relative overflow-hidden" aria-label="Promoções">
       <div id="slide1" class="carousel-item relative w-full h-full">
         <img src="assets/js/img/COMBO_4_OVOMALTINE.webp" width="448" height="176" class="w-full h-full object-cover brightness-[0.7]" alt="Combo 4 Empanadas mais Tortinha de Ovomaltine" fetchpriority="high" decoding="async">
         <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
@@ -238,275 +255,314 @@
         </div>
       </div>
     </section>
+    </div>
 
-    <section id="cardapio" aria-labelledby="cardapio-title">
-      <h2 id="cardapio-title" class="text-lg font-bold text-gray-900 mb-4">Cardápio</h2>
+    <section id="cardapio" class="scroll-mt-36" aria-labelledby="cardapio-title">
+      <h2 id="cardapio-title" class="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Cardápio</h2>
 
-      <div id="cardapio-grid" class="grid grid-cols-1 gap-4" aria-live="polite">
+      <div id="cardapio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 scroll-mt-36" aria-live="polite">
 
         <!-- Empanadas Doces -->
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="doce">
-          <figure class="w-1/3 min-w-[120px] h-full">
-            <img src="assets/js/img/ROMEU.webp" alt="Empanada Romeu e Julieta" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="doce">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100">
+            <img src="assets/js/img/empanada_romeu.webp" alt="Empanada Romeu e Julieta" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async">
           </figure>
-          <div class="card-body p-4 w-2/3 justify-between">
-            <div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada Romeu e Julieta</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Massa recheada com goiabada cascão e muçarela.</p></div>
-            <div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.50</span><div class="flex items-center gap-2" id="controls-emp-romeu" data-item-id="emp_romeu"><button data-action="add" data-id="emp_romeu" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2">
+            <div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada Romeu e Julieta</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Massa recheada com goiabada cascão e muçarela.</p></div>
+            <div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.50</span><div class="flex items-center gap-2" id="controls-emp-romeu" data-item-id="emp_romeu"><button data-action="add" data-id="emp_romeu" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div>
           </div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="doce">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CHOCOLATE.webp" alt="Empanada de Chocolate ao Leite com Morango" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Chocolate ao Leite com Morango</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Saborosa combinação de chocolate ao leite cremoso com pedaços de morango.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 16.90</span><div class="flex items-center gap-2" id="controls-emp-chocolate" data-item-id="empchocolate"><button data-action="add" data-id="empchocolate" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="doce">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_chocolate_morango.webp" alt="Empanada de Chocolate ao Leite com Morango" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Chocolate ao Leite com Morango</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Saborosa combinação de chocolate ao leite cremoso com pedaços de morango.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 16.90</span><div class="flex items-center gap-2" id="controls-emp-chocolate" data-item-id="empchocolate"><button data-action="add" data-id="empchocolate" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
         <!-- Empanadas Salgadas -->
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/QUEIJO-TOMATE.webp" alt="Empanada de Queijo, Tomate, Manjericão e Orégano" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Queijo, Tomate, Manjericão e Orégano</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Leveza do estilo caprese com queijo, tomates frescos picados e manjericão aromático.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-queijo-tomate" data-item-id="emp_queijo_tomate"><button data-action="add" data-id="emp_queijo_tomate" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_queijo.webp" alt="Empanada de Queijo, Tomate, Manjericão e Orégano" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Queijo, Tomate, Manjericão e Orégano</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Leveza do estilo caprese com queijo, tomates frescos picados e manjericão aromático.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-queijo-tomate" data-item-id="emp_queijo_tomate"><button data-action="add" data-id="emp_queijo_tomate" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/QUEIJO-CEBOLA.webp" alt="Empanada de Queijo com Cebola Caramelizada" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Queijo com Cebola Caramelizada</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Contraste agridoce do queijo derretido com cebolas lentamente douradas.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-queijo-cebola" data-item-id="emp_queijo_cebola"><button data-action="add" data-id="emp_queijo_cebola" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_queijo_cebola.webp" alt="Empanada de Queijo com Cebola Caramelizada" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Queijo com Cebola Caramelizada</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Contraste agridoce do queijo derretido com cebolas lentamente douradas.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-queijo-cebola" data-item-id="emp_queijo_cebola"><button data-action="add" data-id="emp_queijo_cebola" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/PALMITO.webp" alt="Empanada de Palmito" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Palmito</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Recheio cremoso com pedaços macios de palmito pupunha.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-palmito" data-item-id="emp_palmito"><button data-action="add" data-id="emp_palmito" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_palmito.webp" alt="Empanada de Palmito" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Palmito</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Recheio cremoso com pedaços macios de palmito pupunha.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-palmito" data-item-id="emp_palmito"><button data-action="add" data-id="emp_palmito" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CARNE.webp" alt="Empanada de Carne com Ovos" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Carne com Ovos</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Tradicional recheio de carne bovina moída com ovos cozidos picados.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-carne" data-item-id="emp_carne"><button data-action="add" data-id="emp_hamburguer" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_carne.webp" alt="Empanada de Carne com Ovos" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Carne com Ovos</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Tradicional recheio de carne bovina moída com ovos cozidos picados.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-carne" data-item-id="emp_carne"><button data-action="add" data-id="emp_carne" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/FRANGO.webp" alt="Empanada de Frango com Espinafre e Cheddar" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Frango com Espinafre e Cheddar</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Combinação suave de peito de frango, folhas frescas de espinafre e cheddar.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-frango-espinafre-cheddar" data-item-id="emp_ Frango com Espinafre e Cheddar"><button data-action="add" data-id="emp_ Frango com Espinafre e Cheddar" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_frango_cheddar.webp" alt="Empanada de Frango com Espinafre e Cheddar" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Frango com Espinafre e Cheddar</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Combinação suave de peito de frango, folhas frescas de espinafre e cheddar.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-frango-espinafre-cheddar" data-item-id="emp_ Frango com Espinafre e Cheddar"><button data-action="add" data-id="emp_ Frango com Espinafre e Cheddar" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/ESPINAFRE-RICOTA.webp" alt="Empanada de Espinafre com Ricota e Tomate Seco" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Espinafre com Ricota e Tomate Seco</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Recheio vegetariano leve de espinafre fresco, ricota macia e tomate seco.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-espinafre-ricota-tomate-seco" data-item-id="emp_Espinafre com Ricota e Tomate Seco"><button data-action="add" data-id="emp_Espinafre com Ricota e Tomate Seco" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_espinafre.webp" alt="Empanada de Espinafre com Ricota e Tomate Seco" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Espinafre com Ricota e Tomate Seco</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Recheio vegetariano leve de espinafre fresco, ricota macia e tomate seco.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-espinafre-ricota-tomate-seco" data-item-id="emp_Espinafre com Ricota e Tomate Seco"><button data-action="add" data-id="emp_Espinafre com Ricota e Tomate Seco" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/ESCAROLA.webp" alt="Empanada de Escarola com Queijo" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Escarola com Queijo</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Escarola refogada no alho e azeite com uma generosa camada de queijo.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-escarola-queijo" data-item-id="emp_Escarola com Queijo"><button data-action="add" data-id="emp_Escarola com Queijo" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_escarola.webp" alt="Empanada de Escarola com Queijo" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Escarola com Queijo</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Escarola refogada no alho e azeite com uma generosa camada de queijo.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-escarola-queijo" data-item-id="emp_Escarola com Queijo"><button data-action="add" data-id="emp_Escarola com Queijo" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CHEESBACON.webp" alt="Empanada Bacon Cheeseburger" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada Bacon Cheeseburger</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Hambúrguer bovino, queijo derretido e pedaços crocantes de bacon frito.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-bacon-cheeseburger" data-item-id="emp_Bacon Cheeseburger"><button data-action="add" data-id="emp_Bacon Cheeseburger" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_bacon_cheesburguer.webp" alt="Empanada Bacon Cheeseburger" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada Bacon Cheeseburger</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Hambúrguer bovino, queijo derretido e pedaços crocantes de bacon frito.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-bacon-cheeseburger" data-item-id="emp_hamburguer"><button data-action="add" data-id="emp_hamburguer" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/CALABRESA.webp" alt="Empanada de Calabresa com Cream Cheese" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Calabresa com Cream Cheese</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Calabresa moída de alta qualidade unida à cremosidade do cream cheese.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-calabresa" data-item-id="empcalabresa"><button data-action="add" data-id="empcalabresa" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_calabresa.webp" alt="Empanada de Calabresa com Cream Cheese" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Calabresa com Cream Cheese</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Calabresa moída de alta qualidade unida à cremosidade do cream cheese.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-calabresa" data-item-id="empcalabresa"><button data-action="add" data-id="empcalabresa" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="salgada">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/ATUM.webp" alt="Empanada de Atum com Queijo" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Empanada de Atum com Queijo</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Atum sólido conservado mesclado com queijo muçarela derretido.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-atum" data-item-id="emp_Atum"><button data-action="add" data-id="emp_Atum" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="salgada">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_atum.webp" alt="Empanada de Atum com Queijo" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Empanada de Atum com Queijo</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Atum sólido conservado mesclado com queijo muçarela derretido.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 14.00</span><div class="flex items-center gap-2" id="controls-emp-atum" data-item-id="emp_Atum"><button data-action="add" data-id="emp_Atum" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
         <!-- Combos -->
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/empanada_combo_coca_600ml.webp" alt="Combo Coca-Cola" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Combo Coca-Cola</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Contém 4 Empanadas à sua escolha + 1 Refrigerante Coca-Cola de 600ml.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 62.90</span><div class="flex items-center gap-2" id="controls-combo-coca" data-item-id="combo_coca"><button data-action="add" data-id="combo_coca" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="combo">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanada_combo_coca_600ml.webp" alt="Combo Coca-Cola" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Combo Coca-Cola</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Contém 4 Empanadas à sua escolha + 1 Refrigerante Coca-Cola de 600ml.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 62.90</span><div class="flex items-center gap-2" id="controls-combo-coca" data-item-id="combo_coca"><button data-action="add" data-id="combo_coca" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/empanadas_combo_8.webp" alt="Combo Família com 8 Empanadas Assadas" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Combo Família (8 Empanadas Assadas)</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">8 empanadas assadas à sua escolha para dividir com quem você gosta.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 102.00</span><div class="flex items-center gap-2" id="controls-combo-familia" data-item-id="combo_familia"><button data-action="add" data-id="combo_familia" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="combo">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanadas_combo_8.webp" alt="Combo Família com 8 Empanadas Assadas" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Combo Família (8 Empanadas Assadas)</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">8 empanadas assadas à sua escolha para dividir com quem você gosta.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 102.00</span><div class="flex items-center gap-2" id="controls-combo-familia" data-item-id="combo_familia"><button data-action="add" data-id="combo_familia" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="assets/js/img/empanadas_combo_4.webp" alt="Combo 4 Empanadas" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Combo 4 Empanadas</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Leve 4 empanadas assadas de qualquer sabor com preço promocional.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 52.90</span><div class="flex items-center gap-2" id="controls-combo-quatro" data-item-id="combo_quatro"><button data-action="add" data-id="combo_quatro" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="combo">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="assets/js/img/empanadas_combo_4.webp" alt="Combo 4 Empanadas" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Combo 4 Empanadas</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Leve 4 empanadas assadas de qualquer sabor com preço promocional.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 52.90</span><div class="flex items-center gap-2" id="controls-combo-quatro" data-item-id="combo_quatro"><button data-action="add" data-id="combo_quatro" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
-          <figure class="w-1/3 min-w-[120px] h-full">
-            <img src="assets/js/img/COMBO_4_OVOMALTINE.webp" alt="Combo 4 Empanadas mais Tortinha de Ovomaltine" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="combo">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100">
+            <img src="assets/js/img/COMBO_4_OVOMALTINE.webp" alt="Combo 4 Empanadas mais Tortinha de Ovomaltine" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async">
           </figure>
-          <div class="card-body p-4 w-2/3 justify-between">
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2">
             <div>
-              <h3 class="font-bold text-gray-900 text-sm leading-tight">Combo 4 Empanadas + Tortinha de Ovomaltine</h3>
+              <h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Combo 4 Empanadas + Tortinha de Ovomaltine</h3>
               <p class="text-xs text-gray-500 mt-1 line-clamp-2">Leve 4 empanadas assadas de qualquer sabor com preço promocional + Tortinha de Ovomaltine.</p>
             </div>
-            <div class="flex items-center justify-between mt-2">
-              <span class="text-base font-bold text-terracotta-600">R$ 69.00</span>
+            <div class="flex items-center justify-between gap-2 mt-auto">
+              <span class="text-lg font-bold text-terracotta-600">R$ 69.00</span>
               <div class="flex items-center gap-2" id="controls-combo-quatro-ovomaltine" data-item-id="combo_quatro_ovomaltine">
-                <button data-action="add" data-id="combo_quatro_ovomaltine" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+                <button data-action="add" data-id="combo_quatro_ovomaltine" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="combo">
-          <figure class="w-1/3 min-w-[120px] h-full">
-            <img src="assets/js/img/COMBO-4-EMPANADAS-CHEESECAKE-_1_.webp" alt="Combo 4 Empanadas mais Cheesecake de Frutas Vermelhas" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="combo">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100">
+            <img src="assets/js/img/COMBO-4-EMPANADAS-CHEESECAKE-_1_.webp" alt="Combo 4 Empanadas mais Cheesecake de Frutas Vermelhas" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async">
           </figure>
-          <div class="card-body p-4 w-2/3 justify-between">
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2">
             <div>
-              <h3 class="font-bold text-gray-900 text-sm leading-tight">Combo 4 Empanadas + Cheesecake de Frutas Vermelhas</h3>
+              <h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Combo 4 Empanadas + Cheesecake de Frutas Vermelhas</h3>
               <p class="text-xs text-gray-500 mt-1 line-clamp-2">Leve 4 empanadas assadas de qualquer sabor com preço promocional + Cheesecake de Frutas Vermelhas.</p>
             </div>
-            <div class="flex items-center justify-between mt-2">
-              <span class="text-base font-bold text-terracotta-600">R$ 69.00</span>
+            <div class="flex items-center justify-between gap-2 mt-auto">
+              <span class="text-lg font-bold text-terracotta-600">R$ 69.00</span>
               <div class="flex items-center gap-2" id="controls-combo-quatro-cheesecake" data-item-id="combo_quatro_cheesecake">
-                <button data-action="add" data-id="combo_quatro_cheesecake" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+                <button data-action="add" data-id="combo_quatro_cheesecake" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button>
               </div>
             </div>
           </div>
         </article>
 
         <!-- Bebidas -->
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full">
-            <img src="assets/js/img/coca-cola-lata-350ml.avif" alt="Coca-Cola Original 350ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="bebida">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100">
+            <img src="assets/js/img/coca_cola_350ml.webp" alt="Coca-Cola Original 350ml" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async">
           </figure>
-          <div class="card-body p-4 w-2/3 justify-between">
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2">
             <div>
-              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Original 350ml</h3>
+              <h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Coca-Cola Original 350ml</h3>
               <p class="text-xs text-gray-500 mt-1 line-clamp-2">Lata de 350ml de Coca-Cola sabor original gelada.</p>
             </div>
-            <div class="flex items-center justify-between mt-2">
-              <span class="text-base font-bold text-terracotta-600">R$ 8.50</span>
+            <div class="flex items-center justify-between gap-2 mt-auto">
+              <span class="text-lg font-bold text-terracotta-600">R$ 8.50</span>
               <div class="flex items-center gap-2" id="controls-beb-coca-original-350" data-item-id="beb_coca_original_350">
-                <button data-action="add" data-id="beb_coca_original_350" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+                <button data-action="add" data-id="beb_coca_original_350" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full">
-            <img src="assets/js/img/cocacolazero.avif" alt="Coca-Cola sem Açúcar 350ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="bebida">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100">
+            <img src="assets/js/img/coca_cola_zero_350ml.webp" alt="Coca-Cola sem Açúcar 350ml" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async">
           </figure>
-          <div class="card-body p-4 w-2/3 justify-between">
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2">
             <div>
-              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola sem Açúcar 350ml</h3>
+              <h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Coca-Cola sem Açúcar 350ml</h3>
               <p class="text-xs text-gray-500 mt-1 line-clamp-2">Lata de 350ml de Coca-Cola sabor zero açúcar gelada.</p>
             </div>
-            <div class="flex items-center justify-between mt-2">
-              <span class="text-base font-bold text-terracotta-600">R$ 8.50</span>
+            <div class="flex items-center justify-between gap-2 mt-auto">
+              <span class="text-lg font-bold text-terracotta-600">R$ 8.50</span>
               <div class="flex items-center gap-2" id="controls-beb-coca-zero-350" data-item-id="beb_coca_zero_350">
-                <button data-action="add" data-id="beb_coca_zero_350" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+                <button data-action="add" data-id="beb_coca_zero_350" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full">
-            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola Original 600ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="bebida">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100">
+            <img src="assets/js/img/coca_cola_original_600ml.webp" alt="Coca-Cola Original 600ml" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async">
           </figure>
-          <div class="card-body p-4 w-2/3 justify-between">
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2">
             <div>
-              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Original 600ml</h3>
+              <h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Coca-Cola Original 600ml</h3>
               <p class="text-xs text-gray-500 mt-1 line-clamp-2">Garrafa de 600ml ideal para acompanhar sua empanada.</p>
             </div>
-            <div class="flex items-center justify-between mt-2">
-              <span class="text-base font-bold text-terracotta-600">R$ 15.00</span>
+            <div class="flex items-center justify-between gap-2 mt-auto">
+              <span class="text-lg font-bold text-terracotta-600">R$ 15.00</span>
               <div class="flex items-center gap-2" id="controls-beb-coca-600" data-item-id="beb_coca_600">
-                <button data-action="add" data-id="beb_coca_600" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+                <button data-action="add" data-id="beb_coca_600" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full">
-            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola Zero 600ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="bebida">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100">
+            <img src="assets/js/img/coca_cola_zero_600ml.webp" alt="Coca-Cola Zero 600ml" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async">
           </figure>
-          <div class="card-body p-4 w-2/3 justify-between">
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2">
             <div>
-              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola Zero 600ml</h3>
+              <h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Coca-Cola Zero 600ml</h3>
               <p class="text-xs text-gray-500 mt-1 line-clamp-2">Garrafa de 600ml de Coca-Cola sabor zero açúcar.</p>
             </div>
-            <div class="flex items-center justify-between mt-2">
-              <span class="text-base font-bold text-terracotta-600">R$ 15.00</span>
+            <div class="flex items-center justify-between gap-2 mt-auto">
+              <span class="text-lg font-bold text-terracotta-600">R$ 15.00</span>
               <div class="flex items-center gap-2" id="controls-beb-coca-zero-600" data-item-id="beb_coca_zero_600">
-                <button data-action="add" data-id="beb_coca_zero_600" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+                <button data-action="add" data-id="beb_coca_zero_600" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full">
-            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60" alt="Coca-Cola 2 litros" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="bebida">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100">
+            <img src="assets/js/img/coca_cola_original_2lts.webp" alt="Coca-Cola 2 litros" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async">
           </figure>
-          <div class="card-body p-4 w-2/3 justify-between">
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2">
             <div>
-              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola 2L</h3>
+              <h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Coca-Cola 2L</h3>
               <p class="text-xs text-gray-500 mt-1 line-clamp-2">Tamanho família. Garrafa de 2 litros.</p>
             </div>
-            <div class="flex items-center justify-between mt-2">
-              <span class="text-base font-bold text-terracotta-600">R$ 25.00</span>
+            <div class="flex items-center justify-between gap-2 mt-auto">
+              <span class="text-lg font-bold text-terracotta-600">R$ 25.00</span>
               <div class="flex items-center gap-2" id="controls-beb-coca-2l" data-item-id="beb_coca_2l">
-                <button data-action="add" data-id="beb_coca_2l" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+                <button data-action="add" data-id="beb_coca_2l" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="bebida">
-          <figure class="w-1/3 min-w-[120px] h-full">
-            <img src="assets/js/img/coca-cola-zero-2l.avif" alt="Coca-Cola zero 2 litros" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async">
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="bebida">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100">
+            <img src="assets/js/img/coca_cola_zero_2lts.webp" alt="Coca-Cola zero 2 litros" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async">
           </figure>
-          <div class="card-body p-4 w-2/3 justify-between">
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2">
             <div>
-              <h3 class="font-bold text-gray-900 text-sm leading-tight">Coca-Cola zero 2L</h3>
+              <h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Coca-Cola zero 2L</h3>
               <p class="text-xs text-gray-500 mt-1 line-clamp-2">Tamanho família. Garrafa de 2 litros.</p>
             </div>
-            <div class="flex items-center justify-between mt-2">
-              <span class="text-base font-bold text-terracotta-600">R$ 25.00</span>
+            <div class="flex items-center justify-between gap-2 mt-auto">
+              <span class="text-lg font-bold text-terracotta-600">R$ 25.00</span>
               <div class="flex items-center gap-2" id="controls-beb-coca-zero-2l" data-item-id="beb_coca_zero_2l">
-                <button data-action="add" data-id="beb_coca_zero_2l" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button>
+                <button data-action="add" data-id="beb_coca_zero_2l" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button>
               </div>
             </div>
           </div>
         </article>
 
         <!-- Vinhos -->
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="vinho">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho La Plata Branco Argentino 750ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Vinho La Plata Branco Argentino 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Vinho argentino branco jovem e refrescante, ideal para empanadas vegetarianas.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 55.90</span><div class="flex items-center gap-2" id="controls-vin-la-plata" data-item-id="vin_la_plata"><button data-action="add" data-id="vin_la_plata" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="vinho">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho La Plata Branco Argentino 750ml" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Vinho La Plata Branco Argentino 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Vinho argentino branco jovem e refrescante, ideal para empanadas vegetarianas.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 55.90</span><div class="flex items-center gap-2" id="controls-vin-la-plata" data-item-id="vin_la_plata"><button data-action="add" data-id="vin_la_plata" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="vinho">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho Tinto Argentino San Telmo Malbec 750ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Vinho Tinto Argentino San Telmo Malbec 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Clássico Malbec de Mendoza de aroma frutado, perfeito com empanada de carne ou costela.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 79.90</span><div class="flex items-center gap-2" id="controls-vin-san-telmo" data-item-id="vin_san_telmo"><button data-action="add" data-id="vin_san_telmo" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="vinho">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho Tinto Argentino San Telmo Malbec 750ml" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Vinho Tinto Argentino San Telmo Malbec 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Clássico Malbec de Mendoza de aroma frutado, perfeito com empanada de carne ou costela.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 79.90</span><div class="flex items-center gap-2" id="controls-vin-san-telmo" data-item-id="vin_san_telmo"><button data-action="add" data-id="vin_san_telmo" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
 
-        <article class="card card-side bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden h-36" data-categoria="vinho">
-          <figure class="w-1/3 min-w-[120px] h-full"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho Tinto Seco Argentino Cavic 750ml" width="160" height="144" class="object-cover w-full h-full" loading="lazy" decoding="async"></figure>
-          <div class="card-body p-4 w-2/3 justify-between"><div><h3 class="font-bold text-gray-900 text-sm leading-tight">Vinho Tinto Seco Argentino Cavic 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Vinho de mesa tinto seco argentino, fácil de beber no dia a dia.</p></div><div class="flex items-center justify-between mt-2"><span class="text-base font-bold text-terracotta-600">R$ 40.00</span><div class="flex items-center gap-2" id="controls-vin-cavic" data-item-id="vin_cavic"><button data-action="add" data-id="vin_cavic" class="btn btn-xs rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-4">Adicionar</button></div></div></div>
+        <article class="group card flex-row md:flex-col bg-white shadow-sm border border-orange-100 rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-0.5" data-categoria="vinho">
+          <figure class="relative shrink-0 w-32 sm:w-40 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-orange-100"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&auto=format&fit=crop&q=60" alt="Vinho Tinto Seco Argentino Cavic 750ml" width="400" height="300" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async"></figure>
+          <div class="card-body p-3 sm:p-4 flex-1 min-w-0 justify-between gap-2"><div><h3 class="font-bold text-gray-900 text-sm md:text-base leading-tight">Vinho Tinto Seco Argentino Cavic 750ml</h3><p class="text-xs text-gray-500 mt-1 line-clamp-2">Vinho de mesa tinto seco argentino, fácil de beber no dia a dia.</p></div><div class="flex items-center justify-between gap-2 mt-auto"><span class="text-lg font-bold text-terracotta-600">R$ 40.00</span><div class="flex items-center gap-2" id="controls-vin-cavic" data-item-id="vin_cavic"><button data-action="add" data-id="vin_cavic" class="btn btn-sm h-10 min-h-10 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white border-none px-5 shadow-sm transition-all duration-200 active:scale-95">Adicionar</button></div></div></div>
         </article>
       </div>
     </section>
 
-    <section class="mt-8 mb-6" aria-labelledby="faq-title">
-      <h2 id="faq-title" class="text-sm font-bold text-gray-900 mb-3">Perguntas frequentes</h2>
+    <section id="faq" class="max-w-3xl mx-auto mt-16 scroll-mt-36" aria-labelledby="faq-title">
+      <div class="text-center mb-6 md:mb-8">
+        <h2 id="faq-title" class="text-xl md:text-2xl font-bold text-gray-900">Perguntas frequentes</h2>
+        <p class="text-sm text-gray-600 mt-2">Tudo o que você precisa saber antes de pedir.</p>
+      </div>
 
-      <div class="space-y-2">
-        <details class="collapse collapse-arrow bg-white border border-orange-100 rounded-2xl">
-          <summary class="collapse-title text-sm font-medium">Como faço meu pedido?</summary>
-          <div class="collapse-content text-xs text-gray-600"><p>Escolha os itens do cardápio, abra o carrinho e finalize no WhatsApp.</p></div>
+      <div class="space-y-3">
+        <details class="faq-item group bg-white border border-orange-100 rounded-xl shadow-sm transition-all duration-200 hover:border-orange-200 open:shadow-md open:border-orange-200">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 md:px-6 md:py-5 rounded-xl text-sm md:text-base font-semibold text-gray-900 hover:text-terracotta-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-500 [&::-webkit-details-marker]:hidden">
+            Como faço meu pedido?
+            <span class="grid place-items-center shrink-0 w-8 h-8 rounded-full bg-orange-50 text-terracotta-600 transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5 md:px-6 -mt-1 text-sm text-gray-700 leading-relaxed"><p>Escolha os itens do cardápio, abra o carrinho e finalize no WhatsApp.</p></div>
         </details>
 
-        <details class="collapse collapse-arrow bg-white border border-orange-100 rounded-2xl">
-          <summary class="collapse-title text-sm font-medium">Qual o horário de atendimento?</summary>
-          <div class="collapse-content text-xs text-gray-600"><p>Segunda a quinta, das 18h às 22h. Sexta, sábado e domingo, das 18h às 23h.</p></div>
+        <details class="faq-item group bg-white border border-orange-100 rounded-xl shadow-sm transition-all duration-200 hover:border-orange-200 open:shadow-md open:border-orange-200">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 md:px-6 md:py-5 rounded-xl text-sm md:text-base font-semibold text-gray-900 hover:text-terracotta-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-500 [&::-webkit-details-marker]:hidden">
+            Qual o horário de atendimento?
+            <span class="grid place-items-center shrink-0 w-8 h-8 rounded-full bg-orange-50 text-terracotta-600 transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5 md:px-6 -mt-1 text-sm text-gray-700 leading-relaxed"><p>Segunda a quinta, das 18h às 22h. Sexta, sábado e domingo, das 18h às 23h.</p></div>
         </details>
 
-        <details class="collapse collapse-arrow bg-white border border-orange-100 rounded-2xl">
-          <summary class="collapse-title text-sm font-medium">O pedido é finalizado por onde?</summary>
-          <div class="collapse-content text-xs text-gray-600"><p>O pedido segue para o WhatsApp para confirmação e finalização.</p></div>
+        <details class="faq-item group bg-white border border-orange-100 rounded-xl shadow-sm transition-all duration-200 hover:border-orange-200 open:shadow-md open:border-orange-200">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 md:px-6 md:py-5 rounded-xl text-sm md:text-base font-semibold text-gray-900 hover:text-terracotta-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-500 [&::-webkit-details-marker]:hidden">
+            O pedido é finalizado por onde?
+            <span class="grid place-items-center shrink-0 w-8 h-8 rounded-full bg-orange-50 text-terracotta-600 transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5 md:px-6 -mt-1 text-sm text-gray-700 leading-relaxed"><p>O pedido segue para o WhatsApp para confirmação e finalização.</p></div>
+        </details>
+
+        <details class="faq-item group bg-white border border-orange-100 rounded-xl shadow-sm transition-all duration-200 hover:border-orange-200 open:shadow-md open:border-orange-200">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 md:px-6 md:py-5 rounded-xl text-sm md:text-base font-semibold text-gray-900 hover:text-terracotta-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-500 [&::-webkit-details-marker]:hidden">
+            Como funciona o pagamento do meu pedido?
+            <span class="grid place-items-center shrink-0 w-8 h-8 rounded-full bg-orange-50 text-terracotta-600 transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5 md:px-6 -mt-1 text-sm text-gray-700 leading-relaxed"><p>O pagamento é 100% seguro e pode ser realizado online via <strong class="font-semibold text-gray-900">Mercado Pago</strong> (Pix ou Cartão de Crédito) ou finalizado diretamente pelo <strong class="font-semibold text-gray-900">WhatsApp</strong> com a nossa equipe.</p></div>
+        </details>
+
+        <details class="faq-item group bg-white border border-orange-100 rounded-xl shadow-sm transition-all duration-200 hover:border-orange-200 open:shadow-md open:border-orange-200">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 md:px-6 md:py-5 rounded-xl text-sm md:text-base font-semibold text-gray-900 hover:text-terracotta-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-500 [&::-webkit-details-marker]:hidden">
+            Posso retirar o pedido no local?
+            <span class="grid place-items-center shrink-0 w-8 h-8 rounded-full bg-orange-50 text-terracotta-600 transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5 md:px-6 -mt-1 text-sm text-gray-700 leading-relaxed"><p>Sim. Além do delivery, você pode retirar seu pedido na R. Marina, 474 - Campestre, Santo André - SP.</p></div>
         </details>
       </div>
     </section>
@@ -526,70 +582,78 @@
     </div>
   </div>
 
- <!-- Footer Claro Gastronômico (Alto Contraste e Harmonia com a Página) -->
-  <footer class="mt-auto border-t border-orange-200/80" style="background-color: #FFF7ED;">
-    <div class="max-w-md mx-auto px-5 py-8 space-y-6">
-      
-      <!-- Marca & Descrição -->
-      <div>
-        <div class="flex items-center gap-2 mb-2">
-          <i data-lucide="cookie" class="w-5 h-5 inline-block text-terracotta-500" style="color: #c2410c;"></i>
-          <span class="text-base font-bold text-gray-900 tracking-wide">La Empanadas</span>
+ <!-- Footer -->
+  <footer class="mt-auto bg-[#FDFBF7] border-t border-stone-200 text-stone-600" aria-labelledby="footer-title">
+    <h2 id="footer-title" class="sr-only">Informações da La Empanadas</h2>
+
+    <div class="max-w-7xl mx-auto px-4 py-12 md:py-14 grid gap-10 md:grid-cols-3 md:gap-12">
+
+      <!-- Coluna 1: Marca & Redes -->
+      <section aria-label="Sobre a La Empanadas">
+        <img src="assets/js/img/logo-la-empanadas.webp" alt="Logo La Empanadas" width="120" height="55" loading="lazy" decoding="async" class="w-[120px] h-auto">
+        <p class="mt-4 text-sm leading-relaxed max-w-xs">Empanadas argentinas artesanais, assadas diariamente com massa leve e recheios suculentos.</p>
+
+        <a href="https://www.instagram.com/laempanadassaltenhas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da La Empanadas: @laempanadas39" class="group mt-5 inline-flex items-center gap-3 rounded-full border border-stone-200 bg-white py-1.5 pl-1.5 pr-4 text-sm font-semibold text-stone-800 shadow-sm transition-all duration-200 hover:border-terracotta-500 hover:text-terracotta-600 hover:shadow-md">
+          <span class="grid place-items-center w-9 h-9 rounded-full bg-terracotta-50 text-terracotta-600 transition-colors duration-200 group-hover:bg-terracotta-500 group-hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </span>
+          @laempanadas39
+        </a>
+      </section>
+
+      <!-- Coluna 2: Horários & Status -->
+      <section aria-labelledby="footer-horarios">
+        <div class="flex items-center justify-between gap-3">
+          <h3 id="footer-horarios" class="text-xs font-bold uppercase tracking-wider text-stone-800">Horário de funcionamento</h3>
+          <span data-status-funcionamento class="inline-flex items-center gap-1.5 shrink-0 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">
+            <span data-status-dot class="w-2 h-2 rounded-full bg-emerald-600 inline-block animate-pulse"></span>
+            <span data-status-texto>Aberto agora</span>
+          </span>
         </div>
-        <p class="text-xs text-gray-600 leading-relaxed">
-          Empanadas argentinas artesanais, assadas diariamente com massa leve, crocante e recheios suculentos.
-        </p>
-      </div>
 
-      <!-- Links Institucionais e Atendimento -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-1">
-        <nav class="flex flex-col gap-2.5">
-          <h2 class="text-xs font-bold uppercase tracking-wider text-orange-950">Institucional</h2>
-          <a href="politica.html" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors">Política de Privacidade</a>
-          <a href="termos.html" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors">Termos de Uso</a>
-          <a href="exclusao.html" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors">Exclusão de Dados</a>
-        </nav>
+        <dl class="mt-5 rounded-xl border border-stone-200 bg-white px-4 text-sm shadow-sm">
+          <div class="flex justify-between gap-4 py-3 border-b border-stone-100">
+            <dt>Segunda a quinta</dt>
+            <dd class="font-semibold text-stone-800">18h às 22h</dd>
+          </div>
+          <div class="flex justify-between gap-4 py-3">
+            <dt>Sexta a domingo</dt>
+            <dd class="font-semibold text-stone-800">18h às 23h</dd>
+          </div>
+        </dl>
+      </section>
 
-        <nav class="flex flex-col gap-2.5">
-          <h2 class="text-xs font-bold uppercase tracking-wider text-orange-950">Atendimento</h2>
-          <a href="mailto:contato@laempanadas.com.br" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors flex items-center gap-2">
-            <i data-lucide="mail" class="w-4 h-4 shrink-0 text-orange-700 inline-block"></i>
-            <span class="truncate">contato@laempanadas.com.br</span>
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=551126690644&text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20La%20Empanadas." target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-800 hover:text-emerald-900 font-semibold transition-colors flex items-center gap-2">
-            <i data-lucide="message-circle" class="w-4 h-4 shrink-0 text-emerald-600 inline-block"></i>
-            <span>WhatsApp: (11) 2669-0644</span>
-          </a>
-          <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-700 hover:text-terracotta-600 font-medium transition-colors flex items-center gap-2">
-            <i data-lucide="map-pin" class="w-4 h-4 shrink-0 text-orange-700 inline-block"></i>
-            <span>R. Marina, 474 - Santo André</span>
-          </a>
-        </nav>
-      </div>
+      <!-- Coluna 3: Localização & Retirada -->
+      <section aria-labelledby="footer-endereco">
+        <h3 id="footer-endereco" class="text-xs font-bold uppercase tracking-wider text-stone-800">Localização &amp; Retirada</h3>
 
-      <!-- Card "Onde Estamos" Claro e com Alto Destaque -->
-      <section class="rounded-2xl p-4 bg-white border border-orange-200 shadow-sm">
-        <h2 class="text-sm font-bold text-gray-900 mb-1 flex items-center gap-2">
-          <i data-lucide="map-pin" class="w-4 h-4 inline-block text-terracotta-500" style="color: #c2410c;"></i>
-          Onde estamos
-        </h2>
-        <p class="text-xs text-gray-800 font-semibold">R. Marina, 474 - Campestre, Santo André - SP</p>
-        <p class="text-[11px] text-gray-500 mt-0.5">CEP 09070-510 • Retirada e Delivery rápido</p>
-        
-        <a href="https://www.google.com/maps?q=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="inline-flex items-center justify-center mt-3 w-full py-2.5 rounded-xl bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs font-bold shadow-sm transition-all text-center" style="background-color: #c2410c;">
-          Ver no Google Maps
+        <address class="not-italic mt-5 text-sm leading-relaxed">
+          <span class="block text-base font-semibold text-stone-800">R. Marina, 474 - Campestre</span>
+          Santo André - SP · CEP 09070-510
+        </address>
+        <p class="mt-1 text-xs text-stone-500">Retirada no local e delivery.</p>
+
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Marina,+474+-+Campestre,+Santo+Andr%C3%A9+-+SP+09070-510" target="_blank" rel="noopener noreferrer" class="group mt-5 inline-flex items-center gap-2 h-11 px-5 rounded-xl border border-stone-200 bg-white text-sm font-semibold text-stone-800 shadow-sm transition-all duration-200 hover:border-terracotta-500 hover:text-terracotta-600 hover:shadow-md">
+          <i data-lucide="map-pin" class="w-4 h-4 inline-block text-terracotta-500" aria-hidden="true"></i>
+          Traçar rota no Google Maps
+          <i data-lucide="arrow-up-right" class="w-4 h-4 inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"></i>
         </a>
       </section>
     </div>
 
-    <!-- Sub-footer / Direitos -->
-    <div class="border-t border-orange-200/60 py-4" style="background-color: #FAEDE1;">
-      <div class="max-w-md mx-auto px-5 text-[11px] text-gray-600 flex flex-col gap-1 text-center sm:text-left font-medium">
-        <p>© 2026 La Empanadas. Todos os direitos reservados.</p>
-        <p class="text-[10px] text-gray-500">Cardápio Digital Delivery Integrado via WhatsApp</p>
+    <!-- Sub-footer -->
+    <div class="border-t border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-stone-500">
+        <p class="text-center md:text-left">© <span data-ano-atual>2026</span> La Empanadas. Todos os direitos reservados.</p>
+
+        <nav aria-label="Links institucionais">
+          <ul class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <li><a href="#faq" class="transition-colors duration-200 hover:text-terracotta-600">Dúvidas Frequentes</a></li>
+            <li><a href="politica.html" class="transition-colors duration-200 hover:text-terracotta-600">Política de Privacidade</a></li>
+            <li><a href="termos.html" class="transition-colors duration-200 hover:text-terracotta-600">Termos de Uso</a></li>
+            <li><a href="exclusao.html" class="transition-colors duration-200 hover:text-terracotta-600">Exclusão de Dados</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </footer>

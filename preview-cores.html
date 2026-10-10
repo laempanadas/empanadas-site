@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Prévia de paletas | La Empanadas</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: Poppins, sans-serif; background: #e7e5e4; color: #1c1917; padding: 24px; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .sub { font-size: 14px; color: #57534e; margin-bottom: 24px; }
+  .opcoes { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+  .opcao { border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.12); background: var(--page); }
+  .rotulo { padding: 14px 18px; background: #fff; border-bottom: 1px solid #e7e5e4; }
+  .rotulo b { font-size: 16px; }
+  .rotulo p { font-size: 12px; color: #57534e; margin-top: 2px; }
+  .swatches { display: flex; gap: 6px; margin-top: 8px; }
+  .swatches span { width: 22px; height: 22px; border-radius: 6px; border: 1px solid rgba(0,0,0,.1); }
+
+  .header { background: var(--header); padding: 12px 18px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--borda); }
+  .header img { width: 80px; }
+  .header .nome { font-weight: 700; font-size: 15px; color: var(--header-texto); }
+  .chips { display: flex; gap: 6px; padding: 10px 18px; background: var(--header); }
+  .chip { font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--chip); color: var(--chip-texto); }
+  .chip.ativo { background: var(--primaria); color: #fff; }
+  .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+  .badge i { width: 7px; height: 7px; border-radius: 50%; background: #059669; }
+
+  .conteudo { padding: 18px; display: grid; gap: 12px; }
+  .card { display: flex; background: var(--card); border: 1px solid var(--borda); border-radius: 16px; overflow: hidden; }
+  .card img { width: 110px; height: 110px; object-fit: cover; }
+  .card div { padding: 12px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+  .card h3 { font-size: 13px; color: var(--titulo); }
+  .card p { font-size: 11px; color: var(--texto-suave); }
+  .linha { display: flex !important; flex-direction: row !important; align-items: center; justify-content: space-between; padding: 0 !important; }
+  .preco { font-weight: 700; font-size: 16px; color: var(--preco); }
+  .btn { font-size: 12px; font-weight: 600; background: var(--primaria); color: #fff; border-radius: 999px; padding: 8px 16px; }
+  .faq { background: var(--card); border: 1px solid var(--borda); border-radius: 12px; padding: 12px 14px; font-size: 13px; font-weight: 600; color: var(--titulo); display: flex; justify-content: space-between; }
+  .faq span { color: var(--primaria); }
+
+  .cta { background: var(--cta); color: var(--cta-texto); padding: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .cta b { font-size: 15px; }
+  .cta p { font-size: 11px; opacity: .85; }
+  .cta a { background: #fff; color: var(--primaria); font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 10px; white-space: nowrap; text-decoration: none; }
+
+  .footer { background: var(--footer); color: var(--footer-texto); padding: 22px 18px; display: grid; gap: 18px; border-top: 1px solid var(--footer-borda); }
+  .footer h4 { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--footer-titulo); margin-bottom: 8px; }
+  .footer .forte { color: var(--footer-titulo); font-weight: 600; font-size: 13px; }
+  .footer p { font-size: 12px; line-height: 1.6; }
+  .footer .logo { width: 90px; border-radius: 8px; background: var(--logo-bg); padding: var(--logo-pad); }
+  .sociais { display: flex; gap: 8px; margin-top: 10px; }
+  .social { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 6px 12px 6px 6px; border-radius: 999px; background: var(--social-bg); color: var(--footer-titulo); border: 1px solid var(--footer-borda); }
+  .social svg { width: 26px; height: 26px; padding: 5px; border-radius: 50%; background: var(--social-icone-bg); color: var(--social-icone); }
+  .rota { display: inline-block; margin-top: 10px; font-size: 12px; font-weight: 600; padding: 9px 14px; border-radius: 10px; background: var(--rota-bg); color: var(--rota-texto); border: 1px solid var(--footer-borda); }
+  .subfooter { background: var(--subfooter); color: var(--footer-texto); font-size: 11px; padding: 12px 18px; border-top: 1px solid var(--footer-borda); opacity: .9; }
+
+  /* Opção 1: Terracota da marca */
+  .o1 { --page:#FFF8F2; --header:#fff; --header-texto:#1c1917; --borda:#FDE3D3; --chip:#FFF1E8; --chip-texto:#7C2D12;
+        --primaria:#C2410C; --card:#fff; --titulo:#1c1917; --texto-suave:#78716c; --preco:#9A3412;
+        --cta:#C2410C; --cta-texto:#fff;
+        --footer:#7C2D12; --footer-texto:#FED7AA; --footer-titulo:#fff; --footer-borda:rgba(255,255,255,.14);
+        --logo-bg:#fff; --logo-pad:4px; --social-bg:rgba(255,255,255,.08); --social-icone-bg:#fff; --social-icone:#C2410C;
+        --rota-bg:#fff; --rota-texto:#7C2D12; --subfooter:#6A250F; }
+  /* Opção 2: Grafite + laranja */
+  .o2 { --page:#FAFAF9; --header:#fff; --header-texto:#1c1917; --borda:#E7E5E4; --chip:#F5F5F4; --chip-texto:#44403c;
+        --primaria:#EA580C; --card:#fff; --titulo:#1c1917; --texto-suave:#78716c; --preco:#C2410C;
+        --cta:#1C1917; --cta-texto:#fff;
+        --footer:#1C1917; --footer-texto:#A8A29E; --footer-titulo:#FAFAF9; --footer-borda:rgba(255,255,255,.1);
+        --logo-bg:#fff; --logo-pad:4px; --social-bg:rgba(255,255,255,.06); --social-icone-bg:#EA580C; --social-icone:#fff;
+        --rota-bg:#EA580C; --rota-texto:#fff; --subfooter:#141110; }
+  /* Opção 3: Areia quente */
+  .o3 { --page:#FFFBF5; --header:#fff; --header-texto:#3B2416; --borda:#F0E2CF; --chip:#F7EEE2; --chip-texto:#5C3A24;
+        --primaria:#B9461A; --card:#fff; --titulo:#3B2416; --texto-suave:#7C6A5C; --preco:#B9461A;
+        --cta:#B9461A; --cta-texto:#fff;
+        --footer:#F3E6D4; --footer-texto:#6B5443; --footer-titulo:#3B2416; --footer-borda:#E6D3BA;
+        --logo-bg:transparent; --logo-pad:0; --social-bg:#fff; --social-icone-bg:#B9461A; --social-icone:#fff;
+        --rota-bg:#3B2416; --rota-texto:#fff; --subfooter:#EBDBC5; }
+</style>
+</head>
+<body>
+  <h1>Prévia de paletas: La Empanadas</h1>
+  <p class="sub">Compare as 3 opções. Cada uma muda a página inteira (fundo, cards, botões, FAQ) e o rodapé. Esta página é só para comparação e não vai para produção.</p>
+
+  <div class="opcoes" id="opcoes"></div>
+
+  <template id="mock">
+    <div class="header"><img src="assets/js/img/logo-la-empanadas.webp" alt=""><div><div class="nome">La Empanadas</div><span class="badge"><i></i>Aberto agora</span></div></div>
+    <div class="chips"><span class="chip ativo">Todas</span><span class="chip">Salgadas</span><span class="chip">Doces</span><span class="chip">Combos</span></div>
+    <div class="conteudo">
+      <div class="card"><img src="assets/js/img/empanada_romeu.webp" alt=""><div><div><h3>Empanada Romeu e Julieta</h3><p>Goiabada cascão e muçarela.</p></div><div class="linha"><span class="preco">R$ 14,50</span><span class="btn">Adicionar</span></div></div></div>
+      <div class="card"><img src="assets/js/img/empanada_carne.webp" alt=""><div><div><h3>Empanada de Carne com Ovos</h3><p>Carne bovina moída com ovos.</p></div><div class="linha"><span class="preco">R$ 14,00</span><span class="btn">Adicionar</span></div></div></div>
+      <div class="faq">Como funciona o pagamento do meu pedido?<span>+</span></div>
+    </div>
+    <div class="cta"><div><b>Bateu a fome?</b><p>Peça agora e receba quentinho.</p></div><a href="#">Pedir no WhatsApp</a></div>
+    <div class="footer">
+      <div>
+        <img class="logo" src="assets/js/img/logo-la-empanadas.webp" alt="">
+        <div class="sociais">
+          <span class="social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</span>
+          <span class="social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>TikTok</span>
+        </div>
+      </div>
+      <div><h4>Horário</h4><p>Seg a Qui · <span class="forte">18h às 22h</span><br>Sex a Dom · <span class="forte">18h às 23h</span></p></div>
+      <div><h4>Localização</h4><p class="forte">R. Marina, 474 - Campestre</p><p>Santo André - SP</p><span class="rota">Traçar rota no Google Maps</span></div>
+    </div>
+    <div class="subfooter">© 2026 La Empanadas · Política de Privacidade · Termos de Uso</div>
+  </template>
+
+  <script>
+    const opcoes = [
+      ['o1', 'Opção 1: Terracota da marca', 'Rodapé na cor da marca. Visual quente, com identidade forte, no estilo dos apps de delivery.', ['#FFF8F2', '#C2410C', '#9A3412', '#7C2D12', '#FED7AA']],
+      ['o2', 'Opção 2: Grafite + laranja', 'Neutro e moderno, com rodapé grafite. O laranja aparece só nos botões e preços.', ['#FAFAF9', '#EA580C', '#C2410C', '#1C1917', '#A8A29E']],
+      ['o3', 'Opção 3: Areia quente', 'Claro e acolhedor, com rodapé cor de areia e textos em marrom café. Mais artesanal.', ['#FFFBF5', '#B9461A', '#3B2416', '#F3E6D4', '#6B5443']]
+    ];
+    const tpl = document.getElementById('mock');
+    for (const [cls, titulo, desc, cores] of opcoes) {
+      const el = document.createElement('section');
+      el.className = `opcao ${cls}`;
+      el.innerHTML = `<div class="rotulo"><b>${titulo}</b><p>${desc}</p><div class="swatches">${cores.map(c => `<span style="background:${c}" title="${c}"></span>`).join('')}</div></div>`;
+      el.appendChild(tpl.content.cloneNode(true));
+      document.getElementById('opcoes').appendChild(el);
+    }
+  </script>
+</body>
+</html>
